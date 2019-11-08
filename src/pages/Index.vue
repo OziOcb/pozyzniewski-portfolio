@@ -1,34 +1,42 @@
 <template>
   <Layout>
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1 class="testFromMainScss">Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore
-      expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <div class="dummyDiv"></div>
+    <div class="smElement">scroll magic test</div>
+    <div class="dummyDiv"></div>
   </Layout>
 </template>
 
 <script>
+import ScrollMagic from "scrollmagic"
+// import "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  mounted() {
+    // init controller
+    var controller = new ScrollMagic.Controller()
+
+    // create a scene
+    new ScrollMagic.Scene({
+      triggerElement: ".smElement",
+      triggerHook: 0.5,
+      duration: "100%" // the scene should last for a scroll distance of 100px
+    })
+      .setClassToggle(".smElement", "smElement--modified")
+      .addTo(controller) // assign the scene to the controller
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.home-links {
-  a {
-    margin-right: 1rem;
-  }
+.dummyDiv {
+  background-color: #aaa;
+  height: 700px;
+}
+.smElement--modified {
+  color: #900;
+  font-weight: bold;
 }
 </style>
