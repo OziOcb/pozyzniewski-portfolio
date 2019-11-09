@@ -7,25 +7,29 @@
 </template>
 
 <script>
-import ScrollMagic from "scrollmagic"
-// import "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"
-
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   mounted() {
-    // init controller
-    var controller = new ScrollMagic.Controller()
+    // create a Tween
+    const testTween = new this.$GSAP.TimelineMax()
+    testTween
+      .from(".smElement", 1.5, { ease: this.$GSAP.Power2.easeOut, opacity: 0 })
+      .to(".smElement", 2, { ease: this.$GSAP.Back.easeInOut.config(5.2), fontSize: "30px" })
+      .to(".smElement", 2, { rotationY: 360 })
 
     // create a scene
-    new ScrollMagic.Scene({
+    const testScene = new this.$ScrollMagic.Scene({
       triggerElement: ".smElement",
-      triggerHook: 0.5,
-      duration: "100%" // the scene should last for a scroll distance of 100px
+      triggerHook: 0.7,
+      duration: 300
     })
-      .setClassToggle(".smElement", "smElement--modified")
-      .addTo(controller) // assign the scene to the controller
+      .addIndicators() // TODO: Check if there is a way to add this plugin only on .env.develop
+      .setTween(testTween)
+
+    // Add the scene to the controller
+    this.$ScrollMagic.Controller.addScene(testScene)
   }
 }
 </script>
