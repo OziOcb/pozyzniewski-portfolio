@@ -4,19 +4,22 @@ import "~/assets/sass/main.scss"
 
 import DefaultLayout from "~/layouts/Default.vue"
 
-// import { TweenMax } from "gsap/TweenMax" // this seems to be unnecessary
+// import { TweenMax } from "gsap/TweenMax" // This seems to be unnecessary
 import ScrollMagic from "scrollmagic"
 import "imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap"
-// TODO: make the inport link below be loaded only on .env.develop
-import "imports-loader?define=>true!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators"
-// any extra plugins from GreenSock
+
+// Load ScrollMagic's Indicators only on development environment
+if (process.env.NODE_ENV === "development") {
+  require("imports-loader?define=>true!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators")
+}
+// Load any extra plugins from GreenSock like this:
 // import SplitText from "../static/SplitText"
 
 const GSAPScrollMagic = {
   install(Vue, options) {
     // GSAP
     Vue.prototype.$GSAP = {
-      TweenMax,
+      // TweenMax,
       TimelineMax,
       Linear,
       Power1,

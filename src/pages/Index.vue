@@ -25,7 +25,7 @@ export default {
       triggerHook: 0.7,
       duration: 300
     })
-      .addIndicators() // TODO: Check if there is a way to add this plugin only on .env.develop
+      .addIndicators() // TODO: Remove this line before sending to production
       .setTween(testTween)
 
     // Add the scene to the controller
