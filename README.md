@@ -14,7 +14,7 @@
 
 ## GSAP & ScrollMagic
 
-### 1. Set up:
+### 1. Setup:
 ```javascript
 // main.js
 
@@ -87,4 +87,14 @@ export  default  {
 	}
 }
 </script>
+```
+
+## FontAwesome 5
+
+### 1. Setup: [here](https://gridsome.org/docs/assets-svg/#fontawesome-svg-icons)
+
+### 2. Example:
+```javascript
+<font-awesome  :icon="['fab',  'github']"  />
+<font-awesome  :icon="['fab',  'linkedin']"  />
 ```
