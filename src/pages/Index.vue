@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .hello {
-  color: red;
+  color: #990000;
+  position: relative;
 }
 </style>
