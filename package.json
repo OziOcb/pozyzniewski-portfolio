@@ -1,6 +1,13 @@
 {
   "name": "pozyzniewski-portfolio",
+  "version": "1.0.0",
+  "description": "This is the my personal portfolio project",
   "private": true,
+  "author": "Paul Ozyzniewski",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OziOcb/pozyzniewski-portfolio.git"
+  },
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
