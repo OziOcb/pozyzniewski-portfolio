@@ -21,7 +21,9 @@
     "eslint-loader": "^3.0.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.2.3",
+    "husky": "^3.0.9",
     "imports-loader": "^0.8.0",
+    "lint-staged": "^10.0.0-1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "sass-loader": "^8.0.0",
@@ -29,5 +31,18 @@
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{css,scss,postcss,vue,js}": [
+      "stylelint --fix",
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

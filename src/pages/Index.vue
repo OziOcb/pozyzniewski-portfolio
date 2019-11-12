@@ -19,7 +19,10 @@ export default {
 
 <style lang="scss" scoped>
 .hello {
-  color: #990000;
   position: relative;
+  z-index: 999;
+  margin: 5px;
+  display: flex;
+  color: #900;
 }
 </style>
