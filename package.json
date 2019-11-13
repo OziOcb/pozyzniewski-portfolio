@@ -47,7 +47,6 @@
   "lint-staged": {
     "src/**/*.{css,scss,postcss,vue,js}": [
       "stylelint --fix",
-      "eslint --fix",
       "prettier --write",
       "git add"
     ]
