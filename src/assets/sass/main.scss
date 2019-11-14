@@ -1,4 +1,4 @@
-.testFromMainScss {
-  color: #b00b55;
-  text-transform: lowercase;
-}
+@import "reset/normalize";
+@import "globals/globals";
+@import "base/base";
+@import "layout/layout";
