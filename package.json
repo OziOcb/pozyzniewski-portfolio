@@ -47,8 +47,7 @@
   "lint-staged": {
     "src/**/*.{css,scss,postcss,vue,js}": [
       "stylelint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
