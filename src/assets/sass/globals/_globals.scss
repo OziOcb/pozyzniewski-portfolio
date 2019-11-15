@@ -3,3 +3,6 @@
 @import "breakpoints";
 @import "palette";
 @import "typography";
+
+// (ten plik zostaje rowniez uzyty jako globalne zmienne dla komponentow -
+// https://gridsome.org/docs/assets-css/#global-preprocessor-files-ie-variables-mixins)
