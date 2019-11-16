@@ -1,20 +1,35 @@
 {
-  "extends": [
-    "stylelint-config-recommended",
-    "stylelint-config-prettier"
-  ],
-  "plugins": [
-    "stylelint-order"
-  ],
+  "extends": ["stylelint-config-recommended", "stylelint-config-prettier"],
+  "plugins": ["stylelint-order"],
   "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "at-root",
+          "debug",
+          "each",
+          "else",
+          "error",
+          "extend",
+          "for",
+          "forward",
+          "function",
+          "if",
+          "import",
+          "include",
+          "mixin",
+          "use",
+          "warn",
+          "while"
+        ]
+      }
+    ],
     "block-no-empty": true,
     "color-hex-length": "short",
     "color-no-invalid-hex": true,
     "at-rule-name-space-after": "always",
-    "order/order": [
-      "declarations",
-      "rules"
-    ],
+    "order/order": ["declarations", "rules"],
     "order/properties-order": [
       "position",
       "z-index",
@@ -186,6 +201,6 @@
       "will-change",
       "cursor",
       "user-select"
-    ],
-  },
+    ]
+  }
 }
