@@ -12,7 +12,7 @@ function addStyleResource(rule) {
     .use("style-resource")
     .loader("style-resources-loader")
     .options({
-      patterns: [path.resolve(__dirname, "./src/assets/sass/globals/_globals.scss")]
+      patterns: [path.resolve(__dirname, "./src/assets/sass/globals/_index.scss")]
     })
 }
 
