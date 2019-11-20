@@ -23,6 +23,6 @@ export default {
   z-index: 999;
   margin: 5px;
   display: flex;
-  color: $testFromGlobalsVarsScss; // Global Variable
+  // color: $testFromGlobalsVarsScss; // Global Variable
 }
 </style>
