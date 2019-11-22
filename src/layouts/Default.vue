@@ -22,15 +22,47 @@ query {
 </static-query>
 
 <style lang="scss">
+// ===
+// Base styles
+// ===
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
-  line-height: 1.5;
+  @extend %typography-small;
   background-color: $color-body-bg;
 }
 
+// ===
+// Base element styles
+// ===
+a,
+a:visited {
+  color: $color-link-text;
+}
+h1 {
+  @extend %typography-xxlarge;
+}
+h2 {
+  @extend %typography-xlarge;
+}
+h3 {
+  @extend %typography-large;
+}
+h4 {
+  @extend %typography-medium;
+}
+h5,
+h6 {
+  @extend %typography-small;
+}
+
+// ===
+// Layout
+// ===
 .layout {
   margin: 0 auto;
   padding-right: 20px;
