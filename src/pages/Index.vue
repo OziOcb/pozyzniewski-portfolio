@@ -6,13 +6,19 @@
       ipsum quas provident ducimus repudiandae inventore placeat velit qui. Recusandae debitis optio
       ipsam dolorum possimus tenetur corrupti?
     </p>
+    <BaseButton disabled>Button (disabled)</BaseButton>
   </layout>
 </template>
 
 <script>
+import BaseButton from "@/components/BaseButton.vue"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  components: {
+    BaseButton
   },
   data() {
     return {
