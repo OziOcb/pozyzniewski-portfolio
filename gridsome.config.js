@@ -18,7 +18,11 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: "Paul Ozyzniewski Portfolio",
-  plugins: [],
+  plugins: [
+    {
+      use: "gridsome-plugin-base-components"
+    }
+  ],
   chainWebpack(config) {
     // Load variables for all vue-files
     const types = ["vue-modules", "vue", "normal-modules", "normal"]

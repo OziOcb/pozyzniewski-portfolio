@@ -12,16 +12,9 @@
 </template>
 
 <script>
-import BaseButton from "@/components/BaseButton.vue"
-import BaseInput from "@/components/BaseInput.vue"
-
 export default {
   metaInfo: {
     title: "Hello, world!"
-  },
-  components: {
-    BaseButton,
-    BaseInput
   },
   data() {
     return {

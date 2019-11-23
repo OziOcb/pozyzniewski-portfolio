@@ -12,6 +12,24 @@
 2.  `cd pozyzniewski-portfolio` to open the folder.
 3.  `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
 
+## Base Components
+Many components will be relatively generic, possibly only wrapping an element like an input or a button. We sometimes refer to these as [base components](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended) and they tend to be used very frequently across your components.
+
+Thanks to `gridsome-plugin-base-components` plugin, all Components with names that start with `Base...` (`BaseButton.vue` etc.) will be globally available.
+
+No need for doing below in every component that uses these `base-components`:
+```javascript
+<script>
+import BaseButton from "@/components/BaseButton.vue"
+
+export  default  {
+	components:  {
+		BaseButton,
+	},
+}
+</script>
+```
+
 ## GSAP & ScrollMagic
 
 ### 1. Setup:
