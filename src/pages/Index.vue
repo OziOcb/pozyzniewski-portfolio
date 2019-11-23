@@ -7,18 +7,21 @@
       ipsam dolorum possimus tenetur corrupti?
     </p>
     <BaseButton disabled>Button (disabled)</BaseButton>
+    <BaseInput type="password" placeholder="BaseInput" required @update="inputUpdate" />
   </layout>
 </template>
 
 <script>
 import BaseButton from "@/components/BaseButton.vue"
+import BaseInput from "@/components/BaseInput.vue"
 
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   components: {
-    BaseButton
+    BaseButton,
+    BaseInput
   },
   data() {
     return {
@@ -30,6 +33,9 @@ export default {
     // eslint-disable-next-line
     eslintTest(one, two, three) {
       console.log(one)
+    },
+    inputUpdate() {
+      console.log("BaseInput")
     }
   }
 }
