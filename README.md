@@ -51,6 +51,13 @@ You can import SVGs as you do with any other Vue component.
 </script>
 ```
 
+## Adding Background Images in styles
+To do that you must use ``~@/`` as a prefix in the url
+```css 
+.imageBox  {
+	background: url("~@/assets/img/image-name.jpg") center/cover no-repeat;
+}
+```
 
 
 ## GSAP & ScrollMagic

@@ -58,8 +58,8 @@ p {
 }
 
 .imageBox {
-  width: 100px;
-  height: 100px;
-  // background: #f00 url("/src/assets/img/curtain2.jpg");
+  width: 400px;
+  height: 400px;
+  background: #f00 url("~@/assets/img/curtain2.jpg") center/cover no-repeat;
 }
 </style>
