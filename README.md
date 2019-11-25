@@ -1,7 +1,7 @@
 
 #  Pozyzniewski Portfolio
 
-
+    
 ## Install
 ### 1. Install Gridsome CLI tool if you don't have
 
@@ -15,20 +15,43 @@
 ## Base Components
 Many components will be relatively generic, possibly only wrapping an element like an input or a button. We sometimes refer to these as [base components](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended) and they tend to be used very frequently across your components.
 
-Thanks to `gridsome-plugin-base-components` plugin, all Components with names that start with `Base...` (`BaseButton.vue` etc.) will be globally available.
+Thanks to `gridsome-plugin-base-components` plugin, all Components with names that start with `Base...` (`BaseButton.vue` etc.) will be globally available. 
 
 No need for doing below in every component that uses these `base-components`:
 ```javascript
 <script>
 import BaseButton from "@/components/BaseButton.vue"
 
-export  default  {
+export  default  { 
 	components:  {
 		BaseButton,
 	},
 }
 </script>
 ```
+
+## Using SVGs as Components
+You can import SVGs as you do with any other Vue component.
+
+```html
+<template>
+	<layout>
+		<SvgBrand />
+	</layout>
+</template>
+
+<script>
+  import SvgBrand from '~/assets/svgs/Brand.svg'
+  
+  export default {
+    components: {
+      SvgBrand
+    }
+  }
+</script>
+```
+
+
 
 ## GSAP & ScrollMagic
 

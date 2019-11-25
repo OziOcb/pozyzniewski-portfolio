@@ -8,13 +8,26 @@
     </p>
     <BaseButton disabled>Button (disabled)</BaseButton>
     <BaseInput type="password" placeholder="BaseInput" required @update="inputUpdate" />
+    <br />
+
+    <!-- SVG -->
+    <SvgUndraw />
+    <!-- Normal Image -->
+    <g-image src="~/assets/img/curtain2.jpg" alt="jpg" height="300" width="300" />
+    <!-- Backgroud image -->
+    <div class="imageBox"></div>
   </layout>
 </template>
 
 <script>
+import SvgUndraw from "~/assets/img/undraw.svg"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  components: {
+    SvgUndraw
   },
   data() {
     return {
@@ -42,5 +55,11 @@ export default {
 
 p {
   @extend %typography-small;
+}
+
+.imageBox {
+  width: 100px;
+  height: 100px;
+  // background: #f00 url("/src/assets/img/curtain2.jpg");
 }
 </style>
