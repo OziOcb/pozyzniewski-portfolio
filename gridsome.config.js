@@ -21,6 +21,15 @@ module.exports = {
   plugins: [
     {
       use: "gridsome-plugin-base-components"
+    },
+    {
+      use: "@gridsome/vue-remark",
+      options: {
+        typeName: "Post", // Required
+        baseDir: "./blog", // Where .md files are located
+        pathPrefix: "/blog", // Add route prefix. Optional
+        template: "./src/templates/Post.vue" // Optional
+      }
     }
   ],
   chainWebpack: config => {
