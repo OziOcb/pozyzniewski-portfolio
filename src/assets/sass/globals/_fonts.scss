@@ -21,6 +21,9 @@ $hero-font-weight: 700;
 $content-font-family: "Lora", $system-default-font-family;
 $content-font-weight: 400;
 
+$button-font-family: "Source Sans Pro", $system-default-font-family;
+$button-font-weight: 400;
+
 // %CLASS_NAME = sass placeholders - https://sass-lang.com/documentation/style-rules/placeholder-selectors
 %font-heading {
   font-family: $heading-font-family;
@@ -43,4 +46,9 @@ $content-font-weight: 400;
   font-family: $content-font-family;
   font-weight: $content-font-weight;
   color: $color-text-secondary;
+}
+
+%font-button {
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
 }
