@@ -6,10 +6,11 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+        <g-link class="nav__link" to="/faq/">FAQ</g-link>
+        <g-link class="nav__link" to="/blog/">Blog</g-link>
       </nav>
     </header>
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -21,27 +22,64 @@ query {
 }
 </static-query>
 
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
+<style lang="scss">
+// ===
+// Base styles
+// ===
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+body {
+  @extend %typography-small;
+  background-color: $color-body-bg;
+}
+
+// ===
+// Base element styles
+// ===
+a,
+a:visited {
+  color: $color-link-text;
+}
+a:hover {
+  color: $color-link-text-hover;
+}
+h1 {
+  @extend %typography-xxlarge;
+}
+h2 {
+  @extend %typography-xlarge;
+}
+h3 {
+  @extend %typography-large;
+}
+h4 {
+  @extend %typography-medium;
+}
+h5,
+h6 {
+  @extend %typography-small;
+}
+
+// ===
+// Layout
+// ===
 .layout {
-  max-width: 760px;
   margin: 0 auto;
-  padding-left: 20px;
   padding-right: 20px;
+  padding-left: 20px;
+  max-width: 760px;
 }
 
 .header {
+  margin-bottom: 20px;
   display: flex;
+  height: 80px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
 }
 
 .nav__link {

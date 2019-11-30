@@ -1,0 +1,27 @@
+// BASE
+$color-black: #232323;
+$color-accent: #a7a7a7;
+
+// CONTENT
+$color-body-bg: #efefef;
+$color-body-bg-light: #fff;
+$color-text-primary: #3e3e3e;
+$color-text-secondary: #626262;
+$color-text-light: #626262;
+$color-heading-text: $color-text-primary;
+$color-primary: #ef6f6c;
+$color-secondary: #465677;
+
+// LINKS
+$color-link-text: $color-text-primary;
+$color-link-text-active: $color-text-primary;
+$color-link-text-hover: $color-primary;
+
+// INPUTS
+$color-input-border: lighten($color-heading-text, 50%);
+
+// BUTTONS
+$color-button-bg: $color-primary;
+$color-button-disabled-bg: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-hover-bg: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-text: #fff;
