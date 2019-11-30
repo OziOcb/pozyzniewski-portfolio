@@ -44,6 +44,9 @@ a,
 a:visited {
   color: $color-link-text;
 }
+a:hover {
+  color: $color-link-text-hover;
+}
 h1 {
   @extend %typography-xxlarge;
 }

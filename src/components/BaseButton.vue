@@ -24,6 +24,10 @@ export default {
   border: none;
   cursor: pointer;
 
+  &:hover {
+    background: $color-button-hover-bg;
+  }
+
   &:disabled {
     background: $color-button-disabled-bg;
     cursor: not-allowed;
