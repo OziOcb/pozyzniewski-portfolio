@@ -281,7 +281,7 @@
 
 // Using vertical rhythm methods from https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
 // Using perfect 8/9 for low contrast and perfect fifth 2/3 for high
-$typography-type-scale: (-1: 0.889rem, 0: 1rem, 1: 1.125rem, 2: 1.266rem, 3: 1.424rem);
+$typography-type-scale: (-1: 0.889rem, 0: 1rem, 1: 1.125rem, 2: 1.266rem, 3: 1.424rem, 4: 4.5rem);
 
 @function typography-type-scale($level) {
   @if map-has-key($typography-type-scale, $level) {
@@ -293,7 +293,14 @@ $typography-type-scale: (-1: 0.889rem, 0: 1rem, 1: 1.125rem, 2: 1.266rem, 3: 1.4
   @return null;
 }
 
-$typography-type-scale-contrast: (-1: 1rem, 0: 1.3333rem, 1: 1.777rem, 2: 2.369rem, 3: 3.157rem);
+$typography-type-scale-contrast: (
+  -1: 1rem,
+  0: 1.3333rem,
+  1: 1.777rem,
+  2: 2.369rem,
+  3: 3.157rem,
+  4: 7rem
+);
 
 @function typography-type-scale-contrast($level) {
   @if map-has-key($typography-type-scale-contrast, $level) {
@@ -306,14 +313,15 @@ $typography-type-scale-contrast: (-1: 1rem, 0: 1.3333rem, 1: 1.777rem, 2: 2.369r
 }
 
 $typography-base-font-size: 1rem;
-$typography-base-line-height: $typography-base-font-size * 1.25;
+$typography-base-line-height: $typography-base-font-size * 1.8;
 
 $typography-line-heights: (
   -1: $typography-base-line-height,
   0: $typography-base-line-height,
   1: $typography-base-line-height * 1.5,
   2: $typography-base-line-height * 1.5,
-  3: $typography-base-line-height * 1.5
+  3: $typography-base-line-height * 1.5,
+  4: $typography-base-line-height * 1.5
 );
 
 @function typography-line-height($level) {
@@ -333,7 +341,8 @@ $typography-line-heights-contrast: (
   0: $typography-base-line-height-contrast * 2,
   1: $typography-base-line-height-contrast * 2,
   2: $typography-base-line-height-contrast * 2,
-  3: $typography-base-line-height * 3
+  3: $typography-base-line-height * 3,
+  4: $typography-base-line-height * 3
 );
 
 @function typography-line-height-contrast($level) {
@@ -364,32 +373,37 @@ $typography-line-heights-contrast: (
   );
 }
 
+%typography-hero {
+  @include typography-got-rhythm(4);
+  @extend %font-heading-hero;
+}
+
+%typography-hero-lead {
+  @include typography-got-rhythm(2);
+  @extend %font-heading-hero-lead;
+}
+
 %typography-xxlarge {
   @include typography-got-rhythm(3);
-
   @extend %font-heading;
 }
 
 %typography-xlarge {
   @include typography-got-rhythm(2);
-
   @extend %font-heading;
 }
 
 %typography-large {
   @include typography-got-rhythm(1);
-
   @extend %font-heading;
 }
 
 %typography-medium {
   @include typography-got-rhythm(0);
-
   @extend %font-content;
 }
 
 %typography-small {
   @include typography-got-rhythm(-1);
-
   @extend %font-content;
 }
