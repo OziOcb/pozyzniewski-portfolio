@@ -1,15 +1,24 @@
 <template>
-  <button class="baseButton" :disabled="disabled">
+  <g-link class="baseButton" :to="to" :target="handleTarget">
     <slot />
-  </button>
+  </g-link>
 </template>
 
 <script>
 export default {
   props: {
-    disabled: {
+    to: {
+      type: String,
+      default: "/"
+    },
+    blank: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    handleTarget() {
+      return this.blank ? "_blank" : "_self"
     }
   }
 }
@@ -19,6 +28,8 @@ export default {
 .baseButton {
   @extend %typography-button;
   padding: $size-button-padding;
+  display: inline-block;
+  text-decoration: none;
   color: $color-button-text;
   background: $color-button-bg;
   border: none;
@@ -26,7 +37,6 @@ export default {
   box-shadow: 0px 0.6em 1.25em $color-button-shadow;
   transition: background $duration-animation-base linear, box-shadow $duration-animation-base linear,
     transform $duration-animation-base linear;
-  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -38,17 +48,6 @@ export default {
   &:focus {
     outline: 0;
     box-shadow: 0px 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
-  }
-
-  &:disabled {
-    background: $color-button-disabled-bg;
-    box-shadow: 0px 0.3em 0.6em $color-button-shadow;
-    cursor: not-allowed;
-
-    &:hover {
-      box-shadow: 0px 0.3em 0.6em $color-button-shadow;
-      transform: none;
-    }
   }
 }
 </style>
