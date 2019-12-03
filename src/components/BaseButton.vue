@@ -49,5 +49,19 @@ export default {
     outline: 0;
     box-shadow: 0px 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
   }
+
+  &--outline {
+    @extend %typography-button-sm;
+    padding: $size-button-sm-padding;
+    font-weight: bold;
+    color: $color-button-sm-text;
+    background: $color-button-sm-bg;
+    border: 2px solid $color-button-sm-border;
+
+    &:hover,
+    &:focus {
+      background: $color-button-sm-bg-hover;
+    }
+  }
 }
 </style>

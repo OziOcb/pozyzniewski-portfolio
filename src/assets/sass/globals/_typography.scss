@@ -408,6 +408,7 @@ $typography-line-heights-contrast: (
   @extend %font-button;
 }
 
+%typography-button-sm,
 %typography-small {
   @include typography-got-rhythm(-1);
   @extend %font-content;
