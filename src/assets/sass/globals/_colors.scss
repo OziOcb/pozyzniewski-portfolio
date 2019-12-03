@@ -1,11 +1,12 @@
 // BASE
 $color-black: #232323;
+$color-white: #fcfcfc;
 $color-accent: #a7a7a7;
 $color-outline: rgba(0, 123, 255, 0.5);
 
 // CONTENT
 $color-body-bg: #efefef;
-$color-body-bg-light: #fff;
+$color-body-bg-light: $color-white;
 $color-text-primary: #3e3e3e;
 $color-text-secondary: #626262;
 $color-text-light: #626262;
@@ -22,8 +23,15 @@ $color-link-text-hover: $color-primary;
 $color-input-border: lighten($color-heading-text, 50%);
 
 // BUTTONS
+// regular
 $color-button-bg: $color-primary;
 $color-button-disabled-bg: darken(desaturate($color-button-bg, 30%), 20%);
 $color-button-hover-bg: darken(desaturate($color-button-bg, 20%), 10%);
-$color-button-text: #fff;
+$color-button-text: $color-white;
 $color-button-shadow: rgba(0, 0, 0, 0.25);
+
+// small
+$color-button-sm-bg: transparent;
+$color-button-sm-bg-hover: rgba(255, 255, 255, 0.25);
+$color-button-sm-text: $color-black;
+$color-button-sm-border: $color-black;
