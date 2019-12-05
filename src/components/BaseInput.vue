@@ -1,7 +1,9 @@
 <template>
   <div class="form-field">
     <div class="form-field__control">
+      <textarea v-if="type === 'textarea'" class="form-field__textarea" placeholder=" "></textarea>
       <input
+        v-else
         :id="id"
         class="form-field__input"
         :type="type"
@@ -10,6 +12,7 @@
         v-on="$listeners"
         @input="$emit('update', $event.target.value)"
       />
+
       <label :for="id" class="form-field__label">{{ label }}</label>
       <div class="form-field__bar"></div>
     </div>
@@ -38,7 +41,9 @@ export default {
       default: "text",
       // Only allow types that essentially just render text boxes.
       validator(value) {
-        return ["email", "number", "password", "search", "tel", "text", "url"].includes(value)
+        return ["email", "number", "password", "search", "tel", "text", "textarea", "url"].includes(
+          value
+        )
       }
     },
     label: {
