@@ -37,6 +37,7 @@
       <BaseInput id="firstname" type="text" label="First Name" required />
       <BaseInput id="lastname" type="text" label="Last Name" />
       <BaseInput id="password" type="password" label="Your Password" />
+      <BaseInput id="message" type="textarea" label="Message" />
     </form>
 
     <h1>Predictions H1</h1>
