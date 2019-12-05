@@ -281,7 +281,15 @@
 
 // Using vertical rhythm methods from https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
 // Using perfect 8/9 for low contrast and perfect fifth 2/3 for high
-$typography-type-scale: (-1: 0.889rem, 0: 1rem, 1: 1.125rem, 2: 1.266rem, 3: 1.424rem, 4: 4.5rem);
+$typography-type-scale: (
+  -2: 0.79rem,
+  -1: 0.889rem,
+  0: 1rem,
+  1: 1.125rem,
+  2: 1.266rem,
+  3: 1.424rem,
+  4: 4.5rem
+);
 
 @function typography-type-scale($level) {
   @if map-has-key($typography-type-scale, $level) {
@@ -294,6 +302,7 @@ $typography-type-scale: (-1: 0.889rem, 0: 1rem, 1: 1.125rem, 2: 1.266rem, 3: 1.4
 }
 
 $typography-type-scale-contrast: (
+  -2: 0.75rem,
   -1: 1rem,
   0: 1.3333rem,
   1: 1.777rem,
@@ -316,6 +325,7 @@ $typography-base-font-size: 1rem;
 $typography-base-line-height: $typography-base-font-size * 1.8;
 
 $typography-line-heights: (
+  -2: $typography-base-line-height,
   -1: $typography-base-line-height,
   0: $typography-base-line-height,
   1: $typography-base-line-height * 1.5,
@@ -337,6 +347,7 @@ $typography-line-heights: (
 $typography-base-line-height-contrast: $typography-base-line-height;
 
 $typography-line-heights-contrast: (
+  -2: $typography-base-line-height-contrast,
   -1: $typography-base-line-height-contrast,
   0: $typography-base-line-height-contrast * 2,
   1: $typography-base-line-height-contrast * 2,
@@ -411,5 +422,10 @@ $typography-line-heights-contrast: (
 %typography-button-sm,
 %typography-small {
   @include typography-got-rhythm(-1);
+  @extend %font-content;
+}
+
+%typography-xsmall {
+  @include typography-got-rhythm(-2);
   @extend %font-content;
 }
