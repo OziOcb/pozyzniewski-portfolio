@@ -22,11 +22,22 @@
     <p class="hero__extraLead">The Front End Developer you need!</p>
 
     <BaseButton class="baseButton">CV BUTTON</BaseButton>
+
     <br />
     <br />
+
     <BaseButton class="baseButton--outline" to="/blog/">GIT</BaseButton>
     &nbsp;
     <BaseButton class="baseButton--outline">VIEW PROJECT</BaseButton>
+
+    <br />
+    <br />
+
+    <form>
+      <BaseInput id="firstname" type="text" label="First Name" required />
+      <BaseInput id="lastname" type="text" label="Last Name" />
+      <BaseInput id="password" type="password" label="Your Password" />
+    </form>
 
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
