@@ -52,6 +52,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
 library.add(faGithub, faLinkedin)
 
+// Vuelidate
+import Vuelidate from "vuelidate"
+
 /**
  * Export
  */
@@ -65,4 +68,7 @@ export default function(Vue, { router, head, isClient }) {
 
   // Add FontAwesome 5 to the project
   Vue.component("font-awesome", FontAwesomeIcon)
+
+  // Vuelidate
+  Vue.use(Vuelidate)
 }

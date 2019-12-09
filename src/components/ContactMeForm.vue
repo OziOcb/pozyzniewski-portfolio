@@ -1,0 +1,180 @@
+<template>
+  <form class="contactMeForm">
+    <BaseInput
+      id="contactName"
+      v-model.trim="$v.formResponses.name.$model"
+      type="text"
+      label="Name*"
+      :class="{
+        'formField--error': errors && $v.formResponses.name.$invalid,
+        'formField--success': errors && !$v.formResponses.name.$invalid
+      }"
+    >
+      <p v-if="errors" class="error">
+        <span v-if="!$v.formResponses.name.required">this field is required.</span>
+        <span v-if="!$v.formResponses.name.minLength">
+          Field must have at least {{ $v.formResponses.name.$params.minLength.min }} characters.
+        </span>
+      </p>
+    </BaseInput>
+
+    <BaseInput
+      id="contactEmail"
+      v-model.trim="$v.formResponses.email.$model"
+      type="email"
+      label="Email*"
+      :class="{
+        'formField--error': errors && $v.formResponses.email.$invalid,
+        'formField--success': errors && !$v.formResponses.email.$invalid
+      }"
+    >
+      <p v-if="errors" class="error">
+        <span v-if="!$v.formResponses.email.required">this field is required.</span>
+        <span v-if="!$v.formResponses.email.email">Needs to be a valid email.</span>
+      </p>
+    </BaseInput>
+
+    <BaseInput
+      id="contactPhone"
+      v-model.trim="$v.formResponses.phone.$model"
+      type="tel"
+      label="Phone"
+      :class="{
+        'formField--error': errors && $v.formResponses.phone.$invalid,
+        'formField--success': errors && !$v.formResponses.phone.$invalid
+      }"
+    >
+      <p v-if="errors" class="error">
+        <span v-if="!$v.formResponses.phone.numeric">Needs to be a valid phone number.</span>
+        <span v-if="!$v.formResponses.phone.minLength">
+          Field must have at least {{ $v.formResponses.phone.$params.minLength.min }} characters.
+        </span>
+      </p>
+    </BaseInput>
+
+    <BaseInput
+      id="contactWebOrCompanyName"
+      v-model.trim="$v.formResponses.webOrCompanyName.$model"
+      type="text"
+      label="Websit Or Company Name"
+      :class="{
+        'formField--error': errors && $v.formResponses.webOrCompanyName.$invalid,
+        'formField--success': errors && !$v.formResponses.webOrCompanyName.$invalid
+      }"
+    >
+      <p v-if="errors" class="error">
+        <span v-if="!$v.formResponses.webOrCompanyName.minLength">
+          Field must have at least
+          {{ $v.formResponses.webOrCompanyName.$params.minLength.min }} characters.
+        </span>
+      </p>
+    </BaseInput>
+
+    <BaseInput
+      id="contactMessage"
+      v-model.trim="$v.formResponses.message.$model"
+      type="textarea"
+      label="Message*"
+      :class="{
+        'formField--error': errors && $v.formResponses.message.$invalid,
+        'formField--success': errors && !$v.formResponses.message.$invalid
+      }"
+    >
+      <p v-if="errors" class="error">
+        <span v-if="!$v.formResponses.message.required">this field is required.</span>
+        <span v-if="!$v.formResponses.message.minLength">
+          Field must have at least {{ $v.formResponses.message.$params.minLength.min }} characters.
+        </span>
+      </p>
+    </BaseInput>
+
+    <div class="contactMeForm__submitBtn">
+      <button class="submit" @click.prevent="submitForm">Send Message</button>
+      <p v-if="errors" class="error">
+        The form above has errors,
+      </p>
+      <p v-else-if="empty && uiState === 'submit clicked'" class="error">
+        The form above is empty,
+      </p>
+      <p v-else-if="uiState === 'form submitted'" class="success">
+        Hooray! Your form was submitted!
+      </p>
+    </div>
+  </form>
+</template>
+
+<script>
+import { required, minLength, email, numeric } from "vuelidate/lib/validators"
+
+export default {
+  data() {
+    return {
+      uiState: "submit not clicked",
+      errors: false,
+      empty: true,
+      formResponses: {
+        name: null,
+        email: null,
+        phone: null,
+        webOrCompanyName: null,
+        message: null
+      }
+    }
+  },
+  validations: {
+    formResponses: {
+      name: {
+        required,
+        minLength: minLength(2)
+      },
+      email: {
+        required,
+        email
+      },
+      phone: {
+        numeric,
+        minLength: minLength(8)
+      },
+      webOrCompanyName: {
+        minLength: minLength(2)
+      },
+      message: {
+        required,
+        minLength: minLength(12)
+      }
+    }
+  },
+  methods: {
+    submitForm() {
+      this.empty = !this.$v.formResponses.$anyDirty
+      this.errors = this.$v.formResponses.$anyError
+      this.uiState = "submit clicked"
+      if (this.errors === false && this.empty === false) {
+        //this is where you send the responses
+        this.uiState = "form submitted"
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.contactMeForm {
+  &__submitBtn {
+    margin: 2rem 0;
+  }
+}
+.success,
+.error {
+  position: absolute;
+  margin: $size-input-error-margin;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.success {
+  color: $color-green;
+}
+.error {
+  color: $color-red;
+}
+</style>
