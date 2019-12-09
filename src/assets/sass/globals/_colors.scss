@@ -1,6 +1,8 @@
 // BASE
 $color-black: #232323;
 $color-white: #fcfcfc;
+$color-green: #008080;
+$color-red: #f00;
 $color-accent: #a7a7a7;
 $color-outline: rgba(0, 123, 255, 0.5);
 
@@ -22,6 +24,8 @@ $color-link-text-hover: $color-primary;
 // INPUTS
 $color-input-border: lighten($color-heading-text, 50%);
 $color-input-bg: transparent;
+$color-input-success: $color-green;
+$color-input-error: $color-red;
 
 // BUTTONS
 // regular
