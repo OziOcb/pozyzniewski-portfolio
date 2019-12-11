@@ -1,35 +1,14 @@
 <template>
-  <g-link class="baseButton" :to="to" :target="handleTarget">
+  <button class="baseButton" v-on="$listeners">
     <slot />
-  </g-link>
+  </button>
 </template>
-
-<script>
-export default {
-  props: {
-    to: {
-      type: String,
-      default: "/"
-    },
-    blank: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    handleTarget() {
-      return this.blank ? "_blank" : "_self"
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .baseButton {
   @extend %typography-button;
   padding: $size-button-padding;
   display: inline-block;
-  text-decoration: none;
   color: $color-button-text;
   background: $color-button-bg;
   border: none;
@@ -37,10 +16,11 @@ export default {
   box-shadow: 0px 0.6em 1.25em $color-button-shadow;
   transition: background $duration-animation-base linear, box-shadow $duration-animation-base linear,
     transform $duration-animation-base linear;
+  cursor: pointer;
 
   &:hover,
   &:focus {
-    background: $color-button-hover-bg;
+    background: $color-button-bg-hover;
     box-shadow: 0px 1.25em 2.5em $color-button-shadow;
     transform: scale(1.03);
   }
@@ -49,18 +29,14 @@ export default {
     outline: 0;
     box-shadow: 0px 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
   }
-
-  &--outline {
-    @extend %typography-button-sm;
-    padding: $size-button-sm-padding;
-    font-weight: bold;
-    color: $color-button-sm-text;
-    background: $color-button-sm-bg;
-    border: 2px solid $color-button-sm-border;
+  &:disabled {
+    background: $color-button-bg-disabled;
+    box-shadow: 0px 0.3em 0.6em $color-button-shadow;
+    cursor: not-allowed;
 
     &:hover,
     &:focus {
-      background: $color-button-sm-bg-hover;
+      transform: none;
     }
   }
 }
