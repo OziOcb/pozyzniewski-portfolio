@@ -30,13 +30,14 @@ $color-input-error: $color-red;
 // BUTTONS
 // regular
 $color-button-bg: $color-primary;
-$color-button-disabled-bg: darken(desaturate($color-button-bg, 30%), 20%);
-$color-button-hover-bg: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-bg-disabled: darken(desaturate($color-button-bg, 25%), 30%);
+$color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: $color-white;
 $color-button-shadow: rgba(0, 0, 0, 0.25);
 
-// small
-$color-button-sm-bg: transparent;
-$color-button-sm-bg-hover: rgba(255, 255, 255, 0.25);
-$color-button-sm-text: $color-black;
-$color-button-sm-border: $color-black;
+// alt
+$color-button-alt-bg: transparent;
+$color-button-alt-bg-hover: rgba(255, 255, 255, 0.25);
+$color-button-alt-text: $color-black;
+$color-button-alt-shadow: $color-button-shadow;
+$color-button-alt-border: $color-black;

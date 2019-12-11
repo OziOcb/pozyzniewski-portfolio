@@ -1,5 +1,5 @@
 <template>
-  <form class="contactMeForm">
+  <form>
     <BaseInput
       id="contactName"
       v-model.trim="$v.formResponses.name.$model"
@@ -88,18 +88,19 @@
       </p>
     </BaseInput>
 
-    <div class="contactMeForm__submitBtn">
-      <button class="submit" @click.prevent="submitForm">Send Message</button>
-      <p v-if="errors" class="error">
-        The form above has errors,
-      </p>
-      <p v-else-if="empty && uiState === 'submit clicked'" class="error">
-        The form above is empty,
-      </p>
-      <p v-else-if="uiState === 'form submitted'" class="success">
-        Hooray! Your form was submitted!
-      </p>
-    </div>
+    <baseButton class="submitBtn" @click.prevent="submitForm">
+      Send Message
+    </baseButton>
+
+    <p v-if="errors" class="error">
+      The form above has errors,
+    </p>
+    <p v-else-if="empty && uiState === 'submit clicked'" class="error">
+      The form above is empty,
+    </p>
+    <p v-else-if="uiState === 'form submitted'" class="success">
+      Hooray! Your form was submitted!
+    </p>
   </form>
 </template>
 
@@ -150,8 +151,10 @@ export default {
       this.errors = this.$v.formResponses.$anyError
       this.uiState = "submit clicked"
       if (this.errors === false && this.empty === false) {
-        //this is where you send the responses
+        // this is where you send the responses
+        // TODO Disable the button while the form is submiting
         this.uiState = "form submitted"
+        console.log("submitForm")
       }
     }
   }
@@ -159,11 +162,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contactMeForm {
-  &__submitBtn {
-    margin: 2rem 0;
-  }
+.submitBtn {
+  margin: 2rem 0;
 }
+
 .success,
 .error {
   position: absolute;
