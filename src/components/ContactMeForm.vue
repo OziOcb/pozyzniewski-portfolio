@@ -1,5 +1,19 @@
 <template>
-  <form>
+  <form
+    name="contact"
+    method="post"
+    action="/success/"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+    <p hidden>
+      <label>
+        Don’t fill this out:
+        <input name="bot-field" />
+      </label>
+    </p>
+
     <BaseInput
       id="contactName"
       v-model.trim="$v.formResponses.name.$model"
@@ -146,7 +160,12 @@ export default {
     }
   },
   methods: {
-    submitForm() {
+    encode(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+    },
+    submitForm(e) {
       this.empty = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
       this.uiState = "submit clicked"
@@ -155,6 +174,17 @@ export default {
         // TODO Disable the button while the form is submiting
         this.uiState = "form submitted"
         console.log("submitForm")
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            "form-name": e.target.getAttribute("name"),
+            ...this.$v.formResponses.$model
+          })
+        })
+          .then(() => this.$router.push("/success"))
+          .catch(error => alert(error))
       }
     }
   }
