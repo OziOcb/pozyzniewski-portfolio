@@ -10,37 +10,38 @@ import "~/assets/sass/main.scss"
 /* Gridsome Layouts */
 import DefaultLayout from "~/layouts/Default.vue"
 
-/* GSAP & ScrollMagic */
-// import { TweenMax } from "gsap/TweenMax" // This seems to be unnecessary
-import ScrollMagic from "scrollmagic"
-import "imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap"
+// // TODO: Find the solution (see here https://github.com/gridsome/gridsome/issues/882)
+// /* GSAP & ScrollMagic */
+// // import { TweenMax } from "gsap/TweenMax" // This seems to be unnecessary
+// import ScrollMagic from "scrollmagic"
+// import "imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap"
 
-// Load ScrollMagic's Indicators only on development environment
-if (process.env.NODE_ENV === "development") {
-  require("imports-loader?define=>true!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators")
-}
-// Load any extra plugins from GreenSock like this:
-// import SplitText from "../static/SplitText"
+// // Load ScrollMagic's Indicators only on development environment
+// if (process.env.NODE_ENV === "development") {
+//   require("imports-loader?define=>true!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators")
+// }
+// // Load any extra plugins from GreenSock like this:
+// // import SplitText from "../static/SplitText"
 
-const GSAPScrollMagic = {
-  install(Vue, options) {
-    // GSAP
-    Vue.prototype.$GSAP = {
-      // TweenMax,
-      TimelineMax,
-      Linear,
-      Power1,
-      Power2,
-      Power3,
-      Back
-    }
-    // ScrollMagic
-    Vue.prototype.$ScrollMagic = {
-      Controller: new ScrollMagic.Controller(),
-      Scene: ScrollMagic.Scene
-    }
-  }
-}
+// const GSAPScrollMagic = {
+//   install(Vue, options) {
+//     // GSAP
+//     Vue.prototype.$GSAP = {
+//       // TweenMax,
+//       TimelineMax,
+//       Linear,
+//       Power1,
+//       Power2,
+//       Power3,
+//       Back
+//     }
+//     // ScrollMagic
+//     Vue.prototype.$ScrollMagic = {
+//       Controller: new ScrollMagic.Controller(),
+//       Scene: ScrollMagic.Scene
+//     }
+//   }
+// }
 
 /* FontAwesome 5 */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
@@ -58,8 +59,9 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout)
 
-  // Add GSAP & ScrollMagic to the project
-  Vue.use(GSAPScrollMagic)
+  // // TODO: Find the solution (see here https://github.com/gridsome/gridsome/issues/882)
+  // // Add GSAP & ScrollMagic to the project
+  // Vue.use(GSAPScrollMagic)
 
   // Add FontAwesome 5 to the project
   Vue.component("font-awesome", FontAwesomeIcon)
