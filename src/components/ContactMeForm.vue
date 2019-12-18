@@ -1,10 +1,10 @@
 <template>
   <form
-    name="contact"
+    name="Contact Me"
     method="post"
-    action="/success/"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
+    @submit.prevent="handleSubmit"
   >
     <input type="hidden" name="form-name" value="contact" />
     <p hidden>
@@ -15,7 +15,7 @@
     </p>
 
     <BaseInput
-      id="contactName"
+      id="name"
       v-model.trim="$v.formResponses.name.$model"
       type="text"
       label="Name*"
@@ -33,7 +33,7 @@
     </BaseInput>
 
     <BaseInput
-      id="contactEmail"
+      id="email"
       v-model.trim="$v.formResponses.email.$model"
       type="email"
       label="Email*"
@@ -49,7 +49,7 @@
     </BaseInput>
 
     <BaseInput
-      id="contactPhone"
+      id="phone"
       v-model.trim="$v.formResponses.phone.$model"
       type="tel"
       label="Phone"
@@ -67,7 +67,7 @@
     </BaseInput>
 
     <BaseInput
-      id="contactWebOrCompanyName"
+      id="webOrCompanyName"
       v-model.trim="$v.formResponses.webOrCompanyName.$model"
       type="text"
       label="Websit Or Company Name"
@@ -85,7 +85,7 @@
     </BaseInput>
 
     <BaseInput
-      id="contactMessage"
+      id="message"
       v-model.trim="$v.formResponses.message.$model"
       type="textarea"
       label="Message*"
@@ -102,7 +102,7 @@
       </p>
     </BaseInput>
 
-    <baseButton class="submitBtn" @click.prevent="submitForm">
+    <baseButton class="submitBtn" :disabled="uiState === 'pending'">
       Send Message
     </baseButton>
 
@@ -111,6 +111,9 @@
     </p>
     <p v-else-if="empty && uiState === 'submit clicked'" class="error">
       The form above is empty,
+    </p>
+    <p v-else-if="uiState === 'pending'" class="success">
+      Sending the data! Please wait...
     </p>
     <p v-else-if="uiState === 'form submitted'" class="success">
       Hooray! Your form was submitted!
@@ -165,25 +168,22 @@ export default {
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&")
     },
-    submitForm(e) {
+    handleSubmit(e) {
       this.empty = !this.$v.formResponses.$anyDirty
       this.errors = this.$v.formResponses.$anyError
       this.uiState = "submit clicked"
       if (this.errors === false && this.empty === false) {
-        // this is where you send the responses
-        // TODO Disable the button while the form is submiting
-        this.uiState = "form submitted"
-        console.log("submitForm")
+        this.uiState = "pending" // Disable the button while the form is submiting
 
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
             "form-name": e.target.getAttribute("name"),
-            ...this.$v.formResponses.$model
+            ...this.formResponses
           })
         })
-          .then(() => this.$router.push("/success"))
+          .then(() => (this.uiState = "form submitted"))
           .catch(error => alert(error))
       }
     }

@@ -4,6 +4,7 @@
       <textarea
         v-if="type === 'textarea'"
         :id="id"
+        :name="id"
         class="formField__textarea"
         placeholder=" "
         v-bind="$attrs"
@@ -13,6 +14,7 @@
       <input
         v-else
         :id="id"
+        :name="id"
         class="formField__input"
         :type="type"
         placeholder=" "
