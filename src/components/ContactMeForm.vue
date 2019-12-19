@@ -14,6 +14,11 @@
       </label>
     </p>
 
+    <!-- TODO: #014k - Refactore the ContactMeForm.vue component (on Hold column) -->
+    <!--
+      - use 'v-for' to DRY the code
+      - find out how to use v-model with v-for and Vuelidate (I spent few hours on that already)
+    -->
     <BaseInput
       id="name"
       v-model.trim="$v.formResponses.name.$model"
