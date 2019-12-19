@@ -112,16 +112,18 @@
     </baseButton>
 
     <p v-if="errors" class="error">
-      The form above has errors,
+      The form above has errors!
     </p>
     <p v-else-if="empty && uiState === 'submit clicked'" class="error">
-      The form above is empty,
+      The form above is empty!
     </p>
     <p v-else-if="uiState === 'pending'" class="success">
       Sending the data! Please wait...
     </p>
     <p v-else-if="uiState === 'form submitted'" class="success">
       Hooray! Your form was submitted!
+      <br />
+      Check your email for the confirmation message.
     </p>
   </form>
 </template>
