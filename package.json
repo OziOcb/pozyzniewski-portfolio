@@ -19,7 +19,8 @@
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "@gridsome/vue-remark": "^0.1.9",
     "gridsome": "^0.7.10",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

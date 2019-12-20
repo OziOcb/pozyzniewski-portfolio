@@ -21,7 +21,20 @@
     <h1 class="hero__heading">It's Paul</h1>
     <p class="hero__extraLead">The Front End Developer you need!</p>
 
-    <BaseButton>CV BUTTON</BaseButton>
+    <BaseButton>Button</BaseButton>
+    <br />
+    <br />
+    <BaseButton disabled>Button (disabled)</BaseButton>
+
+    <br />
+    <br />
+
+    <BaseLinkLikeButton to="/blog/">GIT</BaseLinkLikeButton>
+    &nbsp;
+    <BaseLinkLikeButton class="baseButton--outline">VIEW PROJECT</BaseLinkLikeButton>
+
+    <br />
+    <br />
 
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
