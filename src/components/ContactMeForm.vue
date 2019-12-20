@@ -190,7 +190,16 @@ export default {
             ...this.formResponses
           })
         })
-          .then(() => (this.uiState = "form submitted"))
+          .then(() => {
+            this.uiState = "form submitted"
+            this.formResponses = {
+              name: null,
+              email: null,
+              phone: null,
+              webOrCompanyName: null,
+              message: null
+            }
+          })
           .catch(error => alert(error))
       }
     }
