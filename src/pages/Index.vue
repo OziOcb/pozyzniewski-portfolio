@@ -1,22 +1,5 @@
 <template>
   <layout>
-    <!-- <h1 class="hello">{{ msg }}</h1>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, esse quisquam iure, laudantium
-      ipsum quas provident ducimus repudiandae inventore placeat velit qui. Recusandae debitis optio
-      ipsam dolorum possimus tenetur corrupti?
-    </p>
-    <BaseButton disabled>Button (disabled)</BaseButton>
-    <BaseInput type="password" placeholder="BaseInput" required @update="inputUpdate" />
-    <br /> -->
-
-    <!-- SVG -->
-    <!-- <SvgUndraw /> -->
-    <!-- Normal Image -->
-    <!-- <g-image src="~/assets/img/curtain2.jpg" alt="jpg" height="300" width="300" /> -->
-    <!-- Backgroud image -->
-    <!-- <div class="imageBox"></div> -->
-
     <h1 class="hero__lead">Hello</h1>
     <h1 class="hero__heading">It's Paul</h1>
     <p class="hero__extraLead">The Front End Developer you need!</p>
@@ -116,14 +99,9 @@
 </template>
 
 <script>
-import SvgUndraw from "~/assets/img/undraw.svg"
-
 export default {
   metaInfo: {
     title: "Hello, world!"
-  },
-  components: {
-    SvgUndraw
   },
   data() {
     return {
@@ -151,12 +129,6 @@ export default {
 
 p {
   @extend %typography-small;
-}
-
-.imageBox {
-  width: 400px;
-  height: 400px;
-  background: #f00 url("~@/assets/img/curtain2.jpg") center/cover no-repeat;
 }
 
 .hero {
