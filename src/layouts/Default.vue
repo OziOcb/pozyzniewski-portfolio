@@ -61,10 +61,10 @@ h6 {
 // ===
 // Layout
 // ===
-.layout {
+.container {
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
-  max-width: 760px;
+  max-width: 1244px;
 }
 </style>
