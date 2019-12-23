@@ -78,6 +78,7 @@ export default {
 
 .formField {
   position: relative;
+  // z-index: $layer-negative-z-index;
   margin-bottom: $size-grid-padding;
   display: block;
 }
