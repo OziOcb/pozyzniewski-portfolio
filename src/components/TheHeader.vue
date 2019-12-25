@@ -92,7 +92,7 @@ export default {
       .to(".header__menu", 0.4, { autoAlpha: 1 }, "step1")
       .addLabel("step2")
       .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
-      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut }, "step2")
+      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
       .to(".line02", 0.4, { translateY: "+=5" }, "step2")
       .to(".line03", 0.4, { translateY: "-=4" }, "step2")
       .addLabel("step3")
