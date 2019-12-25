@@ -1,26 +1,20 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/faq/">FAQ</g-link>
-        <g-link class="nav__link" to="/blog/">Blog</g-link>
-      </nav>
-    </header>
+    <TheHeader />
+
     <slot />
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
+<script>
+import TheHeader from "@/components/TheHeader.vue"
+
+export default {
+  components: {
+    TheHeader
   }
 }
-</static-query>
+</script>
 
 <style lang="scss">
 // ===
@@ -67,22 +61,10 @@ h6 {
 // ===
 // Layout
 // ===
-.layout {
+.container {
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
-  max-width: 760px;
-}
-
-.header {
-  margin-bottom: 20px;
-  display: flex;
-  height: 80px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__link {
-  margin-left: 20px;
+  max-width: 1244px;
 }
 </style>
