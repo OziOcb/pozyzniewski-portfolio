@@ -154,13 +154,23 @@ export default {
 .socialIcons__link {
   svg {
     path {
-      transition: fill $duration-animation-base ease-in-out;
+      transition: fill $duration-animation-base linear;
     }
     &:hover {
       path {
         fill: $color-primary;
       }
     }
+  }
+}
+
+.logo {
+  padding: 2px;
+  line-height: 0;
+  border-radius: 5px;
+  transition: box-shadow $duration-animation-base linear;
+  &:focus {
+    @extend %custom-outline;
   }
 }
 
@@ -175,6 +185,7 @@ export default {
   background-color: $color-body-bg;
   border: none;
   border-radius: 5px;
+  transition: box-shadow $duration-animation-base linear;
   cursor: pointer;
 
   &__line {
@@ -182,7 +193,7 @@ export default {
     width: 36px;
     height: 2px;
     background-color: $color-black;
-    transition: background-color $duration-animation-base ease-in-out;
+    transition: background-color $duration-animation-base linear;
 
     &.line01,
     &.line04 {
@@ -198,8 +209,7 @@ export default {
     }
   }
   &:focus {
-    outline: 0;
-    box-shadow: 0 0 2px 4px $color-outline;
+    @extend %custom-outline;
   }
 }
 
@@ -211,7 +221,7 @@ export default {
 
   &__list {
     margin: 0;
-    padding: 0;
+    padding: 1em;
   }
 
   &__item {
@@ -222,7 +232,11 @@ export default {
   &__link {
     padding: 0.5em;
     text-decoration: none;
-    transition: color $duration-animation-base ease-in-out;
+    border-radius: 5px;
+    transition: color $duration-animation-base linear, box-shadow $duration-animation-base linear;
+    &:focus {
+      @extend %custom-outline;
+    }
   }
 }
 
@@ -230,10 +244,17 @@ export default {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
+  display: flex;
 
   &__link {
     margin: 0.2rem;
     padding: 0.5rem;
+    line-height: 0;
+    border-radius: 5px;
+    transition: box-shadow $duration-animation-base linear;
+    &:focus {
+      @extend %custom-outline;
+    }
   }
 }
 </style>
