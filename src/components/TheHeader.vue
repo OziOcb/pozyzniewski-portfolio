@@ -5,14 +5,23 @@
         <SvgTheLogoSimple />
       </g-link>
 
-      <svg class="header__hamburger hamburger" viewBox="0 0 80 80">
-        <line class="hamburger__line line01" x1="0" y1="3" x2="80" y2="3" />
-        <line class="hamburger__line line02a" x1="0" y1="40" x2="80" y2="40" />
-        <line class="hamburger__line line02b" x1="0" y1="40" x2="80" y2="40" />
-        <line class="hamburger__line line03" x1="0" y1="77" x2="80" y2="77" />
-      </svg>
+      <div class="header__hamburger">
+        <button
+          ref="hamburger"
+          class="hamburger"
+          aria-controls="dropdowMenuContent"
+          :aria-expanded="ariaExpanded.toString()"
+          aria-label="Toggle navigation"
+          @click="handleAriaExpanded"
+        >
+          <span class="hamburger__line line01"></span>
+          <span class="hamburger__line line02"></span>
+          <span class="hamburger__line line03"></span>
+          <span class="hamburger__line line04"></span>
+        </button>
+      </div>
 
-      <div class="header__menu">
+      <div id="dropdowMenuContent" class="header__menu">
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -62,33 +71,44 @@ export default {
     SvgLinkedIn,
     SvgGitHub
   },
+  data() {
+    return {
+      ariaExpanded: false
+    }
+  },
   mounted() {
-    const hamburger = document.querySelector(".hamburger")
+    const { hamburger } = this.$refs
+    const hamburgerMotion = gsap.timeline()
 
-    gsap.set(".line01", { translateX: 40 })
-    gsap.set(".line03", { translateX: -40 })
     gsap.set(".nav", { xPercent: -50, yPercent: -50 })
     gsap.set(".nav li", { translateX: -200 })
     gsap.set(".socialIcons--mobile", { translateX: 110 })
 
-    const hamburgerMotion = gsap.timeline()
     hamburgerMotion
       .addLabel("step1")
       .to(".hamburger", 0.4, { backgroundColor: "transparent" }, "step1")
       .to(".line01", 0.4, { translateX: "+=40" }, "step1")
-      .to(".line03", 0.4, { translateX: "-=40" }, "step1")
+      .to(".line04", 0.4, { translateX: "-=40" }, "step1")
       .to(".header__menu", 0.4, { autoAlpha: 1 }, "step1")
-      .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
-      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
       .addLabel("step2")
-      .to(".nav li", 1, { marginBottom: "40px", ease: Power1.easeOut }, "step2")
-      .to(".line02a", 1, { rotation: 45, transformOrigin: "center" }, "step2")
-      .to(".line02b", 1, { rotation: -45, transformOrigin: "center" }, "step2")
+      .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
+      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut }, "step2")
+      .to(".line02", 0.4, { translateY: "+=5" }, "step2")
+      .to(".line03", 0.4, { translateY: "-=4" }, "step2")
+      .addLabel("step3")
+      .to(".nav li", 1, { marginBottom: "40px", ease: Power1.easeOut }, "step3")
+      .to(".line02", 1, { rotation: 45, transformOrigin: "center" }, "step3")
+      .to(".line03", 1, { rotation: -45, transformOrigin: "center" }, "step3")
       .reverse()
 
     hamburger.addEventListener("click", function() {
       hamburgerMotion.reversed(!hamburgerMotion.reversed())
     })
+  },
+  methods: {
+    handleAriaExpanded() {
+      this.ariaExpanded = !this.ariaExpanded
+    }
   }
 }
 </script>
@@ -116,7 +136,6 @@ export default {
 
   &__hamburger {
     z-index: $layer-hamburger-z-index;
-    width: 50px;
   }
 
   &__menu {
@@ -146,20 +165,41 @@ export default {
 }
 
 .hamburger {
-  padding: 10px;
+  padding: 2px;
+  display: flex;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: $color-body-bg;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &__line {
-    stroke: $color-black;
-    stroke-width: 6px;
-    transition: stroke $duration-animation-base ease-in-out;
+    display: block;
+    width: 36px;
+    height: 2px;
+    background-color: $color-black;
+    transition: background-color $duration-animation-base ease-in-out;
+
+    &.line01,
+    &.line04 {
+      width: 18px;
+    }
+    &.line01 {
+      align-self: flex-end;
+    }
   }
   &:hover {
     .hamburger__line {
-      stroke: $color-primary;
+      background-color: $color-primary;
     }
+  }
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 2px 4px $color-outline;
   }
 }
 
