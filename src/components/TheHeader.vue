@@ -150,21 +150,8 @@ export default {
   }
 }
 
-.logo,
-.socialIcons__link {
-  svg {
-    path {
-      transition: fill $duration-animation-base linear;
-    }
-    &:hover {
-      path {
-        fill: $color-primary;
-      }
-    }
-  }
-}
-
 .logo {
+  @extend %svg-color-change-hover;
   padding: 2px;
   line-height: 0;
   border-radius: 5px;
@@ -233,10 +220,6 @@ export default {
     padding: 0.5em;
     text-decoration: none;
     border-radius: 5px;
-    transition: color $duration-animation-base linear, box-shadow $duration-animation-base linear;
-    &:focus {
-      @extend %custom-outline;
-    }
   }
 }
 
@@ -247,6 +230,7 @@ export default {
   display: flex;
 
   &__link {
+    @extend %svg-color-change-hover;
     margin: 0.2rem;
     padding: 0.5rem;
     line-height: 0;

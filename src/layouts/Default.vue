@@ -3,15 +3,19 @@
     <TheHeader />
 
     <slot />
+
+    <TheFooter />
   </div>
 </template>
 
 <script>
 import TheHeader from "@/components/TheHeader.vue"
+import TheFooter from "@/components/TheFooter.vue"
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 }
 </script>
@@ -34,13 +38,19 @@ body {
 // ===
 // Base element styles
 // ===
-a,
-a:visited {
-  color: $color-link-text;
+a {
+  transition: box-shadow $duration-animation-base linear, color $duration-animation-base linear;
+  &:focus {
+    @extend %custom-outline;
+  }
+  &:visited {
+    color: $color-link-text;
+  }
+  &:hover {
+    color: $color-link-text-hover;
+  }
 }
-a:hover {
-  color: $color-link-text-hover;
-}
+
 h1 {
   @extend %typography-xxlarge;
 }
