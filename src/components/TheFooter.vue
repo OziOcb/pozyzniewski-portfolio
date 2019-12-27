@@ -5,23 +5,8 @@
         <SvgTheLogoFullWhite />
       </g-link>
 
-      <div class="footer__socialIcons socialIcons">
-        <a
-          class="socialIcons__link"
-          href="https://www.linkedin.com/in/paul-ozyzniewski/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SvgLinkedIn />
-        </a>
-        <a
-          class="socialIcons__link"
-          href="https://github.com/OziOcb"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SvgGitHub />
-        </a>
+      <div class="footer__socialIcons">
+        <SocialIcons />
       </div>
 
       <p class="footer__copyright">
@@ -35,14 +20,12 @@
 
 <script>
 import SvgTheLogoFullWhite from "~/assets/img/svg/theLogo--full--white.svg"
-import SvgLinkedIn from "~/assets/img/svg/linkedIn.svg"
-import SvgGitHub from "~/assets/img/svg/gitHub.svg"
+import SocialIcons from "@/components/SocialIcons.vue"
 
 export default {
   components: {
     SvgTheLogoFullWhite,
-    SvgLinkedIn,
-    SvgGitHub
+    SocialIcons
   },
   data() {
     return {
@@ -79,23 +62,6 @@ export default {
   transition: box-shadow $duration-animation-base linear;
   &:focus {
     @extend %custom-outline;
-  }
-}
-
-.socialIcons {
-  display: flex;
-  justify-content: center;
-
-  &__link {
-    @extend %svg-color-change-hover;
-    margin: 0.2rem;
-    padding: 0.5rem;
-    line-height: 0;
-    border-radius: 5px;
-    transition: box-shadow $duration-animation-base linear;
-    &:focus {
-      @extend %custom-outline;
-    }
   }
 }
 </style>

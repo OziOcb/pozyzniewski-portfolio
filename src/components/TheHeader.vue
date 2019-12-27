@@ -35,23 +35,9 @@
             </li>
           </ul>
         </nav>
-        <div class="socialIcons socialIcons--mobile">
-          <a
-            class="socialIcons__link"
-            href="https://www.linkedin.com/in/paul-ozyzniewski/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SvgLinkedIn />
-          </a>
-          <a
-            class="socialIcons__link"
-            href="https://github.com/OziOcb"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SvgGitHub />
-          </a>
+
+        <div class="header__socialIcons header__socialIcons--mobile">
+          <SocialIcons />
         </div>
       </div>
     </div>
@@ -60,16 +46,14 @@
 
 <script>
 import SvgTheLogoSimple from "~/assets/img/svg/theLogo--simple.svg"
-import SvgLinkedIn from "~/assets/img/svg/linkedIn.svg"
-import SvgGitHub from "~/assets/img/svg/gitHub.svg"
+import SocialIcons from "@/components/SocialIcons.vue"
 
 import { gsap, Sine, Power1 } from "gsap"
 
 export default {
   components: {
     SvgTheLogoSimple,
-    SvgLinkedIn,
-    SvgGitHub
+    SocialIcons
   },
   data() {
     return {
@@ -82,7 +66,7 @@ export default {
 
     gsap.set(".nav", { xPercent: -50, yPercent: -50 })
     gsap.set(".nav li", { translateX: -200 })
-    gsap.set(".socialIcons--mobile", { translateX: 110 })
+    gsap.set(".header__socialIcons--mobile", { translateX: 110 })
 
     hamburgerMotion
       .addLabel("step1")
@@ -92,7 +76,7 @@ export default {
       .to(".header__menu", 0.4, { autoAlpha: 1 }, "step1")
       .addLabel("step2")
       .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
-      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
+      .to(".header__socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
       .to(".line02", 0.4, { translateY: "+=5" }, "step2")
       .to(".line03", 0.4, { translateY: "-=4" }, "step2")
       .addLabel("step3")
@@ -147,6 +131,14 @@ export default {
     width: 100vw;
     height: 100vh;
     background: $color-menu-gradient;
+  }
+
+  &__socialIcons {
+    &--mobile {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+    }
   }
 }
 
@@ -220,25 +212,6 @@ export default {
     padding: 0.5em;
     text-decoration: none;
     border-radius: 5px;
-  }
-}
-
-.socialIcons {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-
-  &__link {
-    @extend %svg-color-change-hover;
-    margin: 0.2rem;
-    padding: 0.5rem;
-    line-height: 0;
-    border-radius: 5px;
-    transition: box-shadow $duration-animation-base linear;
-    &:focus {
-      @extend %custom-outline;
-    }
   }
 }
 </style>
