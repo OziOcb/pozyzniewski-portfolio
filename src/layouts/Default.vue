@@ -39,6 +39,7 @@ body {
 // Base element styles
 // ===
 a {
+  color: $color-link-text;
   transition: box-shadow $duration-animation-base linear, color $duration-animation-base linear;
   &:focus {
     @extend %custom-outline;

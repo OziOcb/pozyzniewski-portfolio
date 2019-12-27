@@ -1,9 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__inner container">
-      <g-link to="/" class="footer__logo logo">
-        <SvgTheLogoFullWhite />
-      </g-link>
+      <LogoComponent class="footer__logo" version="fullWhite" />
 
       <div class="footer__socialIcons">
         <SocialIcons />
@@ -19,12 +17,12 @@
 </template>
 
 <script>
-import SvgTheLogoFullWhite from "~/assets/img/svg/theLogo--full--white.svg"
+import LogoComponent from "@/components/LogoComponent.vue"
 import SocialIcons from "@/components/SocialIcons.vue"
 
 export default {
   components: {
-    SvgTheLogoFullWhite,
+    LogoComponent,
     SocialIcons
   },
   data() {
@@ -51,17 +49,6 @@ export default {
 
   &__copyright {
     text-align: center;
-  }
-}
-
-.logo {
-  @extend %svg-color-change-hover;
-  padding: 2px;
-  line-height: 0;
-  border-radius: 5px;
-  transition: box-shadow $duration-animation-base linear;
-  &:focus {
-    @extend %custom-outline;
   }
 }
 </style>

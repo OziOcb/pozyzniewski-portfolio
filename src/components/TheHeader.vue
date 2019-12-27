@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <g-link to="/" class="header__logo logo">
-        <SvgTheLogoSimple />
-      </g-link>
+      <LogoComponent class="header__logo" version="simple" />
 
       <div class="header__hamburger">
         <button
@@ -45,14 +43,14 @@
 </template>
 
 <script>
-import SvgTheLogoSimple from "~/assets/img/svg/theLogo--simple.svg"
+import LogoComponent from "@/components/LogoComponent.vue"
 import SocialIcons from "@/components/SocialIcons.vue"
 
 import { gsap, Sine, Power1 } from "gsap"
 
 export default {
   components: {
-    SvgTheLogoSimple,
+    LogoComponent,
     SocialIcons
   },
   data() {
@@ -139,17 +137,6 @@ export default {
       right: 1rem;
       bottom: 1rem;
     }
-  }
-}
-
-.logo {
-  @extend %svg-color-change-hover;
-  padding: 2px;
-  line-height: 0;
-  border-radius: 5px;
-  transition: box-shadow $duration-animation-base linear;
-  &:focus {
-    @extend %custom-outline;
   }
 }
 
