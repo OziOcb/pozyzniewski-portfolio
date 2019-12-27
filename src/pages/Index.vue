@@ -19,6 +19,11 @@
     <br />
     <br />
 
+    <div style="display:flex">
+      <div><QuoteBlock align-right /></div>
+      <div><QuoteBlock /></div>
+    </div>
+
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
     <p>
@@ -99,9 +104,13 @@
 </template>
 
 <script>
+import QuoteBlock from "@/components/QuoteBlock.vue"
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  components: {
+    QuoteBlock
   },
   data() {
     return {
