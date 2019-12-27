@@ -19,6 +19,51 @@
     <br />
     <br />
 
+    <div style="display:flex">
+      <div style="flex:1">
+        <QuoteBlock align-right>
+          Tell me and I forget,
+          <br />
+          teach me and I may premember,
+          <br />
+          involve me and I learn
+
+          <template #cite>
+            Benjamin Franklin
+          </template>
+        </QuoteBlock>
+      </div>
+
+      <div style="flex:1">
+        <QuoteBlock>
+          If you don't have a plan,
+          <br />
+          then you are not a man
+          <template #cite>
+            Unknown
+          </template>
+        </QuoteBlock>
+      </div>
+    </div>
+
+    <QuoteBlock align-right>
+      Tell me and I forget,
+      <br />
+      teach me and I may premember,
+      <br />
+      involve me and I learn
+
+      <template #cite>
+        Benjamin Franklin
+      </template>
+    </QuoteBlock>
+
+    <QuoteBlock>
+      If you don't have a plan,
+      <br />
+      then you are not a man
+    </QuoteBlock>
+
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
     <p>
@@ -99,9 +144,13 @@
 </template>
 
 <script>
+import QuoteBlock from "@/components/QuoteBlock.vue"
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  components: {
+    QuoteBlock
   },
   data() {
     return {
