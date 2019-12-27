@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <g-link to="/" class="header__logo logo">
-        <SvgTheLogoSimple />
-      </g-link>
+      <LogoComponent class="header__logo" version="simple" />
 
       <div class="header__hamburger">
         <button
@@ -35,23 +33,9 @@
             </li>
           </ul>
         </nav>
-        <div class="socialIcons socialIcons--mobile">
-          <a
-            class="socialIcons__link"
-            href="https://www.linkedin.com/in/paul-ozyzniewski/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SvgLinkedIn />
-          </a>
-          <a
-            class="socialIcons__link"
-            href="https://github.com/OziOcb"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SvgGitHub />
-          </a>
+
+        <div class="header__socialIcons header__socialIcons--mobile">
+          <SocialIcons />
         </div>
       </div>
     </div>
@@ -59,17 +43,15 @@
 </template>
 
 <script>
-import SvgTheLogoSimple from "~/assets/img/svg/theLogo--simple.svg"
-import SvgLinkedIn from "~/assets/img/svg/linkedIn.svg"
-import SvgGitHub from "~/assets/img/svg/gitHub.svg"
+import LogoComponent from "@/components/LogoComponent.vue"
+import SocialIcons from "@/components/SocialIcons.vue"
 
 import { gsap, Sine, Power1 } from "gsap"
 
 export default {
   components: {
-    SvgTheLogoSimple,
-    SvgLinkedIn,
-    SvgGitHub
+    LogoComponent,
+    SocialIcons
   },
   data() {
     return {
@@ -82,7 +64,7 @@ export default {
 
     gsap.set(".nav", { xPercent: -50, yPercent: -50 })
     gsap.set(".nav li", { translateX: -200 })
-    gsap.set(".socialIcons--mobile", { translateX: 110 })
+    gsap.set(".header__socialIcons--mobile", { translateX: 110 })
 
     hamburgerMotion
       .addLabel("step1")
@@ -92,7 +74,7 @@ export default {
       .to(".header__menu", 0.4, { autoAlpha: 1 }, "step1")
       .addLabel("step2")
       .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
-      .to(".socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
+      .to(".header__socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
       .to(".line02", 0.4, { translateY: "+=5" }, "step2")
       .to(".line03", 0.4, { translateY: "-=4" }, "step2")
       .addLabel("step3")
@@ -148,29 +130,13 @@ export default {
     height: 100vh;
     background: $color-menu-gradient;
   }
-}
 
-.logo,
-.socialIcons__link {
-  svg {
-    path {
-      transition: fill $duration-animation-base linear;
+  &__socialIcons {
+    &--mobile {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
     }
-    &:hover {
-      path {
-        fill: $color-primary;
-      }
-    }
-  }
-}
-
-.logo {
-  padding: 2px;
-  line-height: 0;
-  border-radius: 5px;
-  transition: box-shadow $duration-animation-base linear;
-  &:focus {
-    @extend %custom-outline;
   }
 }
 
@@ -233,28 +199,6 @@ export default {
     padding: 0.5em;
     text-decoration: none;
     border-radius: 5px;
-    transition: color $duration-animation-base linear, box-shadow $duration-animation-base linear;
-    &:focus {
-      @extend %custom-outline;
-    }
-  }
-}
-
-.socialIcons {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-
-  &__link {
-    margin: 0.2rem;
-    padding: 0.5rem;
-    line-height: 0;
-    border-radius: 5px;
-    transition: box-shadow $duration-animation-base linear;
-    &:focus {
-      @extend %custom-outline;
-    }
   }
 }
 </style>
