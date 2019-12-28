@@ -64,6 +64,8 @@
       then you are not a man
     </QuoteBlock>
 
+    <TheGithubCalendar />
+
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
     <p>
@@ -145,12 +147,15 @@
 
 <script>
 import QuoteBlock from "@/components/QuoteBlock.vue"
+import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   components: {
-    QuoteBlock
+    QuoteBlock,
+    TheGithubCalendar
   },
   data() {
     return {
