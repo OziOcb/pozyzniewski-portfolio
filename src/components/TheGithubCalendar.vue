@@ -11,138 +11,95 @@ import GithubCalendar from "github-calendar"
 export default {
   mounted() {
     GithubCalendar(".calendar", "OziOcb", {
-      responsive: true,
-      global_stats: false,
-      summary_text: " "
+      responsive: true
     })
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 .calendar {
-  margin: 0 auto;
-  min-height: 243px;
   font-family: Helvetica, sans-serif;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-}
+  border-radius: 0.625em;
+  box-shadow: 0px 0.6em 1.25em $color-github-calendar-shadow;
 
-.calendar-graph text.wday,
-.calendar-graph text.month {
-  font-size: 10px;
-  fill: #aaa;
-}
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 25px;
+    display: flex;
+    overflow: hidden;
+    height: 390px;
+    justify-content: flex-end;
+    align-items: center;
 
-.contrib-legend {
-  padding: 0 14px 10px 0;
-  display: inline-block;
-  float: right;
-  text-align: right;
-}
-
-.contrib-legend .legend {
-  position: relative;
-  bottom: -1px;
-  margin: 0 5px;
-  padding: 0;
-  display: inline-block;
-  list-style: none;
-}
-
-.contrib-legend .legend li {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-}
-
-.text-small {
-  font-size: 12px;
-  color: #767676;
+    div:first-child {
+      transform: scale(2);
+      transform-origin: 96%;
+    }
+  }
 }
 
 .calendar-graph {
-  padding: 5px 0 0;
-  text-align: center;
+  padding: 0.25em 0 0;
+
+  text.wday,
+  text.month {
+    font-size: 0.625em;
+    fill: #aaa;
+  }
+  /* level 1 (no commits) */
+  rect.day[fill="#ebedf0"] {
+    fill: rgba($color-secondary, 0.05);
+  }
+  /* level 2 */
+  rect.day[fill="#c6e48b"] {
+    fill: rgba($color-secondary, 0.3);
+  }
+  /* level 3 */
+  rect.day[fill="#7bc96f"] {
+    fill: rgba($color-secondary, 0.6);
+  }
+  /* level 4 */
+  rect.day[fill="#239a3b"] {
+    fill: rgba($color-secondary, 0.8);
+  }
+  /* level 5 */
+  rect.day[fill="#196127"] {
+    fill: rgba($color-secondary, 1);
+  }
 }
 
 .contrib-column {
-  padding: 15px 0;
-  font-size: 11px;
-  text-align: center;
+  padding: 0.625em 0;
+  font-size: 0.6875rem;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
-}
-
-.contrib-column-first {
-  border-left: 0;
+  &-first {
+    border-left: 0;
+  }
 }
 
 .table-column {
-  padding-right: 10px;
-  padding-left: 10px;
-  display: table-cell;
-  width: 1%;
-  vertical-align: top;
+  text-align: center;
+
+  @media (min-width: $breakpoint-sm) {
+    display: inline-block;
+    width: 33.333333%;
+  }
+  @media (min-width: $breakpoint-lg) {
+    display: none;
+  }
 }
 
 .contrib-number {
   display: block;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.3em;
   font-weight: 300;
   color: #333;
 }
 
-.calendar img.spinner {
-  margin-top: 50px;
-  width: 70px;
-  min-height: 70px;
-}
-
-.monospace {
-  font-family: monospace;
-  text-align: center;
-  color: #000;
-}
-
-.monospace a {
-  text-decoration: none;
-  color: #1d75ab;
-}
-
+#user-activity-overview,
 .contrib-footer {
-  padding: 0 10px 12px;
-  box-sizing: border-box;
-  width: 100%;
-  height: 26px;
-  font-size: 11px;
-  text-align: left;
-}
-
-.left.text-muted {
-  margin-left: 9px;
-  float: left;
-  color: #767676;
-}
-.left.text-muted a {
-  text-decoration: none;
-  color: #4078c0;
-}
-.monospace a:hover,
-.left.text-muted a:hover {
-  text-decoration: underline;
-}
-
-h2.f4.text-normal.mb-3 {
-  display: none;
-}
-
-.float-left.text-gray {
-  float: left;
-}
-#user-activity-overview {
   display: none;
 }
 </style>

@@ -1,3 +1,9 @@
+// BASE
 $duration-animation-base: 300ms;
 
+// INPUT
 $duration-animation-input: ($duration-animation-base * 0.3333333333) + $duration-animation-base;
+
+// GITHUB CALENDAR
+$duration-animation-github-calendar: $duration-animation-base * 16;
+$duration-animation-github-calendar-delay: $duration-animation-base / 3;

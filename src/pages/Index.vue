@@ -19,6 +19,11 @@
     <br />
     <br />
 
+    <TheGithubCalendarDummy />
+
+    <br />
+    <br />
+
     <div style="display:flex">
       <div style="flex:1">
         <QuoteBlock align-right>
@@ -64,7 +69,25 @@
       then you are not a man
     </QuoteBlock>
 
-    <TheGithubCalendar />
+    <div class="calendarTest">
+      <div class="calendarTest__column">
+        <QuoteBlock align-right>
+          Tell me and I forget,
+          <br />
+          teach me and I may premember,
+          <br />
+          involve me and I learn
+
+          <template #cite>
+            Benjamin Franklin
+          </template>
+        </QuoteBlock>
+      </div>
+
+      <div class="calendarTest__column">
+        <TheGithubCalendar />
+      </div>
+    </div>
 
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
@@ -148,6 +171,7 @@
 <script>
 import QuoteBlock from "@/components/QuoteBlock.vue"
 import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
+import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
 
 export default {
   metaInfo: {
@@ -155,7 +179,8 @@ export default {
   },
   components: {
     QuoteBlock,
-    TheGithubCalendar
+    TheGithubCalendar,
+    TheGithubCalendarDummy
   },
   data() {
     return {
@@ -176,6 +201,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Github Calendar
+.calendarTest {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+  }
+
+  &__column {
+    flex: 1;
+  }
+}
+
 // TODO: describe in README.md how to use typhography like below
 .hello {
   @extend %typography-xxlarge;
