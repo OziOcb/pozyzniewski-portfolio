@@ -61,6 +61,10 @@ export default {
     box-shadow: 0px 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
   }
 
+  @media (min-width: $breakpoint-lg) {
+    font-size: 0.8125rem;
+  }
+
   &__inner {
     padding-right: 10px;
     padding-bottom: 10px;
@@ -87,7 +91,7 @@ export default {
 
   &__weekDays {
     grid-area: weekDays;
-    padding-right: 1em;
+    padding-right: 0.625em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -110,16 +114,22 @@ export default {
     align-items: center;
     opacity: 0;
     background-color: $color-github-calendar-bg;
+    border-radius: 0.625em;
     transition: opacity $duration-animation-github-calendar-hover linear;
 
     svg {
-      width: 320px;
-      height: 320px;
+      width: 220px;
+      height: 220px;
       opacity: 0;
       transition: opacity $duration-animation-github-calendar-hover
           $duration-animation-github-calendar-hover linear,
         transform ($duration-animation-github-calendar-hover * 2) linear;
       fill: $color-github-calendar-svg-fill;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 320px;
+        height: 320px;
+      }
     }
   }
   &:hover &__overlay,
@@ -128,7 +138,7 @@ export default {
 
     svg {
       opacity: 0.7;
-      transform: rotate(15deg);
+      transform: rotate(15deg) scale(1.2);
     }
   }
 }
@@ -142,9 +152,13 @@ export default {
   grid-column-gap: 4px;
   grid-row-gap: 4px;
 
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(53, 35px);
+    grid-template-rows: repeat(7, 35px);
+  }
+
   > div {
     background: rgba($color-github-calendar-single-commit-bg, 0.05);
-
     &:nth-child(2n + 1) {
       background-color: rgba($color-github-calendar-single-commit-bg, 0.3);
     }

@@ -24,6 +24,29 @@
     <br />
     <br />
 
+    <div class="calendarTest">
+      <div class="calendarTest__column">
+        <QuoteBlock align-right>
+          Tell me and I forget,
+          <br />
+          teach me and I may premember,
+          <br />
+          involve me and I learn
+
+          <template #cite>
+            Benjamin Franklin
+          </template>
+        </QuoteBlock>
+      </div>
+
+      <div class="calendarTest__column">
+        <TheGithubCalendarDummy />
+      </div>
+    </div>
+
+    <br />
+    <br />
+
     <div style="display:flex">
       <div style="flex:1">
         <QuoteBlock align-right>
@@ -68,26 +91,6 @@
       <br />
       then you are not a man
     </QuoteBlock>
-
-    <div class="calendarTest">
-      <div class="calendarTest__column">
-        <QuoteBlock align-right>
-          Tell me and I forget,
-          <br />
-          teach me and I may premember,
-          <br />
-          involve me and I learn
-
-          <template #cite>
-            Benjamin Franklin
-          </template>
-        </QuoteBlock>
-      </div>
-
-      <div class="calendarTest__column">
-        <TheGithubCalendar />
-      </div>
-    </div>
 
     <h1>Predictions H1</h1>
     <h2>World of Grammar H2</h2>
