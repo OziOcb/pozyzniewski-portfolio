@@ -5,6 +5,7 @@ $color-green: #008080;
 $color-red: #f00;
 $color-accent: #a7a7a7;
 $color-outline: rgba(0, 123, 255, 0.5);
+$color-box-shadow: rgba(0, 0, 0, 0.25);
 
 // CONTENT
 $color-body-bg: #efefef;
@@ -38,11 +39,17 @@ $color-button-bg: $color-primary;
 $color-button-bg-disabled: darken(desaturate($color-button-bg, 25%), 30%);
 $color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: $color-white;
-$color-button-shadow: rgba(0, 0, 0, 0.25);
-
+$color-button-shadow: $color-box-shadow;
 // alt
 $color-button-alt-bg: transparent;
 $color-button-alt-bg-hover: rgba(255, 255, 255, 0.25);
 $color-button-alt-text: $color-black;
-$color-button-alt-shadow: $color-button-shadow;
+$color-button-alt-shadow: $color-box-shadow;
 $color-button-alt-border: $color-black;
+
+// GITHUB CALENDAR
+$color-github-calendar-bg: $color-white;
+$color-github-calendar-text: #aaa;
+$color-github-calendar-shadow: $color-box-shadow;
+$color-github-calendar-single-commit-bg: $color-secondary;
+$color-github-calendar-svg-fill: $color-github-calendar-single-commit-bg;

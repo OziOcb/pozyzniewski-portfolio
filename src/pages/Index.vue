@@ -19,6 +19,32 @@
     <br />
     <br />
 
+    <div class="calendarTest">
+      <div class="calendarTest__column">
+        <QuoteBlock align-right>
+          Tell me and I forget,
+          <br />
+          teach me and I may premember,
+          <br />
+          involve me and I learn
+
+          <template #cite>
+            Benjamin Franklin
+          </template>
+        </QuoteBlock>
+      </div>
+
+      <div class="calendarTest__column">
+        <TheGithubCalendarDummy @open-modalGithubCalendar="$refs.modalGithubCalendar.open()" />
+      </div>
+    </div>
+    <SweetModal ref="modalGithubCalendar" overlay-theme="dark">
+      <TheGithubCalendar />
+    </SweetModal>
+
+    <br />
+    <br />
+
     <div style="display:flex">
       <div style="flex:1">
         <QuoteBlock align-right>
@@ -145,12 +171,20 @@
 
 <script>
 import QuoteBlock from "@/components/QuoteBlock.vue"
+import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
+import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
+
+import { SweetModal } from "sweet-modal-vue"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   components: {
-    QuoteBlock
+    QuoteBlock,
+    TheGithubCalendar,
+    TheGithubCalendarDummy,
+    SweetModal
   },
   data() {
     return {
@@ -171,6 +205,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Github Calendar
+.calendarTest {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+  }
+
+  &__column {
+    flex: 1;
+  }
+}
+
 // TODO: describe in README.md how to use typhography like below
 .hello {
   @extend %typography-xxlarge;
