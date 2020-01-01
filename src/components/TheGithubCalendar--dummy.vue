@@ -1,5 +1,5 @@
 <template>
-  <button class="ghCalendar">
+  <button class="ghCalendar" @click="$emit('open-modalGithubCalendar')">
     <div class="ghCalendar__inner">
       <div class="ghCalendar__months">
         <span v-for="(month, index) in months" :key="index">{{ month }}</span>

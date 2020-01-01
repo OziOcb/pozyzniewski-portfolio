@@ -19,11 +19,6 @@
     <br />
     <br />
 
-    <TheGithubCalendarDummy />
-
-    <br />
-    <br />
-
     <div class="calendarTest">
       <div class="calendarTest__column">
         <QuoteBlock align-right>
@@ -40,9 +35,12 @@
       </div>
 
       <div class="calendarTest__column">
-        <TheGithubCalendarDummy />
+        <TheGithubCalendarDummy @open-modalGithubCalendar="$refs.modalGithubCalendar.open()" />
       </div>
     </div>
+    <SweetModal ref="modalGithubCalendar" overlay-theme="dark">
+      <TheGithubCalendar />
+    </SweetModal>
 
     <br />
     <br />
@@ -176,6 +174,8 @@ import QuoteBlock from "@/components/QuoteBlock.vue"
 import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
 import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
 
+import { SweetModal } from "sweet-modal-vue"
+
 export default {
   metaInfo: {
     title: "Hello, world!"
@@ -183,7 +183,8 @@ export default {
   components: {
     QuoteBlock,
     TheGithubCalendar,
-    TheGithubCalendarDummy
+    TheGithubCalendarDummy,
+    SweetModal
   },
   data() {
     return {
