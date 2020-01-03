@@ -22,14 +22,8 @@
       <div id="dropdowMenuContent" class="header__menu">
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item">
-              <g-link class="nav__link" to="/">Home</g-link>
-            </li>
-            <li class="nav__item">
-              <g-link class="nav__link" to="/faq/">FAQ</g-link>
-            </li>
-            <li class="nav__item">
-              <g-link class="nav__link" to="/blog/">Blog</g-link>
+            <li v-for="(page, index) in pages" :key="index" class="nav__item">
+              <g-link class="nav__link" :to="page.url">{{ page.name }}</g-link>
             </li>
           </ul>
         </nav>
@@ -55,7 +49,25 @@ export default {
   },
   data() {
     return {
-      ariaExpanded: false
+      ariaExpanded: false,
+      pages: [
+        {
+          name: "Home",
+          url: "/"
+        },
+        {
+          name: "FAQ",
+          url: "/faq/"
+        },
+        {
+          name: "Blog",
+          url: "/blog/"
+        },
+        {
+          name: "Elements",
+          url: "/elements/"
+        }
+      ]
     }
   },
   mounted() {
@@ -63,7 +75,7 @@ export default {
     const hamburgerMotion = gsap.timeline()
 
     gsap.set(".nav", { xPercent: -50, yPercent: -50 })
-    gsap.set(".nav li", { translateX: -200 })
+    gsap.set(".nav li", { translateX: -300 })
     gsap.set(".header__socialIcons--mobile", { translateX: 110 })
 
     hamburgerMotion
@@ -73,7 +85,7 @@ export default {
       .to(".line04", 0.4, { translateX: "-=40" }, "step1")
       .to(".header__menu", 0.4, { autoAlpha: 1 }, "step1")
       .addLabel("step2")
-      .staggerTo(".nav li", 0.4, { translateX: 0, ease: Sine.easeOut }, 0.2, 0.5)
+      .staggerTo(".nav li", 0.45, { translateX: 0, ease: Sine.easeOut }, 0.3, 0.5)
       .to(".header__socialIcons--mobile", 0.4, { translateX: 0, ease: Sine.easeOut })
       .to(".line02", 0.4, { translateY: "+=5" }, "step2")
       .to(".line03", 0.4, { translateY: "-=4" }, "step2")
@@ -187,7 +199,7 @@ export default {
 
   &__list {
     margin: 0;
-    padding: 1em;
+    padding: 2em 0.5em;
   }
 
   &__item {
