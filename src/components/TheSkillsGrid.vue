@@ -1,23 +1,154 @@
 <template>
   <div class="skillsGrid">
-    <div v-for="n in 24" :key="n" class="skillsGrid__skillBox">
-      <SvgSass />
+    <div v-for="(tile, index) in tiles" :key="index" class="skillsGrid__skillBox">
+      <component :is="tile"></component>
     </div>
   </div>
 </template>
 
 <script>
-import SvgSass from "~/assets/img/svg/skillsGrid/sass.svg"
+import {
+  SvgAdobeIllustrator,
+  SvgAdobePhotoshop,
+  SvgAdobeTypekit,
+  SvgAdobeXd,
+  SvgAtom,
+  SvgBabel,
+  SvgBasecamp,
+  SvgBit,
+  SvgBootstrap,
+  SvgCodeoen,
+  SvgCodeSandbox,
+  SvgCodewars,
+  SvgCss,
+  SvgCssWizardy,
+  SvgEsLint,
+  SvgFigma,
+  SvgFilleZilla,
+  SvgFirebase,
+  SvgGit,
+  SvgGitHub,
+  SvgGitLab,
+  SvgGraphQl,
+  SvgGulp,
+  SvgHtml5,
+  SvgJavascript,
+  SvgJekyll,
+  SvgJest,
+  SvgJson,
+  SvgMarkdown,
+  SvgMaterialDesign,
+  SvgNpm,
+  SvgNuxtJs,
+  SvgPostman,
+  SvgPowerShell,
+  SvgPrettier,
+  SvgSass,
+  SvgVSC,
+  SvgVueJs,
+  SvgVue,
+  SvgWebpack,
+  SvgYarn,
+  SvgZapier
+} from "~/assets/img/svg/skillsGrid/index.js"
 
 export default {
   components: {
-    SvgSass
+    SvgAdobeIllustrator,
+    SvgAdobePhotoshop,
+    SvgAdobeTypekit,
+    SvgAdobeXd,
+    SvgAtom,
+    SvgBabel,
+    SvgBasecamp,
+    SvgBit,
+    SvgBootstrap,
+    SvgCodeoen,
+    SvgCodeSandbox,
+    SvgCodewars,
+    SvgCss,
+    SvgCssWizardy,
+    SvgEsLint,
+    SvgFigma,
+    SvgFilleZilla,
+    SvgFirebase,
+    SvgGit,
+    SvgGitHub,
+    SvgGitLab,
+    SvgGraphQl,
+    SvgGulp,
+    SvgHtml5,
+    SvgJavascript,
+    SvgJekyll,
+    SvgJest,
+    SvgJson,
+    SvgMarkdown,
+    SvgMaterialDesign,
+    SvgNpm,
+    SvgNuxtJs,
+    SvgPostman,
+    SvgPowerShell,
+    SvgPrettier,
+    SvgSass,
+    SvgVSC,
+    SvgVueJs,
+    SvgVue,
+    SvgWebpack,
+    SvgYarn,
+    SvgZapier
+  },
+  data() {
+    return {
+      tiles: [
+        "SvgMarkdown",
+        "SvgFilleZilla",
+        "SvgPowerShell",
+        "SvgMaterialDesign",
+        "SvgCss",
+        "SvgGit",
+        "SvgBasecamp",
+        "SvgGraphQl",
+        "SvgCssWizardy",
+        "SvgBit",
+        "SvgNuxtJs",
+        "SvgBootstrap",
+        "SvgEsLint",
+        "SvgVueJs",
+        "SvgGitHub",
+        "SvgAdobePhotoshop",
+        "SvgGitLab",
+        "SvgVSC",
+        "SvgGulp",
+        "SvgFigma",
+        "SvgAdobeXd",
+        "SvgSass",
+        "SvgPrettier",
+        "SvgHtml5",
+        "SvgNpm",
+        "SvgFirebase",
+        "SvgWebpack",
+        "SvgJavascript",
+        "SvgCodewars",
+        "SvgVue",
+        "SvgCodeoen",
+        "SvgCodeSandbox",
+        "SvgAtom",
+        "SvgAdobeTypekit",
+        "SvgPostman",
+        "SvgZapier",
+        "SvgBabel",
+        "SvgAdobeIllustrator",
+        "SvgYarn",
+        "SvgJest",
+        "SvgJekyll",
+        "SvgJson"
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-/* Change this to change the appearance of the hexaons */
 $hex-width: 100px;
 $hex-between: $hex-width / 2;
 
