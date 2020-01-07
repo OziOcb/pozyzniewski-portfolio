@@ -1,147 +1,41 @@
 <template>
   <div class="skillsGrid">
-    <div v-for="(tile, index) in tiles" :key="index" class="skillsGrid__skillBox">
-      <component :is="tile"></component>
+    <div v-for="(tile, index) in tiles" :key="index" :class="tile" class="skillsGrid__skillBox">
+      <component :is="`Svg${tile}`"></component>
     </div>
   </div>
 </template>
 
 <script>
+// prettier-ignore
 import {
-  SvgAdobeIllustrator,
-  SvgAdobePhotoshop,
-  SvgAdobeTypekit,
-  SvgAdobeXd,
-  SvgAtom,
-  SvgBabel,
-  SvgBasecamp,
-  SvgBit,
-  SvgBootstrap,
-  SvgCodeoen,
-  SvgCodeSandbox,
-  SvgCodewars,
-  SvgCss,
-  SvgCssWizardy,
-  SvgEsLint,
-  SvgFigma,
-  SvgFilleZilla,
-  SvgFirebase,
-  SvgGit,
-  SvgGitHub,
-  SvgGitLab,
-  SvgGraphQl,
-  SvgGulp,
-  SvgHtml5,
-  SvgJavascript,
-  SvgJekyll,
-  SvgJest,
-  SvgJson,
-  SvgMarkdown,
-  SvgMaterialDesign,
-  SvgNpm,
-  SvgNuxtJs,
-  SvgPostman,
-  SvgPowerShell,
-  SvgPrettier,
-  SvgSass,
-  SvgVSC,
-  SvgVueJs,
-  SvgVue,
-  SvgWebpack,
-  SvgYarn,
-  SvgZapier
+  SvgAdobeIllustrator,SvgAdobePhotoshop,SvgAdobeTypekit,SvgAdobeXd,SvgAtom,SvgBabel,
+  SvgBasecamp,SvgBit,SvgBootstrap,SvgCodeoen,SvgCodeSandbox,SvgCodewars,SvgCss,SvgCssWizardy,
+  SvgEsLint,SvgFigma,SvgFilleZilla,SvgFirebase,SvgGit,SvgGitHub,SvgGitLab,SvgGraphQl,SvgGulp,
+  SvgHtml5,SvgJavascript,SvgJekyll,SvgJest,SvgJson,SvgMarkdown,SvgMaterialDesign,SvgNpm,
+  SvgNuxtJs,SvgPostman,SvgPowerShell,SvgPrettier,SvgSass,SvgVSC,SvgVueJs,SvgVue,SvgWebpack,
+  SvgYarn,SvgZapier
 } from "~/assets/img/svg/skillsGrid/index.js"
 
 export default {
+  // prettier-ignore
   components: {
-    SvgAdobeIllustrator,
-    SvgAdobePhotoshop,
-    SvgAdobeTypekit,
-    SvgAdobeXd,
-    SvgAtom,
-    SvgBabel,
-    SvgBasecamp,
-    SvgBit,
-    SvgBootstrap,
-    SvgCodeoen,
-    SvgCodeSandbox,
-    SvgCodewars,
-    SvgCss,
-    SvgCssWizardy,
-    SvgEsLint,
-    SvgFigma,
-    SvgFilleZilla,
-    SvgFirebase,
-    SvgGit,
-    SvgGitHub,
-    SvgGitLab,
-    SvgGraphQl,
-    SvgGulp,
-    SvgHtml5,
-    SvgJavascript,
-    SvgJekyll,
-    SvgJest,
-    SvgJson,
-    SvgMarkdown,
-    SvgMaterialDesign,
-    SvgNpm,
-    SvgNuxtJs,
-    SvgPostman,
-    SvgPowerShell,
-    SvgPrettier,
-    SvgSass,
-    SvgVSC,
-    SvgVueJs,
-    SvgVue,
-    SvgWebpack,
-    SvgYarn,
-    SvgZapier
+    SvgAdobeIllustrator,SvgAdobePhotoshop,SvgAdobeTypekit,SvgAdobeXd,SvgAtom,SvgBabel,
+    SvgBasecamp,SvgBit,SvgBootstrap,SvgCodeoen,SvgCodeSandbox,SvgCodewars,SvgCss,SvgCssWizardy,
+    SvgEsLint,SvgFigma,SvgFilleZilla,SvgFirebase,SvgGit,SvgGitHub,SvgGitLab,SvgGraphQl,SvgGulp,
+    SvgHtml5,SvgJavascript,SvgJekyll,SvgJest,SvgJson,SvgMarkdown,SvgMaterialDesign,SvgNpm,
+    SvgNuxtJs,SvgPostman,SvgPowerShell,SvgPrettier,SvgSass,SvgVSC,SvgVueJs,SvgVue,SvgWebpack,
+    SvgYarn,SvgZapier
   },
   data() {
     return {
+      // prettier-ignore
       tiles: [
-        "SvgMarkdown",
-        "SvgFilleZilla",
-        "SvgPowerShell",
-        "SvgMaterialDesign",
-        "SvgCss",
-        "SvgGit",
-        "SvgBasecamp",
-        "SvgGraphQl",
-        "SvgCssWizardy",
-        "SvgBit",
-        "SvgNuxtJs",
-        "SvgBootstrap",
-        "SvgEsLint",
-        "SvgVueJs",
-        "SvgGitHub",
-        "SvgAdobePhotoshop",
-        "SvgGitLab",
-        "SvgVSC",
-        "SvgGulp",
-        "SvgFigma",
-        "SvgAdobeXd",
-        "SvgSass",
-        "SvgPrettier",
-        "SvgHtml5",
-        "SvgNpm",
-        "SvgFirebase",
-        "SvgWebpack",
-        "SvgJavascript",
-        "SvgCodewars",
-        "SvgVue",
-        "SvgCodeoen",
-        "SvgCodeSandbox",
-        "SvgAtom",
-        "SvgAdobeTypekit",
-        "SvgPostman",
-        "SvgZapier",
-        "SvgBabel",
-        "SvgAdobeIllustrator",
-        "SvgYarn",
-        "SvgJest",
-        "SvgJekyll",
-        "SvgJson"
+        "Markdown","FilleZilla","PowerShell","MaterialDesign","Css","Git","Basecamp","GraphQl",
+        "CssWizardy","Bit","NuxtJs","Bootstrap","EsLint","VueJs","GitHub","AdobePhotoshop",
+        "GitLab","VSC","Gulp","Figma","AdobeXd","Sass","Prettier","Html5","Npm","Firebase",
+        "Webpack","Javascript","Codewars","Vue","Codeoen","CodeSandbox","Atom","AdobeTypekit",
+        "Postman","Zapier","Babel","AdobeIllustrator","Yarn","Jest","Jekyll","Json"
       ]
     }
   }
@@ -149,29 +43,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$hex-width: 100px;
-$hex-between: $hex-width / 2;
-
-/* Other hexagon dimentions */
-$hex-height: $hex-width / 1.73 /* sqrt(3) */;
-$hex-margin: $hex-width / 2;
-$hex-border: $hex-margin / 1.73 /* sqrt(3) */;
-$hex-transition: background-color $duration-animation-base ease, $duration-animation-base ease,
-  border-bottom-color $duration-animation-base ease;
+$cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
 
 .skillsGrid {
-  padding-bottom: $hex-border;
+  padding-bottom: $size-skills-grid-border;
   display: grid;
-  grid-template-columns: repeat(4, $hex-width);
-  grid-auto-rows: $hex-width - $hex-between / 2;
-  grid-column-gap: $hex-between;
+  grid-template-columns: repeat(4, $size-skills-grid-width);
+  grid-auto-rows: $size-skills-grid-width - $size-skills-grid-gap / 2;
+  grid-column-gap: $size-skills-grid-gap;
 
   &__skillBox {
     position: relative;
-    margin: $hex-border 0;
+    margin: $size-skills-grid-border 0;
     display: flex;
-    width: $hex-width / 1.4;
-    height: $hex-height * 1.2;
+    width: $size-skills-grid-width / 1.4;
+    height: $size-skills-grid-height * 1.2;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -179,11 +65,11 @@ $hex-transition: background-color $duration-animation-base ease, $duration-anima
 
     &:before {
       position: absolute;
-      width: $hex-width;
-      height: $hex-width;
+      width: $size-skills-grid-width;
+      height: $size-skills-grid-width;
       content: "";
       background-color: $color-skills-grid-box-bg;
-      transition: $hex-transition;
+      transition: background-color $duration-animation-skills-grid ease;
       transform: rotate(45deg);
     }
     &:nth-child(2n + 1):before {
@@ -200,12 +86,22 @@ $hex-transition: background-color $duration-animation-base ease, $duration-anima
     }
     &:hover:before {
       background-color: $color-skills-grid-box-bg-hover;
+      transition: background-color $duration-animation-skills-grid $cubic-bezier-skills-grid;
     }
 
     > svg {
       z-index: 0;
       height: 75%;
-      transition: $hex-transition;
+      transition: transform $duration-animation-skills-grid ease,
+        fill $duration-animation-skills-grid $cubic-bezier-skills-grid;
+      fill: $color-body-bg;
+    }
+    &:hover > svg {
+      transition: transform $duration-animation-skills-grid $duration-animation-skills-grid-delay
+          $cubic-bezier-skills-grid,
+        fill $duration-animation-skills-grid $duration-animation-skills-grid-delay
+          $cubic-bezier-skills-grid;
+      transform: scale(1.6) rotate(3deg);
     }
   }
 
@@ -213,7 +109,19 @@ $hex-transition: background-color $duration-animation-base ease, $duration-anima
   &__skillBox:nth-child(8n + 6),
   &__skillBox:nth-child(8n + 7),
   &__skillBox:nth-child(8n + 8) {
-    margin-left: $hex-width / 2 + $hex-between / 2;
+    margin-left: $size-skills-grid-width / 2 + $size-skills-grid-gap / 2;
+  }
+}
+
+// Logos
+@each $name, $glyph in $color-logos {
+  .#{$name}:hover {
+    &:before {
+      background-color: rgba($glyph, 0.16);
+    }
+    svg {
+      fill: $glyph;
+    }
   }
 }
 </style>
