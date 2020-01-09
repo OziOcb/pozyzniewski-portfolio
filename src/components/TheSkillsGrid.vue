@@ -1,6 +1,12 @@
 <template>
   <div class="skillsGrid">
-    <div v-for="(tile, index) in tiles" :key="index" :class="tile" class="skillsGrid__skillBox">
+    <div
+      v-for="(tile, index) in tiles"
+      :key="index"
+      ref="skillsGridTiles"
+      :class="tile"
+      class="skillsGrid__skillBox"
+    >
       <component :is="`Svg${tile}`"></component>
     </div>
   </div>
@@ -38,6 +44,20 @@ export default {
         "Postman","Zapier","Babel","AdobeIllustrator","Yarn","Jest","Jekyll","Json"
       ]
     }
+  },
+  mounted() {
+    const skillsGridTiles = this.$refs.skillsGridTiles
+    const intervalDurration = 3000
+    let randomNum
+
+    const highlightRandomTile = () => {
+      randomNum = Math.floor(Math.random() * (skillsGridTiles.length - 2)) // -2 because two last tiles are hidden on mobile
+      skillsGridTiles.forEach(tile => tile.classList.remove("active"))
+      skillsGridTiles[randomNum].classList.add("active")
+    }
+    highlightRandomTile()
+
+    setInterval(highlightRandomTile, intervalDurration)
   }
 }
 </script>
@@ -97,7 +117,8 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
         display: flex;
       }
     }
-    &:hover:before {
+    &:hover:before,
+    &.active:before {
       background-color: $color-skills-grid-box-bg-hover;
       transition: background-color $duration-animation-skills-grid $cubic-bezier-skills-grid;
     }
@@ -109,7 +130,8 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
         fill $duration-animation-skills-grid $cubic-bezier-skills-grid;
       fill: $color-body-bg;
     }
-    &:hover > svg {
+    &:hover > svg,
+    &.active > svg {
       transition: transform $duration-animation-skills-grid $duration-animation-skills-grid-delay
           $cubic-bezier-skills-grid,
         fill $duration-animation-skills-grid $duration-animation-skills-grid-delay
@@ -154,7 +176,8 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
 
 // Logos
 @each $name, $glyph in $color-logos {
-  .#{$name}:hover {
+  .#{$name}:hover,
+  .#{$name}.active {
     &:before {
       background-color: rgba($glyph, 0.16);
     }
