@@ -51,6 +51,12 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
   grid-template-columns: repeat(4, $size-skills-grid-width);
   grid-auto-rows: $size-skills-grid-width - $size-skills-grid-gap / 2;
   grid-column-gap: $size-skills-grid-gap;
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(5, $size-skills-grid-width);
+  }
+  @media (min-width: $breakpoint-xl) {
+    grid-template-columns: repeat(6, $size-skills-grid-width);
+  }
 
   &__skillBox {
     position: relative;
@@ -84,6 +90,13 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
     &:nth-child(7n + 5):before {
       background-color: rgba($color-skills-grid-box-bg, 1);
     }
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      display: none;
+      @media (min-width: $breakpoint-lg) {
+        display: flex;
+      }
+    }
     &:hover:before {
       background-color: $color-skills-grid-box-bg-hover;
       transition: background-color $duration-animation-skills-grid $cubic-bezier-skills-grid;
@@ -110,6 +123,32 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
   &__skillBox:nth-child(8n + 7),
   &__skillBox:nth-child(8n + 8) {
     margin-left: $size-skills-grid-width / 2 + $size-skills-grid-gap / 2;
+    @media (min-width: $breakpoint-md) {
+      margin-left: 0;
+    }
+  }
+
+  &__skillBox:nth-child(10n + 6),
+  &__skillBox:nth-child(10n + 7),
+  &__skillBox:nth-child(10n + 8),
+  &__skillBox:nth-child(10n + 9),
+  &__skillBox:nth-child(10n + 10) {
+    @media (min-width: $breakpoint-md) {
+      margin-left: $size-skills-grid-width / 2 + $size-skills-grid-gap / 2;
+    }
+    @media (min-width: $breakpoint-xl) {
+      margin-left: 0;
+    }
+  }
+  &__skillBox:nth-child(12n + 7),
+  &__skillBox:nth-child(12n + 8),
+  &__skillBox:nth-child(12n + 9),
+  &__skillBox:nth-child(12n + 10),
+  &__skillBox:nth-child(12n + 11),
+  &__skillBox:nth-child(12n + 12) {
+    @media (min-width: $breakpoint-xl) {
+      margin-left: $size-skills-grid-width / 2 + $size-skills-grid-gap / 2;
+    }
   }
 }
 

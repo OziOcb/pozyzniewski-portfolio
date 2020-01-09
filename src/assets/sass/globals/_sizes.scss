@@ -26,7 +26,7 @@ $size-button-alt-padding-horizontal: $size-grid-padding * 1.5;
 $size-button-alt-padding: $size-button-alt-padding-vertical $size-button-alt-padding-horizontal;
 
 // SKILLS GRID
-$size-skills-grid-width: 100px;
+$size-skills-grid-width: 7em;
 $size-skills-grid-gap: $size-skills-grid-width / 2;
 // Other hexagon dimensions
 $size-skills-grid-height: $size-skills-grid-width / 1.73 /* sqrt(3) */;
