@@ -70,6 +70,32 @@
     </section>
     <!-- GitHub Calendar End -->
 
+    <!-- SkillsGrid Calendar -->
+    <section>
+      <div class="elementsSectionTitle">SkillsGrid</div>
+
+      <div class="theSkillsGridTest">
+        <div class="theSkillsGridTest__column theSkillsGridTest__column--grid">
+          <TheSkillsGrid class="theSkillsGridTest__skillsGrid" />
+        </div>
+
+        <div class="theSkillsGridTest__column theSkillsGridTest__column--quote">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur fuga accusamus debitis
+          nobis excepturi aliquid, laboriosam, iusto nisi maiores deleniti illum? Fugiat pariatur
+          officia consequatur nesciunt odio provident nostrum accusantium. Lorem ipsum dolor sit
+          amet consectetur, adipisicing elit. Possimus dolores non repellendus velit qui laudantium
+          fuga libero officiis delectus laboriosam, veritatis odio distinctio illum. Omnis libero
+          dolorum voluptatum accusamus excepturi. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Quis cum fugit consectetur eligendi fuga non vero accusantium optio dolore
+          temporibus, ipsa et aperiam voluptates ducimus suscipit dolor, minus quam ullam? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Odit esse, ratione labore natus
+          deleniti pariatur tempore hic facilis, earum quisquam doloremque voluptate provident minus
+          sed distinctio, excepturi eveniet. Veritatis, sit.
+        </div>
+      </div>
+    </section>
+    <!-- SkillsGrid Calendar End -->
+
     <!-- Contact Form -->
     <section>
       <div class="elementsSectionTitle">Contact Form</div>
@@ -177,6 +203,9 @@ import QuoteBlock from "@/components/QuoteBlock.vue"
 // Contact Form
 import ContactMeForm from "@/components/ContactMeForm.vue"
 
+// SkillsGrid
+import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
+
 export default {
   components: {
     // Github Calendar
@@ -186,24 +215,14 @@ export default {
     // QuoteBlock
     QuoteBlock,
     // Contact Form
-    ContactMeForm
+    ContactMeForm,
+    // SkillsGrid
+    TheSkillsGrid
   }
 }
 </script>
 
 <style lang="scss" scoped>
-section {
-  padding: 10rem 0;
-  overflow: hidden;
-  &:nth-child(2n) {
-    background-color: $color-body-bg-light;
-  }
-}
-.elementsSectionTitle {
-  @extend %typography-large;
-  text-align: center;
-}
-
 // Hero Text
 .hero {
   &__lead {
@@ -218,14 +237,12 @@ section {
     margin-top: 0;
   }
 }
+// Hero Text End
 
 // Github Calendar
 .calendarTest {
-  display: flex;
-  flex-direction: column;
-
   @media (min-width: $breakpoint-lg) {
-    flex-direction: row;
+    display: flex;
   }
 
   &__column {
@@ -233,4 +250,58 @@ section {
     text-align: center;
   }
 }
+// Github Calendar End
+
+// SkillsGrid
+.theSkillsGridTest {
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+  }
+
+  &__column {
+    flex: 1;
+
+    &--grid {
+      position: relative;
+      margin-left: -($size-skills-grid-width / 2 + $size-skills-grid-gap / 2) / 2;
+      padding-top: 10px;
+      padding-bottom: 35px;
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      @media (min-width: $breakpoint-lg) {
+        margin-left: 0;
+        height: $size-skills-grid-width * 6.7;
+      }
+      @media (min-width: $breakpoint-xl) {
+        height: $size-skills-grid-width * 6;
+      }
+    }
+    &--quote {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+  &__skillsGrid {
+    @media (min-width: $breakpoint-lg) {
+      position: absolute;
+      right: 100px;
+    }
+  }
+}
+// SkillsGrid End
+
+// Base Styles
+section {
+  padding: 10rem 0;
+  overflow: hidden;
+  &:nth-child(2n) {
+    background-color: $color-body-bg-light;
+  }
+}
+.elementsSectionTitle {
+  @extend %typography-large;
+  text-align: center;
+}
+// Base Styles End
 </style>
