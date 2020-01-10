@@ -1,5 +1,5 @@
 <template>
-  <div class="skillsGrid">
+  <div ref="skillsGrid" class="skillsGrid">
     <div
       v-for="(tile, index) in tiles"
       :key="index"
@@ -46,18 +46,69 @@ export default {
     }
   },
   mounted() {
+    const skillsGrid = this.$refs.skillsGrid
     const skillsGridTiles = this.$refs.skillsGridTiles
-    const intervalDurration = 3000
-    let randomNum
+    const timeoutDurration = 100
+    const intervalDurration = 4800
 
-    const highlightRandomTile = () => {
-      randomNum = Math.floor(Math.random() * (skillsGridTiles.length - 2)) // -2 because two last tiles are hidden on mobile
-      skillsGridTiles.forEach(tile => tile.classList.remove("active"))
-      skillsGridTiles[randomNum].classList.add("active")
+    const removeHiglights = () => skillsGridTiles.forEach(tile => tile.classList.remove("active"))
+    const giveRandomTileNumber = () => Math.floor(Math.random() * (skillsGridTiles.length - 2)) // -2 because two last tiles are hidden on mobile
+    const highlightRandomTile = () =>
+      skillsGridTiles[giveRandomTileNumber()].classList.add("active")
+
+    let timeout
+    const highlightFourRandomTiles = bool => {
+      if (bool) {
+        timeout = setTimeout(() => {
+          highlightRandomTile()
+          setTimeout(() => {
+            highlightRandomTile()
+            setTimeout(() => {
+              highlightRandomTile()
+              setTimeout(() => {
+                highlightRandomTile()
+                setTimeout(() => {
+                  highlightRandomTile()
+                  setTimeout(() => {
+                    highlightRandomTile()
+                    setTimeout(() => {
+                      highlightRandomTile()
+                    }, timeoutDurration)
+                  }, timeoutDurration)
+                }, timeoutDurration)
+              }, timeoutDurration)
+            }, timeoutDurration)
+          }, timeoutDurration)
+        }, timeoutDurration)
+      } else {
+        clearTimeout(timeout)
+      }
     }
-    highlightRandomTile()
 
-    setInterval(highlightRandomTile, intervalDurration)
+    let interval
+    const setHiglightInterval = bool => {
+      if (bool) {
+        interval = setInterval(() => {
+          removeHiglights()
+          highlightFourRandomTiles(true)
+        }, intervalDurration)
+      } else {
+        highlightFourRandomTiles(false)
+        clearInterval(interval)
+      }
+    }
+
+    highlightFourRandomTiles(true)
+    setHiglightInterval(true)
+
+    skillsGrid.addEventListener("mouseenter", () => {
+      removeHiglights()
+      setHiglightInterval(false)
+    })
+    skillsGrid.addEventListener("mouseleave", () => {
+      highlightFourRandomTiles(true)
+      setHiglightInterval(true)
+    })
   }
 }
 </script>
