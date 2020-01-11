@@ -1,13 +1,27 @@
 <template>
   <div class="portfolioProject">
-    <div class="container">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nulla alias! Sequi vel
-      necessitatibus aliquam eum quae doloribus, repellat maxime rem explicabo perferendis, quos
-      ducimus, ex praesentium alias illo dicta?
+    <div class="portfolioProject__inner container">
+      <div class="portfolioProject__date">2019</div>
+
+      <div class="portfolioProject__descWrapper">
+        <h3 class="portfolioProject__title">Project Name</h3>
+        <p class="portfolioProject__desc">Web Design / Development</p>
+      </div>
+
+      <div class="portfolioProject__btns">
+        <BaseLinkLikeButton>Git</BaseLinkLikeButton>
+        <BaseLinkLikeButton>View Project</BaseLinkLikeButton>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import BaseLinkLikeButton from "@/components/BaseLinkLikeButton.vue"
+
+export default {
+  components: {
+    BaseLinkLikeButton
+  }
+}
 </script>
