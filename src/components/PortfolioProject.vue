@@ -58,6 +58,13 @@ export default {
   overflow: hidden;
   border: 1px dashed #aaa;
 
+  &__inner {
+    @media (min-width: $breakpoint-xl) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__date {
     @extend %typography-large;
     position: relative;
@@ -76,6 +83,11 @@ export default {
     }
   }
 
+  &__descWrapper {
+    @media (min-width: $breakpoint-xl) {
+      margin-left: 50px;
+    }
+  }
   &__title {
     @extend %typography-xlarge;
     margin-top: 0.4375em;
@@ -88,6 +100,7 @@ export default {
 
   &__btns {
     margin-left: auto;
+    min-width: 280px;
     a:first-child {
       margin-right: 1em;
     }
