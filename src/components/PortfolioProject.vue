@@ -1,15 +1,18 @@
 <template>
   <div class="portfolioProject">
     <div class="portfolioProject__inner container">
-      <div class="portfolioProject__date">2019</div>
+      <div class="portfolioProject__date">{{ year }}</div>
 
       <div class="portfolioProject__descWrapper">
-        <h3 class="portfolioProject__title">Project Name</h3>
-        <p class="portfolioProject__desc">Web Design / Development</p>
+        <h3 class="portfolioProject__title">{{ title }}</h3>
+        <p class="portfolioProject__desc">{{ desc }}</p>
       </div>
 
       <div class="portfolioProject__btns">
-        <BaseLinkLikeButton :to="repoUrl" blank>Git</BaseLinkLikeButton>
+        <BaseLinkLikeButton :to="repoUrl" blank>
+          <font-awesome :icon="['fab', 'github']" />
+          GitHub
+        </BaseLinkLikeButton>
         <BaseLinkLikeButton :to="projectUrl" blank>View Project</BaseLinkLikeButton>
       </div>
     </div>
@@ -24,6 +27,18 @@ export default {
     BaseLinkLikeButton
   },
   props: {
+    year: {
+      type: Number,
+      default: new Date().getFullYear()
+    },
+    title: {
+      type: String,
+      default: "Project Name"
+    },
+    desc: {
+      type: String,
+      default: "Web Design / Development"
+    },
     repoUrl: {
       type: String,
       default: "https://github.com/OziOcb/pozyzniewski-portfolio"
@@ -41,6 +56,7 @@ export default {
   padding-top: 5.125rem;
   padding-bottom: 5.125rem;
   overflow: hidden;
+  border: 1px dashed #aaa;
 
   &__date {
     @extend %typography-large;
@@ -71,6 +87,7 @@ export default {
   }
 
   &__btns {
+    margin-left: auto;
     a:first-child {
       margin-right: 1em;
     }
