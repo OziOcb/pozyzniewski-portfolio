@@ -164,9 +164,22 @@ To save visitors' bandwith (especially on mobile devices) it's important to foll
 	- for example if your file is `design.jpg` use:
 ```html
 <PortfolioProject
-	...
-	bg-image-src="design"
-	...
+	v-for="(project, index) in  portfolioProjects"
+	:key="index"
+	:project-info="project"
 />
+```
+
+```javascript
+data() {
+	return {
+		portfolioProjects: [
+			{
+				....
+				bgImage:  "design"
+			}
+		}
+	}
+}
 ```
 
