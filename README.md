@@ -1,25 +1,23 @@
-# Pozyzniewski Portfolio
+
+#  Pozyzniewski Portfolio
+
 
 ## Install
-
 ### 1. Install Gridsome CLI tool if you don't have
 
 `npm install --global @gridsome/cli`
 
 ### 2. Run the Project
-
 1. Clone the Repository.
-2. `cd pozyzniewski-portfolio` to open the folder.
-3. `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
+2.  `cd pozyzniewski-portfolio` to open the folder.
+3.  `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
 
 ## Base Components
-
 Many components will be relatively generic, possibly only wrapping an element like an input or a button. We sometimes refer to these as [base components](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended) and they tend to be used very frequently across your components.
 
 Thanks to `gridsome-plugin-base-components` plugin, all Components with names that start with `Base...` (`BaseButton.vue` etc.) will be globally available.
 
 No need for doing below in every component that uses these `base-components`:
-
 ```javascript
 <script>
 import BaseButton from "@/components/BaseButton.vue"
@@ -33,18 +31,17 @@ export  default  {
 ```
 
 ## Using SVGs as Components
-
 You can import SVGs as you do with any other Vue component.
 
 ```html
 <template>
-  <layout>
-    <SvgBrand />
-  </layout>
+	<layout>
+		<SvgBrand />
+	</layout>
 </template>
 
 <script>
-  import SvgBrand from "~/assets/svgs/Brand.svg"
+  import SvgBrand from '~/assets/svgs/Brand.svg'
 
   export default {
     components: {
@@ -55,12 +52,10 @@ You can import SVGs as you do with any other Vue component.
 ```
 
 ## Adding Background Images in styles
-
-To do that you must use `~@/` as a prefix in the url
-
+To do that you must use ``~@/`` as a prefix in the url
 ```css
-.imageBox {
-  background: url("~@/assets/img/image-name.jpg") center/cover no-repeat;
+.imageBox  {
+	background: url("~@/assets/img/image-name.jpg") center/cover no-repeat;
 }
 ```
 
@@ -141,15 +136,37 @@ export  default  {
 }
 </script>
 ```
- -->
+-->
 
 ## FontAwesome 5
 
 ### 1. Setup: [here](https://gridsome.org/docs/assets-svg/#fontawesome-svg-icons)
 
 ### 2. Example:
-
 ```javascript
 <font-awesome  :icon="['fab',  'github']"  />
 <font-awesome  :icon="['fab',  'linkedin']"  />
 ```
+
+## Portfolio Projects Background Images
+To save visitors' bandwith (especially on mobile devices) it's important to follow these few rules.
+1. Each image **must** be provided in four specific size variations & follow the naming convention:
+
+		IMAGE_NAME.jpg		-	h: 400px; w: 480px
+		IMAGE_NAME--md.jpg	-	h: 400px; w: 1025px
+		IMAGE_NAME--md.jpg	-	h: 290px; w: 1281px
+		IMAGE_NAME--md.jpg	-	h: 290px; w: 1920px
+
+2. They **must** be placed inside:
+	- `static/assets/img/jpg/projects-bgs/`
+
+3. While passing the file name via props **use only the name without the extension**:
+	- for example if your file is `design.jpg` use:
+```html
+<PortfolioProject
+	...
+	bg-image-src="design"
+	...
+/>
+```
+
