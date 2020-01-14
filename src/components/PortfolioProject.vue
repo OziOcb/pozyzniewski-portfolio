@@ -1,19 +1,19 @@
 <template>
   <div class="portfolioProject" :style="cssProps">
     <div class="portfolioProject__inner container">
-      <div class="portfolioProject__date">{{ year }}</div>
+      <div class="portfolioProject__date">{{ projectInfo.year }}</div>
 
       <div class="portfolioProject__descWrapper">
-        <h3 class="portfolioProject__title">{{ title }}</h3>
-        <p class="portfolioProject__desc">{{ desc }}</p>
+        <h3 class="portfolioProject__title">{{ projectInfo.title }}</h3>
+        <p class="portfolioProject__desc">{{ projectInfo.desc }}</p>
       </div>
 
       <div class="portfolioProject__btns">
-        <BaseLinkLikeButton :to="repoUrl" blank>
+        <BaseLinkLikeButton :to="projectInfo.repoUrl" blank>
           <font-awesome :icon="['fab', 'github']" />
           GitHub
         </BaseLinkLikeButton>
-        <BaseLinkLikeButton :to="projectUrl" blank>View Project</BaseLinkLikeButton>
+        <BaseLinkLikeButton :to="projectInfo.projectUrl" blank>View Project</BaseLinkLikeButton>
       </div>
     </div>
   </div>
@@ -27,60 +27,48 @@ export default {
     BaseLinkLikeButton
   },
   props: {
-    year: {
-      type: Number,
-      default: new Date().getFullYear()
-    },
-    title: {
-      type: String,
-      default: "Project Name"
-    },
-    desc: {
-      type: String,
-      default: "Web Design / Development"
-    },
-    repoUrl: {
-      type: String,
-      default: "https://github.com/OziOcb/pozyzniewski-portfolio"
-    },
-    projectUrl: {
-      type: String,
-      default: "https://github.com/OziOcb/pozyzniewski-portfolio"
-    },
-    colorGradientPrimary: {
-      type: String,
-      default: "#ef6f6c"
-    },
-    colorGradientSecondary: {
-      type: String,
-      default: "rgba(235, 193, 141, 0.6)"
-    },
-    bgImageSrc: {
-      type: String,
-      default: "default"
+    projectInfo: {
+      type: Object,
+      default: () => {
+        return {
+          year: new Date().getFullYear(),
+          title: "Project Title",
+          desc: "Poroject Description",
+          repoUrl: "https://example.com/",
+          projectUrl: "https://example.com/",
+          colorGradientPrimary: "#ef6f6c",
+          colorGradientSecondary: "rgba(255, 255, 255, 0.6)",
+          bgImage: "default"
+        }
+      }
     }
   },
-
   computed: {
     bgImagePath() {
-      return "/assets/img/jpg/projects-bgs/" + this.bgImageSrc
+      return "/assets/img/jpg/projects-bgs/" + this.projectInfo.bgImage
     },
-    bgImage() {
+    bgImageSize() {
+      const imgPath = this.bgImagePath
       return {
-        sm: `${this.bgImagePath}.jpg`,
-        md: `${this.bgImagePath}--md.jpg`,
-        lg: `${this.bgImagePath}--lg.jpg`,
-        xl: `${this.bgImagePath}--xl.jpg`
+        sm: `${imgPath}.jpg`,
+        md: `${imgPath}--md.jpg`,
+        lg: `${imgPath}--lg.jpg`,
+        xl: `${imgPath}--xl.jpg`
       }
     },
+    // cssProps() explanation:
+    // https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
     cssProps() {
+      const { sm, md, lg, xl } = this.bgImageSize
+      const { colorGradientPrimary, colorGradientSecondary } = this.projectInfo
+
       return {
-        "--color-gradient-primary": this.colorGradientPrimary,
-        "--color-gradient-secondary": this.colorGradientSecondary,
-        "--bg-image-src": `url(${JSON.stringify(this.bgImage.sm)})`,
-        "--bg-image-src--md": `url(${JSON.stringify(this.bgImage.md)})`,
-        "--bg-image-src--lg": `url(${JSON.stringify(this.bgImage.lg)})`,
-        "--bg-image-src--xl": `url(${JSON.stringify(this.bgImage.xl)})`
+        "--color-gradient-primary": colorGradientPrimary,
+        "--color-gradient-secondary": colorGradientSecondary,
+        "--bg-image-src": `url(${JSON.stringify(sm)})`,
+        "--bg-image-src--md": `url(${JSON.stringify(md)})`,
+        "--bg-image-src--lg": `url(${JSON.stringify(lg)})`,
+        "--bg-image-src--xl": `url(${JSON.stringify(xl)})`
       }
     }
   }

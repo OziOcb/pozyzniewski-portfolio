@@ -6,22 +6,14 @@
       </div>
       <div style="height:50px"></div>
 
+      <!-- default -->
+      <PortfolioProject />
+
+      <!-- In loop -->
       <PortfolioProject
-        :year="2019"
-        title="Lorem ipsum"
-        desc="Test Description"
-        repo-url="https://wwww.google.com"
-        project-url="https://www.twitter.com"
-      />
-      <PortfolioProject
-        :year="2018"
-        title="Lorem ipsum"
-        desc="Design &amp; Development"
-        repo-url="https://wwww.google.com"
-        project-url="https://www.twitter.com"
-        color-gradient-primary="rgba(111,255,111,0.9)"
-        color-gradient-secondary="rgba(255,255,255,0.5)"
-        bg-image-src="design"
+        v-for="(project, index) in portfolioProjects"
+        :key="index"
+        :project-info="project"
       />
 
       <div style="height:800px"></div>
@@ -37,6 +29,32 @@ export default {
   },
   components: {
     PortfolioProject
+  },
+  data() {
+    return {
+      portfolioProjects: [
+        {
+          year: 2020,
+          title: "POzyzniewski Portfolio",
+          desc: "Design & Development",
+          repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
+          projectUrl: "https://www.twitter.com",
+          colorGradientPrimary: "rgba(111,255,111,0.9)",
+          colorGradientSecondary: "rgba(255,255,255,0.5)",
+          bgImage: "design"
+        },
+        {
+          year: 2019,
+          title: "Dude is this another TODO list?",
+          desc: "Design & Development",
+          repoUrl: "https://github.com/OziOcb/Dude-is-this-another-Todo-List",
+          projectUrl: "https://dude-is-this-another-todolist3.web.app/auth",
+          colorGradientPrimary: "#0091ea",
+          colorGradientSecondary: "rgba(255,255,255,0.5)",
+          bgImage: "default"
+        }
+      ]
+    }
   }
 }
 </script>
