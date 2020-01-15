@@ -2,7 +2,7 @@
   <layout>
     <section>
       <div class="container">
-        <h1>Home Page</h1>
+        <h3>Home Page</h3>
       </div>
       <div style="height:50px"></div>
 

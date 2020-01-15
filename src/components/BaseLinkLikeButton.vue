@@ -1,5 +1,15 @@
 <template>
-  <g-link class="baseLinkLikeButton" :to="to" :target="handleTarget">
+  <g-link
+    v-if="blank"
+    class="baseLinkLikeButton"
+    :to="to"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <slot />
+  </g-link>
+
+  <g-link v-else class="baseLinkLikeButton" :to="to">
     <slot />
   </g-link>
 </template>
@@ -14,11 +24,6 @@ export default {
     blank: {
       type: Boolean,
       default: false
-    }
-  },
-  computed: {
-    handleTarget() {
-      return this.blank ? "_blank" : "_self"
     }
   }
 }
