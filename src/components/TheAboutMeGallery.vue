@@ -1,12 +1,17 @@
 <template>
   <div class="theAboutMeGallery">
-    <h2>The About Me Gallery</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, veniam expedita sapiente
-    consequatur minima itaque molestias beatae optio est pariatur saepe rem eum odio recusandae
-    laudantium quasi aut! Mollitia, atque.
+    <g-image quality="90" src="~/assets/img/jpg/portrait-fake.jpg" width="500" />
+    <g-image quality="90" src="~/assets/img/jpg/theAboutMeGallerySecondary.jpg" width="500" />
+    <SvgAboutMeBackgroundGrid />
   </div>
 </template>
 
 <script>
-export default {}
+import SvgAboutMeBackgroundGrid from "~/assets/img/svg/aboutMeBackgroundGrid.svg"
+
+export default {
+  components: {
+    SvgAboutMeBackgroundGrid
+  }
+}
 </script>
