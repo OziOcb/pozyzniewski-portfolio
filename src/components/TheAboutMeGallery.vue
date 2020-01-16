@@ -1,8 +1,16 @@
 <template>
   <div class="theAboutMeGallery">
-    <g-image quality="90" src="~/assets/img/jpg/portrait-fake.jpg" width="500" />
-    <g-image quality="90" src="~/assets/img/jpg/theAboutMeGallerySecondary.jpg" width="500" />
-    <SvgAboutMeBackgroundGrid />
+    <g-image
+      class="theAboutMeGallery__imagePrimary"
+      quality="90"
+      src="~/assets/img/jpg/portrait-fake.jpg"
+    />
+    <g-image
+      class="theAboutMeGallery__imageSecondary"
+      quality="90"
+      src="~/assets/img/jpg/theAboutMeGallerySecondary.jpg"
+    />
+    <SvgAboutMeBackgroundGrid class="theAboutMeGallery__bgGrid" />
   </div>
 </template>
 
