@@ -6,9 +6,9 @@
     <section>
       <div class="elementsSectionTitle">Hero Section Text</div>
 
-      <h1 class="hero__lead">Hello</h1>
-      <h1 class="hero__heading">It's Paul</h1>
-      <p class="hero__extraLead">The Front End Developer you need!</p>
+      <p class="hero__lead">Hello</p>
+      <p class="hero__heading">It's Paul</p>
+      <h1 class="hero__extraLead">The Front End Developer you need!</h1>
     </section>
     <!-- Hero Text End -->
 
@@ -302,6 +302,7 @@ export default {
     margin: 0 0 0 -0.07em;
   }
   &__extraLead {
+    @extend %typography-small;
     margin-top: 0;
   }
 }
