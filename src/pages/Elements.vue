@@ -53,6 +53,12 @@
     </section>
     <!-- QuoteBlock End -->
 
+    <!-- About Me Gallery -->
+    <section>
+      <TheAboutMeGallery :gallery-details="galleryDetails" />
+    </section>
+    <!-- About Me Gallery End -->
+
     <!-- GitHub Calendar -->
     <section>
       <div class="elementsSectionTitle">GitHub Calendar</div>
@@ -204,16 +210,16 @@
 </template>
 
 <script>
+// QuoteBlock
+import QuoteBlock from "@/components/QuoteBlock.vue"
+
+// About Me Gallery
+import TheAboutMeGallery from "@/components/TheAboutMeGallery.vue"
+
 // Github Calendar
 import TheGithubCalendar from "@/components/TheGithubCalendar.vue"
 import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue"
 import { SweetModal } from "sweet-modal-vue"
-
-// QuoteBlock
-import QuoteBlock from "@/components/QuoteBlock.vue"
-
-// Contact Form
-import ContactMeForm from "@/components/ContactMeForm.vue"
 
 // SkillsGrid
 import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
@@ -221,23 +227,41 @@ import TheSkillsGrid from "@/components/TheSkillsGrid.vue"
 // PortfolioProject
 import PortfolioProject from "@/components/PortfolioProject.vue"
 
+// Contact Form
+import ContactMeForm from "@/components/ContactMeForm.vue"
+
 export default {
   components: {
+    // QuoteBlock
+    QuoteBlock,
+
+    // About Me Gallery
+    TheAboutMeGallery,
+
     // Github Calendar
     TheGithubCalendar,
     TheGithubCalendarDummy,
     SweetModal,
-    // QuoteBlock
-    QuoteBlock,
-    // Contact Form
-    ContactMeForm,
+
     // SkillsGrid
     TheSkillsGrid,
+
     //  PortfolioProject
-    PortfolioProject
+    PortfolioProject,
+
+    // Contact Form
+    ContactMeForm
   },
   data() {
     return {
+      // About Me Gallery
+      galleryDetails: {
+        primaryImg: "portrait"
+        // primaryOverlayColor: "rgba(0, 0, 255, 0.25)",
+        // secondaryImg: "theAboutMeGallerySecondary",
+        // secondaryOverlayColor: "rgba(155, 0, 0, 0.75)"
+      },
+
       //  PortfolioProject
       portfolioProjects: [
         {
