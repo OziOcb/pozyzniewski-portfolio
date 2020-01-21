@@ -5,7 +5,8 @@
         <h3>Home Page</h3>
         <div style="height:50px"></div>
 
-        <TheAboutMeGallery />
+        <TheAboutMeGallery :gallery-details="galleryDetails" />
+        <!-- <TheAboutMeGallery /> -->
 
         <div style="height:800px"></div>
       </div>
@@ -21,6 +22,16 @@ export default {
   },
   components: {
     TheAboutMeGallery
+  },
+  data() {
+    return {
+      galleryDetails: {
+        primaryImg: "portrait"
+        // primaryOverlayColor: "rgba(0, 0, 255, 0.25)",
+        // secondaryImg: "theAboutMeGallerySecondary",
+        // secondaryOverlayColor: "rgba(155, 0, 0, 0.75)"
+      }
+    }
   }
 }
 </script>

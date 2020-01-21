@@ -1,12 +1,12 @@
 <template>
-  <div class="theAboutMeGallery">
+  <div class="theAboutMeGallery" :style="cssProps">
     <SvgAboutMeBackgroundGrid class="theAboutMeGallery__backgroundFigure" />
 
     <div class="theAboutMeGallery__secondaryFigure">
       <g-image
         class="theAboutMeGallery__secondaryImg"
         quality="90"
-        src="~/assets/img/jpg/theAboutMeGallerySecondary.jpg"
+        :src="secondaryImgSrc(galleryDetails.secondaryImg)"
       />
     </div>
 
@@ -14,7 +14,7 @@
       <g-image
         class="theAboutMeGallery__primaryImg"
         quality="90"
-        src="~/assets/img/jpg/portrait-default.jpg"
+        :src="primaryImgSrc(galleryDetails.primaryImg)"
       />
     </div>
   </div>
@@ -26,6 +26,34 @@ import SvgAboutMeBackgroundGrid from "~/assets/img/svg/aboutMeBackgroundGrid.svg
 export default {
   components: {
     SvgAboutMeBackgroundGrid
+  },
+  props: {
+    galleryDetails: {
+      type: Object,
+      default: () => ({
+        primaryImg: "portrait-default",
+        primaryOverlayColor: "",
+        secondaryImg: "theAboutMeGallerySecondary",
+        secondaryOverlayColor: ""
+      })
+    }
+  },
+  computed: {
+    cssProps() {
+      const { primaryOverlayColor, secondaryOverlayColor } = this.galleryDetails
+      return {
+        "--color-overlay-primary": primaryOverlayColor,
+        "--color-overlay-secondary": secondaryOverlayColor
+      }
+    }
+  },
+  methods: {
+    primaryImgSrc(imgName = "portrait-default") {
+      return require(`!!assets-loader?width=250!~/assets/img/jpg/${imgName}.jpg`)
+    },
+    secondaryImgSrc(imgName = "theAboutMeGallerySecondary") {
+      return require(`!!assets-loader?width=380!~/assets/img/jpg/${imgName}.jpg`)
+    }
   }
 }
 </script>
@@ -80,7 +108,7 @@ export default {
       animation-delay: 1.25s;
     }
     &:after {
-      background-color: rgba($color-primary, 0.25);
+      background-color: var(--color-overlay-primary, rgba($color-primary, 0.25));
     }
   }
 
@@ -99,11 +127,11 @@ export default {
     }
 
     &:after {
-      background-color: rgba($color-secondary, 0.75);
-      transition: background-color $duration-animation-base linear;
+      background-color: var(--color-overlay-secondary, rgba($color-secondary, 0.75));
+      transition: opacity $duration-animation-base linear;
     }
     &:hover:after {
-      background-color: rgba($color-secondary, 0.55);
+      opacity: 0.75;
     }
   }
 
