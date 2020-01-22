@@ -26,7 +26,19 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
+  display: grid;
   height: 100vh;
+  grid-template-columns: 1fr 60px 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas:
+    ". . ."
+    "contentWrapper contentWrapper contentWrapper"
+    "socialIcons scrollBtn .";
+
+  &__contentWrapper {
+    grid-area: contentWrapper;
+    margin-left: 1rem;
+  }
 
   &__lead {
     @extend %typography-hero-lead;
@@ -42,7 +54,17 @@ export default {
   }
 
   &__socialIcons {
+    grid-area: socialIcons;
+    align-self: end;
+    margin-bottom: 13vh;
     display: block;
+  }
+
+  &__scrollBtn {
+    grid-area: scrollBtn;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 13vh;
   }
 }
 </style>

@@ -2,9 +2,6 @@
   <layout>
     <main role="main">
       <SectionHero />
-
-      <!-- dummy div -->
-      <div style="height:800px;background:#acacac"></div>
     </main>
   </layout>
 </template>
