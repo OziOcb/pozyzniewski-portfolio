@@ -1,20 +1,20 @@
 <template>
   <layout>
-    <section>
-      <div class="container">
-        <h3>Home Page</h3>
-        <div style="height:50px"></div>
-
-        <div style="height:800px"></div>
-      </div>
-    </section>
+    <main role="main">
+      <SectionHero />
+    </main>
   </layout>
 </template>
 
 <script>
+import SectionHero from "@/components/SectionHero.vue"
+
 export default {
   metaInfo: {
     title: "Home Page"
+  },
+  components: {
+    SectionHero
   }
 }
 </script>
