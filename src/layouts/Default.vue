@@ -78,4 +78,13 @@ h6 {
   padding-left: 20px;
   max-width: 1244px;
 }
+.row {
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+
+    > .column {
+      flex: 1;
+    }
+  }
+}
 </style>
