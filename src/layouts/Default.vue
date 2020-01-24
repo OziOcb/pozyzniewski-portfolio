@@ -57,6 +57,9 @@ h1 {
 }
 h2 {
   @extend %typography-xlarge;
+  &.fixedSize {
+    font-size: 50px;
+  }
 }
 h3 {
   @extend %typography-large;
