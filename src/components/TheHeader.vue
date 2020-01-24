@@ -110,7 +110,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   position: fixed;
-  z-index: $layer-page-z-index;
+  z-index: $layer-header-z-index;
   top: 0;
   right: 0;
   left: 0;

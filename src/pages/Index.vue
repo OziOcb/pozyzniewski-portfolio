@@ -3,6 +3,9 @@
     <main role="main">
       <SectionHero />
       <SectionAbout />
+
+      <!-- dummy box -->
+      <div style="height: 400px"></div>
     </main>
   </layout>
 </template>

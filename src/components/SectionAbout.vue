@@ -1,29 +1,31 @@
 <template>
   <section class="aboutMe">
-    <div class="aboutMe__inner container row">
-      <div class="column">
-        <h2 class="aboutMe__title aboutMe__title--mobile">who am I ?</h2>
-        <TheAboutMeGallery />
+    <div class="aboutMe__inner container">
+      <div class="aboutMe__column aboutMe__column--gallery">
+        <TheAboutMeGallery class="aboutMe__gallery" />
       </div>
 
-      <div class="column">
-        <h2 class="aboutMe__title aboutMe__title--desktop">who am I ?</h2>
+      <div class="aboutMe__column">
+        <h2 class="aboutMe__title fixedSize">who am I?</h2>
         <p class="aboutMe__description">
           In 2017 I had chosen to follow my passion and become a programmer. After a rough start -
           coding late at night while still working full time - I've decided to dedicate to
-          programming. Since then, I strive to perfect my coding by educating myself towards
-          creating clean, easy to enlargement code. I gathered enough experience in front end
-          development to be a valuable employee and to make the web a beautiful place with every
-          line of code.
+          programming.
+          <br />
+          <br />
+          Since then, I strive to perfect my coding by educating myself towards creating clean, easy
+          to enlargement code. I gathered enough experience in front end development to be a
+          valuable employee and to make the web a beautiful place with every line of code.
         </p>
 
-        <h2 class="aboutMe__title">in more details</h2>
+        <h2 class="aboutMe__title fixedSize">in more details</h2>
         <ul class="aboutMe__detailsList">
           <li>Name: Paul Ozyzniewski</li>
           <li>Age: 32</li>
           <li>Town: Barnsley</li>
           <li>Mail: pozyzniewski@yahoo.com</li>
         </ul>
+        <BaseButton class="aboutMe__btn">CV BUTTON</BaseButton>
       </div>
     </div>
   </section>
@@ -38,3 +40,91 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.aboutMe {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  background-color: $color-body-bg-light;
+  @media (min-width: $breakpoint-xxl) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    content: "";
+    border-right: 100vw solid transparent;
+  }
+  &:before {
+    top: 0;
+    border-top: 45px solid $color-body-bg;
+    @media (min-width: $breakpoint-xxl) {
+      border-top-width: 90px;
+    }
+  }
+  &:after {
+    bottom: 0;
+    border-bottom: 45px solid $color-body-bg;
+    @media (min-width: $breakpoint-xxl) {
+      border-bottom-width: 90px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: $layer-page-z-index;
+    padding: 150px 40px 90px;
+    background-color: $color-body-bg-light;
+    border-radius: 15px;
+    @media (min-width: $breakpoint-xl) {
+      display: flex;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    &--gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__gallery {
+    margin-bottom: 2.5em;
+    @media (min-width: $breakpoint-xl) {
+      margin-right: 2.5em;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @media (min-width: $breakpoint-xl) {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    @media (min-width: $breakpoint-xl) {
+      margin-bottom: 8.125em;
+    }
+  }
+
+  &__detailsList {
+    margin-bottom: 3.125em;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__btn {
+    margin: 0 auto;
+    display: block;
+    @media (min-width: $breakpoint-xl) {
+      margin: inherit;
+    }
+  }
+}
+</style>

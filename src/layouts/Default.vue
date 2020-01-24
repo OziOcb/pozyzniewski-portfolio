@@ -57,6 +57,9 @@ h1 {
 }
 h2 {
   @extend %typography-xlarge;
+  &.fixedSize {
+    font-size: 50px;
+  }
 }
 h3 {
   @extend %typography-large;
@@ -77,14 +80,5 @@ h6 {
   padding-right: 20px;
   padding-left: 20px;
   max-width: 1244px;
-}
-.row {
-  @media (min-width: $breakpoint-lg) {
-    display: flex;
-
-    > .column {
-      flex: 1;
-    }
-  }
 }
 </style>
