@@ -25,7 +25,8 @@
           <li>Town: Barnsley</li>
           <li>Mail: pozyzniewski@yahoo.com</li>
         </ul>
-        <BaseButton class="aboutMe__btn">CV BUTTON</BaseButton>
+        <!-- TODO: #045 - Add a scrolling effect to the contact form after clicking on the contact me button -->
+        <BaseButton class="aboutMe__btn">CONTACT ME</BaseButton>
       </div>
     </div>
   </section>
