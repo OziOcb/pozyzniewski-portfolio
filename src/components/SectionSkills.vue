@@ -71,3 +71,100 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.skills {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+.calendarSection {
+  margin-bottom: 80px;
+  @media (min-width: $breakpoint-lg) {
+    margin-bottom: 200px;
+    display: flex;
+  }
+  &__column {
+    flex: 1;
+    &:first-child {
+      margin-bottom: 80px;
+      @media (min-width: $breakpoint-lg) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__title {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 320px;
+    text-align: center;
+    @media (min-width: $breakpoint-lg) {
+      margin-right: 40px;
+      text-align: right;
+    }
+  }
+}
+.gridSection {
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+  }
+  &__column {
+    flex: 1;
+    &:first-child {
+      margin-bottom: 80px;
+      @media (min-width: $breakpoint-lg) {
+        margin-bottom: 0;
+        order: 1;
+      }
+    }
+    &--grid {
+      position: relative;
+      margin-left: -($size-skills-grid-width / 2 + $size-skills-grid-gap / 2) / 2;
+      padding-top: 10px;
+      padding-bottom: 35px;
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      @media (min-width: $breakpoint-lg) {
+        margin-left: 0;
+        height: $size-skills-grid-width * 6.7;
+      }
+      @media (min-width: $breakpoint-xl) {
+        height: $size-skills-grid-width * 6;
+      }
+    }
+    &--quote {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+  &__skillsGrid {
+    @media (min-width: $breakpoint-lg) {
+      position: absolute;
+      right: 100px;
+    }
+  }
+  &__title {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 320px;
+    text-align: center;
+    @media (min-width: $breakpoint-lg) {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+  &__desc {
+    padding-right: 40px;
+    padding-left: 40px;
+    @media (min-width: $breakpoint-lg) {
+      padding: 0;
+      max-width: 622px;
+    }
+  }
+}
+</style>
