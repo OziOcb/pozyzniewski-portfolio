@@ -116,7 +116,7 @@ export default {
       bottom: 0;
       left: 0;
       content: "";
-      background-color: $color-body-bg;
+      background-color: $color-body-bg-light;
       transition: transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
     }

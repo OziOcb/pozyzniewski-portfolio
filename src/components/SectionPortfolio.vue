@@ -52,3 +52,36 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.portfolio {
+  @extend %skewBorderBeforeFlip;
+  @extend %skewBorderAfterFlip;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: $color-body-bg-light;
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+    padding-right: $size-gutter-width;
+    padding-left: $size-gutter-width;
+  }
+
+  &__listTitle {
+    display: none;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+</style>
