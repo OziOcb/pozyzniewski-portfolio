@@ -3,6 +3,7 @@
     <main role="main">
       <SectionHero />
       <SectionAbout />
+      <SectionSkills />
 
       <!-- dummy box -->
       <div style="height: 400px"></div>
@@ -13,6 +14,7 @@
 <script>
 import SectionHero from "@/components/SectionHero.vue"
 import SectionAbout from "@/components/SectionAbout.vue"
+import SectionSkills from "@/components/SectionSkills.vue"
 
 export default {
   metaInfo: {
@@ -20,7 +22,8 @@ export default {
   },
   components: {
     SectionHero,
-    SectionAbout
+    SectionAbout,
+    SectionSkills
   }
 }
 </script>
