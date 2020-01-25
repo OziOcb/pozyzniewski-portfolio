@@ -52,7 +52,7 @@ export default {
   }
   &__paragraph,
   &__cite {
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $breakpoint-lg) {
       text-align: left;
 
       .right & {
