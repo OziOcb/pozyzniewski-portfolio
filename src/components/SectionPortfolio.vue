@@ -1,11 +1,15 @@
 <template>
   <section class="portfolio">
     <div class="portfolio__textWrapper">
-      <h2 class="portfolio__title fixedSize">portfolio</h2>
-      <p class="portfolio__desc">
-        Collection of my recent design and development work. I am constantly working on new projects
-        so this list will soon be expanded.
-      </p>
+      <div class="portfolio__column">
+        <h2 class="portfolio__title fixedSize">portfolio</h2>
+      </div>
+      <div class="portfolio__column">
+        <p class="portfolio__desc">
+          Collection of my recent design and development work. I am constantly working on&nbsp;new
+          projects so this list will soon be expanded.
+        </p>
+      </div>
     </div>
 
     <h3 class="portfolio__listTitle">Portfolio Projects List</h3>
@@ -65,14 +69,36 @@ export default {
     padding-bottom: 160px;
   }
 
+  &__textWrapper {
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 100px;
+      display: flex;
+      height: 200px;
+      justify-content: center;
+    }
+  }
+  &__column {
+    flex: 1;
+  }
+
   &__title {
     text-align: center;
+    @media (min-width: $breakpoint-lg) {
+      padding-right: $size-gutter-width;
+      text-align: right;
+    }
   }
 
   &__desc {
     margin-bottom: 40px;
     padding-right: $size-gutter-width;
     padding-left: $size-gutter-width;
+    @media (min-width: $breakpoint-lg) {
+      margin-top: 100px;
+      padding-right: 0;
+      padding-left: 0;
+      max-width: 400px;
+    }
   }
 
   &__listTitle {
