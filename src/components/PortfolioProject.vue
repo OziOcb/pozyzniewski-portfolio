@@ -143,8 +143,10 @@ export default {
   }
 
   &__descWrapper {
+    padding-right: 25px;
     @media (min-width: $breakpoint-xl) {
       margin-left: 50px;
+      padding-right: 0;
     }
   }
 

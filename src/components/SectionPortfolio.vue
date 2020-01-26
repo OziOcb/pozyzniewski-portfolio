@@ -33,23 +33,53 @@ export default {
       portfolioProjects: [
         {
           year: 2020,
-          title: "POzyzniewski Portfolio",
-          desc: "Design & Development",
+          title: "This Portfolio",
+          desc: "Design & Development - Vue.js (Gridsome), Netlify",
           repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
-          projectUrl: "https://www.twitter.com",
-          colorGradientPrimary: "rgba(111,255,111,0.9)",
-          colorGradientSecondary: "rgba(255,255,255,0.5)",
+          projectUrl: "https://www.paulthedeveloper.com",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(239,111,108,0.9)",
           bgImage: "design"
         },
         {
           year: 2019,
           title: "Dude is this another TODO list?",
-          desc: "Design & Development",
+          desc: "Design & Development - Vue.js (Vuetify, Vuex, VueRouter), Firebase",
           repoUrl: "https://github.com/OziOcb/Dude-is-this-another-Todo-List",
           projectUrl: "https://dude-is-this-another-todolist3.web.app/auth",
-          colorGradientPrimary: "#0091ea",
-          colorGradientSecondary: "rgba(255,255,255,0.5)",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(0,145,235,0.9)",
           bgImage: "default"
+        },
+        {
+          year: 2019,
+          title: "ScrollMagic & GSAP Playground",
+          desc: "ScrollMagic & GSAP",
+          repoUrl: "https://github.com/OziOcb/ScrollMagic-GSAP-Playground/blob/master/js/main.js",
+          projectUrl: "https://awesome-roentgen-f2a498.netlify.com/",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(132,205,4,0.6)",
+          bgImage: "gsap"
+        },
+        {
+          year: 2018,
+          title: "Bootstrap 4 Challenge",
+          desc: "Development - HTML5, CSS3, SASS, JavaScript, Bootstrap, Jekyll, Gulp, Git",
+          repoUrl: "https://github.com/OziOcb/Bootstrap4_challenge",
+          projectUrl: "https://oziocb.github.io/Bootstrap4_challenge/",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(86,61,124,0.9)",
+          bgImage: "bootstrapChallenge"
+        },
+        {
+          year: 2018,
+          title: "The Town End Boxing Academy",
+          desc: "Development - HTML5, CSS3/Sass, Basic jQuery",
+          repoUrl: "https://github.com/OziOcb/03_Project-box",
+          projectUrl: "https://oziocb.github.io/03_Project-box/",
+          colorGradientSecondary: "rgba(240,27,22,0.6)",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          bgImage: "townEndBoxing"
         }
       ]
     }
