@@ -9,11 +9,23 @@
       </div>
 
       <div class="portfolioProject__btns">
-        <BaseLinkLikeButton :to="projectInfo.repoUrl" blank>
+        <BaseLinkLikeButton v-if="projectInfo.repoUrl" :to="projectInfo.repoUrl" blank>
           <font-awesome :icon="['fab', 'github']" />
           GitHub
         </BaseLinkLikeButton>
-        <BaseLinkLikeButton :to="projectInfo.projectUrl" blank>View Project</BaseLinkLikeButton>
+
+        <BaseLinkLikeButton
+          v-if="projectInfo.designUrl"
+          class="designBtn"
+          :to="projectInfo.designUrl"
+          blank
+        >
+          Design
+        </BaseLinkLikeButton>
+
+        <BaseLinkLikeButton v-if="projectInfo.projectUrl" :to="projectInfo.projectUrl" blank>
+          View Project
+        </BaseLinkLikeButton>
       </div>
     </div>
   </div>
@@ -38,7 +50,8 @@ export default {
           projectUrl: "https://example.com/",
           colorGradientPrimary: "#ef6f6c",
           colorGradientSecondary: "rgba(255, 255, 255, 0.6)",
-          bgImage: "default"
+          bgImage: "default",
+          designUrl: ""
         }
       }
     }
@@ -175,6 +188,7 @@ export default {
     min-width: 280px;
     transition-delay: ($duration-animation-portfolio-project-delay * 2);
     @media (min-width: $breakpoint-xl) {
+      text-align: right;
       transition-delay: ($duration-animation-portfolio-project-delay * 1.5);
     }
 
@@ -182,6 +196,13 @@ export default {
       margin-right: 1em;
       &:last-child {
         margin-right: 0;
+      }
+
+      &.designBtn {
+        margin-bottom: 1.2em;
+        @media (min-width: $breakpoint-sm) {
+          margin-bottom: 0;
+        }
       }
     }
   }

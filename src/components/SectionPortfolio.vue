@@ -36,10 +36,11 @@ export default {
           title: "This Portfolio",
           desc: "Design & Development - Vue.js (Gridsome), Netlify",
           repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
-          projectUrl: "https://www.paulthedeveloper.com",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
           colorGradientSecondary: "rgba(239,111,108,0.9)",
-          bgImage: "design"
+          bgImage: "design",
+          designUrl:
+            "https://www.figma.com/file/NGbKGUI6RKF3N6SB9LOuSt/poz-portfolio__wireframe?node-id=0%3A1"
         },
         {
           year: 2019,
