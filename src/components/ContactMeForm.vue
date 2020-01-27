@@ -209,7 +209,11 @@ export default {
 
 <style lang="scss" scoped>
 .submitBtn {
-  margin: 2rem 0;
+  margin: 2rem auto;
+  display: block;
+  @media (min-width: $breakpoint-lg) {
+    margin: 2rem 0;
+  }
 }
 
 .success,
