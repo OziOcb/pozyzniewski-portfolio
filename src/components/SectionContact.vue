@@ -1,0 +1,62 @@
+<template>
+  <section class="contact container">
+    <div class="contact__column">
+      <h2 class="contact__title fixedSize">how to contact me?</h2>
+      <p class="contact__desc">
+        Contact me if you are looking for talented and hard working Front End Developer!
+      </p>
+    </div>
+
+    <div class="contact__column">
+      <ContactMeForm class="contact__contactForm" />
+    </div>
+  </section>
+</template>
+
+<script>
+import ContactMeForm from "@/components/ContactMeForm.vue"
+export default {
+  components: {
+    ContactMeForm
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.contact {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  @media (min-width: $breakpoint-xl) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    display: flex;
+  }
+
+  &__column {
+    flex: 1;
+  }
+
+  &__title {
+    text-align: center;
+    @media (min-width: $breakpoint-xl) {
+      margin-top: 0.2em;
+      margin-left: auto;
+      padding-right: $size-gutter-width;
+      max-width: 360px;
+      text-align: right;
+    }
+  }
+
+  &__desc {
+    @media (min-width: $breakpoint-md) {
+      text-align: center;
+    }
+    @media (min-width: $breakpoint-xl) {
+      margin-left: auto;
+      padding-right: $size-gutter-width;
+      max-width: 360px;
+      text-align: right;
+    }
+  }
+}
+</style>

@@ -5,9 +5,7 @@
       <SectionAbout />
       <SectionSkills />
       <SectionPortfolio />
-
-      <!-- dummy box -->
-      <div style="height: 400px"></div>
+      <SectionContact />
     </main>
   </layout>
 </template>
@@ -17,6 +15,7 @@ import SectionHero from "@/components/SectionHero.vue"
 import SectionAbout from "@/components/SectionAbout.vue"
 import SectionSkills from "@/components/SectionSkills.vue"
 import SectionPortfolio from "@/components/SectionPortfolio.vue"
+import SectionContact from "@/components/SectionContact.vue"
 
 export default {
   metaInfo: {
@@ -26,7 +25,8 @@ export default {
     SectionHero,
     SectionAbout,
     SectionSkills,
-    SectionPortfolio
+    SectionPortfolio,
+    SectionContact
   }
 }
 </script>
