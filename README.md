@@ -44,7 +44,7 @@ You can import SVGs as you do with any other Vue component.
 </template>
 
 <script>
-  import SvgBrand from "~/assets/svgs/Brand.svg"
+  import SvgBrand from "~/assets/img/svg/Brand.svg"
 
   export default {
     components: {
@@ -159,7 +159,7 @@ export  default  {
 1.  Follow this sizes: (For image templates follow this [link](https://www.figma.com/file/FjVqnpkJ4mvdc3Y3CnFIDe/POzyzniewski_Portfolio_Project_Image_Breakpoints_Sizez_Template?node-id=0%3A1))
 
         Primary Image		-	h: 290px; w: 250px
-        Secondary Image		-	h: 380px; w: 380px
+        Secondary Image	-	h: 380px; w: 380px
 
 2.  All files must be places inside:
 
