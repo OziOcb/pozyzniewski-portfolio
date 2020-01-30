@@ -76,6 +76,7 @@ export default {
 .skills {
   padding-top: 80px;
   padding-bottom: 120px;
+  overflow: hidden;
   @media (min-width: $breakpoint-lg) {
     padding-top: 200px;
     padding-bottom: 200px;
