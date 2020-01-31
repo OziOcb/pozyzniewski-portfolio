@@ -46,6 +46,7 @@ export default {
   position: relative;
   padding-top: 45px;
   padding-bottom: 45px;
+  overflow: hidden;
   background-color: $color-body-bg-light;
   @media (min-width: $breakpoint-xxl) {
     padding-top: 0;
