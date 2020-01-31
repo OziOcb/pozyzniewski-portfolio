@@ -48,8 +48,8 @@ export default {
           desc: "Poroject Description",
           repoUrl: "https://example.com/",
           projectUrl: "https://example.com/",
-          colorGradientPrimary: "#ef6f6c",
-          colorGradientSecondary: "rgba(255, 255, 255, 0.6)",
+          colorGradientPrimary: "",
+          colorGradientSecondary: "",
           bgImage: "default",
           designUrl: ""
         }
@@ -93,24 +93,36 @@ export default {
   position: relative;
   overflow: hidden;
   //prettier-ignore
-  background-image: linear-gradient( 45deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 100% ),
+  background-image: linear-gradient(
+                      45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
+                      0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+                    ),
                     var(--bg-image-src);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   @media (min-width: $breakpoint-sm) {
     // prettier-ignore
-    background-image: linear-gradient( 45deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 100% ),
+    background-image: linear-gradient(
+                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
+                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+                      ),
                       var(--bg-image-src--md);
   }
   @media (min-width: $breakpoint-xl) {
     // prettier-ignore
-    background-image: linear-gradient( 45deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 100% ),
+    background-image: linear-gradient(
+                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
+                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+                      ),
                       var(--bg-image-src--lg);
   }
   @media (min-width: $breakpoint-xxl) {
     // prettier-ignore
-    background-image: linear-gradient( 45deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 100% ),
+    background-image: linear-gradient(
+                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
+                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+                      ),
                       var(--bg-image-src--xl);
   }
 

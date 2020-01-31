@@ -78,8 +78,8 @@ export default {
           desc: "Development - HTML5, CSS3/Sass, Basic jQuery",
           repoUrl: "https://github.com/OziOcb/03_Project-box",
           projectUrl: "https://oziocb.github.io/03_Project-box/",
-          colorGradientSecondary: "rgba(240,27,22,0.6)",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(240,27,22,0.6)",
           bgImage: "townEndBoxing"
         }
       ]
