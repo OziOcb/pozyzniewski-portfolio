@@ -7,7 +7,19 @@
 
       <div class="aboutMe__column">
         <h2 class="aboutMe__title fixedSize">who am I?</h2>
-        <p class="aboutMe__description">
+        <ul class="aboutMe__detailsList">
+          <li>
+            A full-time Front End Developer at
+            <a href="https://www.bigfootdigital.co.uk/" target="_blank" rel="noopener noreferrer">
+              Bigfoot Digital
+            </a>
+            .
+          </li>
+          <li>Huge Vue.js enthusiast and advocate.</li>
+        </ul>
+
+        <h2 class="aboutMe__title fixedSize">in more details</h2>
+        <p>
           In 2017 I had chosen to follow my passion and become a programmer. After a rough start -
           coding late at night while still working full time - I've decided to dedicate to
           programming.
@@ -18,14 +30,14 @@
           valuable employee and to make the web a beautiful place with every line of code.
         </p>
 
-        <h2 class="aboutMe__title fixedSize">in more details</h2>
         <ul class="aboutMe__detailsList">
           <li>Name: Paul Ozyzniewski</li>
-          <li>Age: 32</li>
           <li>Town: Barnsley</li>
         </ul>
         <!-- TODO: #045 - Add a scrolling effect to the contact form after clicking on the contact me button -->
-        <BaseButton class="aboutMe__btn">CONTACT ME</BaseButton>
+        <div class="aboutMe__btn">
+          <BaseLinkLikeButton class="btn" to="/#contactMe">CONTACT ME</BaseLinkLikeButton>
+        </div>
       </div>
     </div>
   </section>
@@ -127,12 +139,26 @@ export default {
     padding-left: 0;
     list-style: none;
   }
+
   &__btn {
-    margin: 0 auto;
-    display: block;
+    display: flex;
+    justify-content: center;
     @media (min-width: $breakpoint-xl) {
-      margin: inherit;
+      justify-content: flex-start;
     }
+  }
+}
+
+.btn {
+  @extend %typography-button;
+  padding: $size-button-padding;
+  display: inline-block;
+  color: $color-button-text;
+  background: $color-button-bg;
+  border: none;
+  &:hover,
+  &:focus {
+    background: $color-button-bg-hover;
   }
 }
 </style>

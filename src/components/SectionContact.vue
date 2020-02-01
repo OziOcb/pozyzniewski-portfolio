@@ -1,5 +1,5 @@
 <template>
-  <section class="contact container">
+  <section id="contactMe" class="contact container">
     <div class="contact__column">
       <h2 class="contact__title fixedSize">how to contact me?</h2>
       <p class="contact__desc">
