@@ -37,8 +37,10 @@
             and many sleepless nights.
           </p>
           <p>
-            My main focus is to provide high-quality code that implements the newest standards while
-            remembering about good practices
+            My main focus is to provide
+            <strong>high-quality code that implements the newest standards</strong>
+            while remembering about
+            <strong>good practices</strong>
           </p>
         </div>
       </div>

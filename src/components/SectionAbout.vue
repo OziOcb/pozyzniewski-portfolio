@@ -9,13 +9,19 @@
         <h2 class="aboutMe__title fixedSize">who am I?</h2>
         <ul class="aboutMe__detailsList">
           <li>
-            A full-time Front End Developer at
+            A full-time
+            <strong>Front End Developer</strong>
+            at
             <a href="https://www.bigfootdigital.co.uk/" target="_blank" rel="noopener noreferrer">
               Bigfoot Digital
             </a>
             .
           </li>
-          <li>Huge Vue.js enthusiast and advocate.</li>
+          <li>
+            Huge
+            <strong>Vue.js</strong>
+            enthusiast and advocate.
+          </li>
         </ul>
 
         <h2 class="aboutMe__title fixedSize">in more details</h2>
@@ -25,9 +31,11 @@
           programming.
           <br />
           <br />
-          Since then, I strive to perfect my coding by educating myself towards creating clean, easy
-          to enlargement code. I gathered enough experience in front end development to be a
-          valuable employee and to make the web a beautiful place with every line of code.
+          Since then, I strive to perfect my coding skills by educating myself towards creating
+          <strong>clean, easy to enlargement code.</strong>
+          I gathered enough
+          <strong>experience in front end development</strong>
+          to be a valuable employee and to make the web a beautiful place with every line of code.
         </p>
 
         <ul class="aboutMe__detailsList">

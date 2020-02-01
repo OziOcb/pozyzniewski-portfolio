@@ -3,7 +3,11 @@
     <div class="contact__column">
       <h2 class="contact__title fixedSize">how to contact me?</h2>
       <p class="contact__desc">
-        Contact me if you are looking for talented and hard working Front End Developer!
+        Contact me if you are looking for
+        <strong>talented</strong>
+        and
+        <strong>hard working</strong>
+        Front End Developer!
       </p>
     </div>
 

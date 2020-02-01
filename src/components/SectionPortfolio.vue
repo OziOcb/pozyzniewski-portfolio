@@ -6,8 +6,11 @@
       </div>
       <div class="portfolio__column">
         <p class="portfolio__desc">
-          Collection of my recent design and development work. I am constantly working on&nbsp;new
-          projects so this list will soon be expanded.
+          Collection of my recent
+          <strong>design</strong>
+          and
+          <strong>development work.</strong>
+          I am constantly working on&nbsp;new projects so this list will soon be expanded.
         </p>
       </div>
     </div>
