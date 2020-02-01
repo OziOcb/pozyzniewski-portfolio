@@ -2,7 +2,7 @@
   <section class="aboutMe">
     <div class="aboutMe__inner container">
       <div class="aboutMe__column aboutMe__column--gallery">
-        <TheAboutMeGallery class="aboutMe__gallery" />
+        <TheAboutMeGallery class="aboutMe__gallery" :gallery-details="galleryDetails" />
       </div>
 
       <div class="aboutMe__column">
@@ -37,6 +37,13 @@ import TheAboutMeGallery from "@/components/TheAboutMeGallery.vue"
 export default {
   components: {
     TheAboutMeGallery
+  },
+  data() {
+    return {
+      galleryDetails: {
+        primaryImg: "portrait"
+      }
+    }
   }
 }
 </script>
