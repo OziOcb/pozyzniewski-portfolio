@@ -160,7 +160,7 @@ export default {
   height: 40px;
   flex-direction: column;
   justify-content: space-around;
-  background-color: $color-body-bg;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   transition: box-shadow $duration-animation-base linear;
