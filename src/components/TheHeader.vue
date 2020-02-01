@@ -62,10 +62,6 @@ export default {
         {
           name: "Blog",
           url: "/blog/"
-        },
-        {
-          name: "Elements",
-          url: "/elements/"
         }
       ]
     }
