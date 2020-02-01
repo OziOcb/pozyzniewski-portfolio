@@ -25,7 +25,8 @@ query Post {
 <script>
 export default {
   metaInfo: {
-    title: "Blog"
+    title: "Blog",
+    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
   }
 }
 </script>

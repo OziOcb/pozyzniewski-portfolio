@@ -8,7 +8,8 @@
 <script>
 export default {
   metaInfo: {
-    title: "FAQ"
+    title: "FAQ",
+    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
   }
 }
 </script>
