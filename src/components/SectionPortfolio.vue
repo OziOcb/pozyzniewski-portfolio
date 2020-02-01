@@ -34,7 +34,7 @@ export default {
         {
           year: 2020,
           title: "This Portfolio",
-          desc: "Design & Development - Vue.js (Gridsome), Netlify",
+          desc: "Design & Development - Vue.js (Gridsome), Netlify, GSAP",
           repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
           colorGradientSecondary: "rgba(239,111,108,0.9)",
