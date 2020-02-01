@@ -1,12 +1,21 @@
 // GRID
 $size-grid-padding: 1em;
 
-// CONTENT
+// CONTENT (for typography)
 $size-content-width-max: 50rem;
 $size-content-width-min: 25rem;
 
+// CONTAINER
+$size-container-max-width: 78rem;
+
+// SECTIONS
+$size-section-padding-top: 5rem;
+$size-section-padding-top--desktop: 12.5rem;
+$size-section-padding-bottom: 7.5rem;
+$size-section-padding-bottom--desktop: 12.5rem;
+
 // Gutters
-$size-gutter-width: 40px;
+$size-gutter-width: 2.5rem;
 
 // INPUTS
 // $size-input-padding-vertical: 0.75em;

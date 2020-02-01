@@ -24,11 +24,11 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: $size-section-padding-top;
+  padding-bottom: $size-section-padding-bottom;
   @media (min-width: $breakpoint-xl) {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: $size-section-padding-top--desktop;
+    padding-bottom: $size-section-padding-bottom--desktop;
     display: flex;
   }
 

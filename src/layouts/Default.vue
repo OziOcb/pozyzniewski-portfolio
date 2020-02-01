@@ -77,8 +77,8 @@ h6 {
 // ===
 .container {
   margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  max-width: 1244px;
+  padding-right: $size-gutter-width;
+  padding-left: $size-gutter-width;
+  max-width: $size-container-max-width;
 }
 </style>

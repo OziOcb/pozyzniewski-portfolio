@@ -74,12 +74,12 @@ export default {
 
 <style lang="scss" scoped>
 .skills {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: $size-section-padding-top;
+  padding-bottom: $size-section-padding-bottom;
   overflow: hidden;
   @media (min-width: $breakpoint-lg) {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: $size-section-padding-top--desktop;
+    padding-bottom: $size-section-padding-bottom--desktop;
   }
 }
 .calendarSection {
@@ -103,7 +103,7 @@ export default {
     max-width: 320px;
     text-align: center;
     @media (min-width: $breakpoint-lg) {
-      margin-right: 40px;
+      margin-right: $size-gutter-width;
       text-align: right;
     }
   }
@@ -160,8 +160,8 @@ export default {
     }
   }
   &__desc {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: $size-gutter-width;
+    padding-left: $size-gutter-width;
     @media (min-width: $breakpoint-lg) {
       padding: 0;
       max-width: 622px;

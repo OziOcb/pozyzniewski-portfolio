@@ -97,7 +97,7 @@ export default {
   &__inner {
     position: relative;
     z-index: $layer-page-z-index;
-    padding: 150px 40px 90px;
+    padding: 150px $size-gutter-width 90px;
     background-color: $color-body-bg-light;
     border-radius: 15px;
     @media (min-width: $breakpoint-xl) {
@@ -115,9 +115,9 @@ export default {
   }
 
   &__gallery {
-    margin-bottom: 2.5em;
+    margin-bottom: $size-gutter-width;
     @media (min-width: $breakpoint-xl) {
-      margin-right: 2.5em;
+      margin-right: $size-gutter-width;
     }
   }
 

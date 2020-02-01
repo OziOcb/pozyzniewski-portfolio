@@ -92,12 +92,12 @@ export default {
 .portfolio {
   @extend %skewBorderBeforeFlip;
   @extend %skewBorderAfterFlip;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: $size-section-padding-top;
+  padding-bottom: $size-section-padding-bottom / 1.5;
   background-color: $color-body-bg-light;
   @media (min-width: $breakpoint-lg) {
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: $size-section-padding-top--desktop / 1.25;
+    padding-bottom: $size-section-padding-bottom--desktop / 1.25;
   }
 
   &__textWrapper {
