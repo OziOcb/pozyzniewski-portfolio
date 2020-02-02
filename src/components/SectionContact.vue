@@ -1,9 +1,13 @@
 <template>
-  <section class="contact container">
+  <section id="contactMe" class="contact container">
     <div class="contact__column">
       <h2 class="contact__title fixedSize">how to contact me?</h2>
       <p class="contact__desc">
-        Contact me if you are looking for talented and hard working Front End Developer!
+        Contact me if you are looking for
+        <strong>talented</strong>
+        and
+        <strong>hard working</strong>
+        Front End Developer!
       </p>
     </div>
 
@@ -24,11 +28,11 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: $size-section-padding-top;
+  padding-bottom: $size-section-padding-bottom;
   @media (min-width: $breakpoint-xl) {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: $size-section-padding-top--desktop;
+    padding-bottom: $size-section-padding-bottom--desktop;
     display: flex;
   }
 

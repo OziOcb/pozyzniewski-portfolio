@@ -1,5 +1,6 @@
 <template>
   <g-link to="/" class="logo">
+    <span class="sr-only">{{ desc }}</span>
     <component :is="showCorrectLogo"></component>
   </g-link>
 </template>
@@ -19,6 +20,10 @@ export default {
     version: {
       type: String,
       default: "SvgTheLogo"
+    },
+    desc: {
+      type: String,
+      required: true
     }
   },
   computed: {

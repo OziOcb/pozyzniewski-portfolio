@@ -8,6 +8,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
+      <span class="sr-only">{{ website.svg }} in {{ parentComponent }}</span>
       <component :is="website.svg"></component>
     </a>
   </div>
@@ -21,6 +22,12 @@ export default {
   components: {
     SvgLinkedIn,
     SvgGitHub
+  },
+  props: {
+    parentComponent: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {

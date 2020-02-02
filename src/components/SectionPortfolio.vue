@@ -6,8 +6,11 @@
       </div>
       <div class="portfolio__column">
         <p class="portfolio__desc">
-          Collection of my recent design and development work. I am constantly working on&nbsp;new
-          projects so this list will soon be expanded.
+          Collection of my recent
+          <strong>design</strong>
+          and
+          <strong>development work.</strong>
+          I am constantly working on&nbsp;new projects so this list will soon be expanded.
         </p>
       </div>
     </div>
@@ -34,7 +37,7 @@ export default {
         {
           year: 2020,
           title: "This Portfolio",
-          desc: "Design & Development - Vue.js (Gridsome), Netlify",
+          desc: "Design & Development - Vue.js (Gridsome), Netlify, GSAP",
           repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
           colorGradientSecondary: "rgba(239,111,108,0.9)",
@@ -78,8 +81,8 @@ export default {
           desc: "Development - HTML5, CSS3/Sass, Basic jQuery",
           repoUrl: "https://github.com/OziOcb/03_Project-box",
           projectUrl: "https://oziocb.github.io/03_Project-box/",
-          colorGradientSecondary: "rgba(240,27,22,0.6)",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(240,27,22,0.6)",
           bgImage: "townEndBoxing"
         }
       ]
@@ -92,12 +95,12 @@ export default {
 .portfolio {
   @extend %skewBorderBeforeFlip;
   @extend %skewBorderAfterFlip;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: $size-section-padding-top;
+  padding-bottom: $size-section-padding-bottom / 1.5;
   background-color: $color-body-bg-light;
   @media (min-width: $breakpoint-lg) {
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: $size-section-padding-top--desktop / 1.25;
+    padding-bottom: $size-section-padding-bottom--desktop / 1.25;
   }
 
   &__textWrapper {

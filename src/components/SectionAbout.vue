@@ -2,30 +2,50 @@
   <section class="aboutMe">
     <div class="aboutMe__inner container">
       <div class="aboutMe__column aboutMe__column--gallery">
-        <TheAboutMeGallery class="aboutMe__gallery" />
+        <TheAboutMeGallery class="aboutMe__gallery" :gallery-details="galleryDetails" />
       </div>
 
       <div class="aboutMe__column">
         <h2 class="aboutMe__title fixedSize">who am I?</h2>
-        <p class="aboutMe__description">
+        <ul class="aboutMe__detailsList">
+          <li>
+            A full-time
+            <strong>Front End Developer</strong>
+            at
+            <a href="https://www.bigfootdigital.co.uk/" target="_blank" rel="noopener noreferrer">
+              Bigfoot Digital
+            </a>
+            .
+          </li>
+          <li>
+            Huge
+            <strong>Vue.js</strong>
+            enthusiast and advocate.
+          </li>
+        </ul>
+
+        <h2 class="aboutMe__title fixedSize">in more details</h2>
+        <p>
           In 2017 I had chosen to follow my passion and become a programmer. After a rough start -
           coding late at night while still working full time - I've decided to dedicate to
           programming.
           <br />
           <br />
-          Since then, I strive to perfect my coding by educating myself towards creating clean, easy
-          to enlargement code. I gathered enough experience in front end development to be a
-          valuable employee and to make the web a beautiful place with every line of code.
+          Since then, I strive to perfect my coding skills by educating myself towards creating
+          <strong>clean, easy to enlargement code.</strong>
+          I gathered enough
+          <strong>experience in front end development</strong>
+          to be a valuable employee and to make the web a beautiful place with every line of code.
         </p>
 
-        <h2 class="aboutMe__title fixedSize">in more details</h2>
         <ul class="aboutMe__detailsList">
           <li>Name: Paul Ozyzniewski</li>
-          <li>Age: 32</li>
           <li>Town: Barnsley</li>
         </ul>
         <!-- TODO: #045 - Add a scrolling effect to the contact form after clicking on the contact me button -->
-        <BaseButton class="aboutMe__btn">CONTACT ME</BaseButton>
+        <div class="aboutMe__btn">
+          <BaseLinkLikeButton class="btn" to="/#contactMe">CONTACT ME</BaseLinkLikeButton>
+        </div>
       </div>
     </div>
   </section>
@@ -37,6 +57,15 @@ import TheAboutMeGallery from "@/components/TheAboutMeGallery.vue"
 export default {
   components: {
     TheAboutMeGallery
+  },
+  data() {
+    return {
+      galleryDetails: {
+        primaryImg: "portrait",
+        primaryAlt: "Portrait of Paul Ozyzniewski the author and the owner of this website",
+        secondaryAlt: "Well maintained office desk"
+      }
+    }
   }
 }
 </script>
@@ -46,6 +75,7 @@ export default {
   position: relative;
   padding-top: 45px;
   padding-bottom: 45px;
+  overflow: hidden;
   background-color: $color-body-bg-light;
   @media (min-width: $breakpoint-xxl) {
     padding-top: 0;
@@ -77,7 +107,7 @@ export default {
   &__inner {
     position: relative;
     z-index: $layer-page-z-index;
-    padding: 150px 40px 90px;
+    padding: 150px $size-gutter-width 90px;
     background-color: $color-body-bg-light;
     border-radius: 15px;
     @media (min-width: $breakpoint-xl) {
@@ -95,9 +125,9 @@ export default {
   }
 
   &__gallery {
-    margin-bottom: 2.5em;
+    margin-bottom: $size-gutter-width;
     @media (min-width: $breakpoint-xl) {
-      margin-right: 2.5em;
+      margin-right: $size-gutter-width;
     }
   }
 
@@ -119,12 +149,26 @@ export default {
     padding-left: 0;
     list-style: none;
   }
+
   &__btn {
-    margin: 0 auto;
-    display: block;
+    display: flex;
+    justify-content: center;
     @media (min-width: $breakpoint-xl) {
-      margin: inherit;
+      justify-content: flex-start;
     }
+  }
+}
+
+.btn {
+  @extend %typography-button;
+  padding: $size-button-padding;
+  display: inline-block;
+  color: $color-button-text;
+  background: $color-button-bg;
+  border: none;
+  &:hover,
+  &:focus {
+    background: $color-button-bg-hover;
   }
 }
 </style>

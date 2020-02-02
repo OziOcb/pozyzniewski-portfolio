@@ -1,6 +1,6 @@
 <template>
   <layout>
-    <h1>Blog</h1>
+    <h1>Blog (comming soon)</h1>
     <div v-for="edge in $page.post.edges" :key="edge.node.id">
       <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
     </div>
@@ -25,7 +25,8 @@ query Post {
 <script>
 export default {
   metaInfo: {
-    title: "Blog"
+    title: "Blog",
+    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
   }
 }
 </script>

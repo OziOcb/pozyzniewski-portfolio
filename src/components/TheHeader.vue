@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <LogoComponent class="header__logo" version="simple" />
+      <LogoComponent class="header__logo" version="simple" desc="Main Logo" />
 
       <div class="header__hamburger">
         <button
@@ -29,7 +29,7 @@
         </nav>
 
         <div class="header__socialIcons header__socialIcons--mobile">
-          <SocialIcons />
+          <SocialIcons parent-component="the Header" />
         </div>
       </div>
     </div>
@@ -62,10 +62,6 @@ export default {
         {
           name: "Blog",
           url: "/blog/"
-        },
-        {
-          name: "Elements",
-          url: "/elements/"
         }
       ]
     }
@@ -160,7 +156,7 @@ export default {
   height: 40px;
   flex-direction: column;
   justify-content: space-around;
-  background-color: $color-body-bg;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   transition: box-shadow $duration-animation-base linear;

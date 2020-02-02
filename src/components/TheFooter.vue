@@ -1,10 +1,10 @@
 <template>
   <footer class="footer">
     <div class="footer__inner container">
-      <LogoComponent class="footer__logo" version="fullWhite" />
+      <LogoComponent class="footer__logo" version="fullWhite" desc="Footer Logo" />
 
       <div class="footer__socialIcons">
-        <SocialIcons />
+        <SocialIcons parent-component="the Footer" />
       </div>
 
       <p class="footer__copyright">
@@ -39,6 +39,7 @@ export default {
   padding-top: 85px;
   display: flex;
   justify-content: center;
+  color: $color-text-light;
   background-color: $color-bg-dark;
 
   &__logo {
@@ -49,6 +50,13 @@ export default {
 
   &__copyright {
     text-align: center;
+
+    a {
+      color: $color-text-light;
+      &:hover {
+        color: $color-primary;
+      }
+    }
   }
 }
 </style>

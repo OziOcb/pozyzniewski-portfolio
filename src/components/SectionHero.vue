@@ -3,10 +3,14 @@
     <div class="hero__contentWrapper">
       <p class="hero__lead">Hello</p>
       <p class="hero__heading">It's Paul</p>
-      <h1 class="hero__extraLead">The Front End Developer you need!</h1>
+      <h1 class="hero__extraLead">
+        The
+        <strong>Front End Developer</strong>
+        you need!
+      </h1>
     </div>
 
-    <SocialIcons class="hero__socialIcons" />
+    <SocialIcons class="hero__socialIcons" parent-component="the Hero" />
 
     <div class="hero__scrollBtn">
       <font-awesome :icon="['fas', 'arrow-down']" />
