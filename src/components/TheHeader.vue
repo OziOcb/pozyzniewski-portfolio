@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <LogoComponent class="header__logo" version="simple" />
+      <LogoComponent class="header__logo" version="simple" desc="Main Logo" />
 
       <div class="header__hamburger">
         <button
@@ -29,7 +29,7 @@
         </nav>
 
         <div class="header__socialIcons header__socialIcons--mobile">
-          <SocialIcons />
+          <SocialIcons parent-component="the Header" />
         </div>
       </div>
     </div>

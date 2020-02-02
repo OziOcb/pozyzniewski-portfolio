@@ -81,4 +81,19 @@ h6 {
   padding-left: $size-gutter-width;
   max-width: $size-container-max-width;
 }
+
+// ===
+// Helpers
+// ===
+.sr-only {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  border: 0;
+}
 </style>

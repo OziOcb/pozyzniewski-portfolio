@@ -10,7 +10,7 @@
       </h1>
     </div>
 
-    <SocialIcons class="hero__socialIcons" />
+    <SocialIcons class="hero__socialIcons" parent-component="the Hero" />
 
     <div class="hero__scrollBtn">
       <font-awesome :icon="['fas', 'arrow-down']" />

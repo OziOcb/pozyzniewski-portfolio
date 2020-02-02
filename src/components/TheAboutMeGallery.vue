@@ -7,6 +7,7 @@
         class="theAboutMeGallery__secondaryImg"
         quality="90"
         :src="secondaryImgSrc(galleryDetails.secondaryImg)"
+        :alt="secondaryAlt()"
       />
     </div>
 
@@ -15,6 +16,7 @@
         class="theAboutMeGallery__primaryImg"
         quality="90"
         :src="primaryImgSrc(galleryDetails.primaryImg)"
+        :alt="primaryAlt()"
       />
     </div>
   </div>
@@ -32,8 +34,10 @@ export default {
       type: Object,
       default: () => ({
         primaryImg: "portrait-default",
+        primaryAlt: "",
         primaryOverlayColor: "",
         secondaryImg: "theAboutMeGallerySecondary",
+        secondaryAlt: "",
         secondaryOverlayColor: ""
       })
     }
@@ -53,6 +57,12 @@ export default {
     },
     secondaryImgSrc(imgName = "theAboutMeGallerySecondary") {
       return require(`!!assets-loader?width=380!~/assets/img/jpg/${imgName}.jpg`)
+    },
+    primaryAlt() {
+      return this.galleryDetails.primaryAlt ? this.galleryDetails.primaryAlt : ""
+    },
+    secondaryAlt() {
+      return this.galleryDetails.secondaryAlt ? this.galleryDetails.secondaryAlt : ""
     }
   }
 }

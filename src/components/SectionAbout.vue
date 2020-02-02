@@ -61,7 +61,9 @@ export default {
   data() {
     return {
       galleryDetails: {
-        primaryImg: "portrait"
+        primaryImg: "portrait",
+        primaryAlt: "Portrait of Paul Ozyzniewski the author and the owner of this website",
+        secondaryAlt: "Well maintained office desk"
       }
     }
   }
