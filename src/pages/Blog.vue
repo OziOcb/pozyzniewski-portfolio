@@ -1,11 +1,16 @@
 <template>
   <layout>
-    <h1>Blog (comming soon)</h1>
-    <div v-for="edge in $page.post.edges" :key="edge.node.id">
-      <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
-    </div>
+    <main role="main" class="container">
+      <h1>Blog (comming soon)</h1>
 
-    <div style="height:500px"></div>
+      <div v-for="edge in $page.post.edges" :key="edge.node.id">
+        <g-link :to="edge.node.path">{{ edge.node.title }}</g-link>
+      </div>
+
+      <Pager :info="$page.post.pageInfo" />
+
+      <div style="height:500px"></div>
+    </main>
   </layout>
 </template>
 
@@ -31,10 +36,15 @@ query Post($page:Int) {
 </page-query>
 
 <script>
+import { Pager } from "gridsome"
+
 export default {
   metaInfo: {
     title: "Blog",
     meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
+  },
+  components: {
+    Pager
   }
 }
 </script>
