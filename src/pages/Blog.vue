@@ -10,12 +10,20 @@
 </template>
 
 <page-query>
-query Post {
-  post: allPost {
+query Post($page:Int) {
+  post: allPost(perPage: 9, page: $page) @paginate  {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         title,
-        path
+        excerpt,
+        path,
+        image(width:400),
+        image_caption,
       }
     }
   }

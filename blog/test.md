@@ -1,9 +1,14 @@
 ---
 title: Test Post
 author: Paul Ozyzniewski
+category: Digital
 created_at: 2019-11-25T22:49:26.723Z
 excerpt: Excerpt - Lorem Ipsum is simply dummy text.
+image: ./images/img1.jpg
+image_caption: Photo by Josh Spires on Unsplash
+tags: tag1, tag2
 ---
+
 ## Test
 
 ### Heading
