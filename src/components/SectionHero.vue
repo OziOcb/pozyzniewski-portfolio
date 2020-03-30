@@ -1,6 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero__contentWrapper">
+      <span class="hero__backgroundText">Dev</span>
       <p class="hero__lead">Hello</p>
       <p class="hero__heading">It's Paul</p>
       <h1 class="hero__extraLead">
@@ -82,21 +83,20 @@ export default {
     grid-area: contentWrapper;
     align-self: center;
     margin-left: 1rem;
+  }
+
+  &__backgroundText {
+    display: none;
     @media (min-width: $breakpoint-lg) {
-      &:before {
-        position: absolute;
-        z-index: $layer-negative-z-index;
-        top: 50%;
-        left: 10px;
-        font-size: 360px;
-        content: "Dev";
-        color: $color-text-lightest;
-        transition: color $duration-animation-base ease;
-        transform: translateY(-50%);
-      }
-      &:hover:before {
-        color: rgba($color-secondary, 0.3);
-      }
+      position: absolute;
+      z-index: $layer-negative-z-index;
+      top: 50%;
+      left: 10px;
+      display: block;
+      font-size: 360px;
+      color: $color-text-lightest;
+      transition: color $duration-animation-base ease;
+      transform: translateY(-50%);
     }
   }
 
