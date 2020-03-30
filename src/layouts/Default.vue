@@ -2,20 +2,25 @@
   <div class="layout">
     <TheHeader />
 
-    <slot />
+    <ThePageTransitionOverlay />
 
-    <TheFooter />
+    <div class="pageTransitionWrapper">
+      <slot />
+      <TheFooter />
+    </div>
   </div>
 </template>
 
 <script>
 import TheHeader from "@/components/TheHeader.vue"
 import TheFooter from "@/components/TheFooter.vue"
+import ThePageTransitionOverlay from "@/components/ThePageTransitionOverlay.vue"
 
 export default {
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    ThePageTransitionOverlay
   }
 }
 </script>
@@ -75,6 +80,10 @@ h6 {
 // ===
 // Layout
 // ===
+.layout {
+  overflow-x: hidden;
+}
+
 .container {
   margin: 0 auto;
   padding-right: $size-gutter-width;
