@@ -84,6 +84,8 @@ export default {
     grid-area: contentWrapper;
     align-self: center;
     margin-left: 1rem;
+    --maskX: 0;
+    --maskY: 50;
   }
 
   &__backgroundText {
@@ -102,7 +104,7 @@ export default {
 
       &--clone {
         color: rgba($color-secondary, 0.3);
-        clip-path: polygon(0 0, 0 0, 50% 100%, 0 100%);
+        clip-path: polygon(0 0, calc(var(--maskX) * 1%) 0, calc(var(--maskY) * 1%) 100%, 0 100%);
       }
     }
   }
