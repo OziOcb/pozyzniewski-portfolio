@@ -94,6 +94,24 @@ export default {
     hamburger.addEventListener("click", function() {
       hamburgerMotion.reversed(!hamburgerMotion.reversed())
     })
+
+    // Hide menu after clicking on .nav__link
+    const navList = document.querySelector(".nav__list")
+
+    const clickNavLinkHandler = gsap.timeline({ paused: true })
+    clickNavLinkHandler
+      .to(".nav", 0.3, { autoAlpha: 0 }, 0.1, 0)
+      .to(".header__socialIcons--mobile", 0.4, { translateX: 110, ease: Sine.easeOut }, 0)
+      .to(".pageTransitionOverlay", 0.01, { zIndex: 11 }, 0)
+      .to(".pageTransitionOverlay", 0.6, { autoAlpha: 1 }, 0.5)
+
+    navList.addEventListener("click", e => {
+      if (!e.target.classList.contains("active--exact")) {
+        clickNavLinkHandler.play()
+      } else {
+        hamburgerMotion.reverse(0)
+      }
+    })
   },
   methods: {
     handleAriaExpanded() {
@@ -208,5 +226,9 @@ export default {
     text-decoration: none;
     border-radius: 5px;
   }
+}
+
+.nav .active--exact {
+  text-decoration: underline;
 }
 </style>

@@ -16,6 +16,7 @@ import SectionAbout from "@/components/SectionAbout.vue"
 import SectionSkills from "@/components/SectionSkills.vue"
 import SectionPortfolio from "@/components/SectionPortfolio.vue"
 import SectionContact from "@/components/SectionContact.vue"
+import { basicPageTransitionEnter, basicPageTransitionLeave } from "@/mixins/pageTransitions"
 
 export default {
   metaInfo: {
@@ -27,6 +28,7 @@ export default {
     SectionSkills,
     SectionPortfolio,
     SectionContact
-  }
+  },
+  mixins: [basicPageTransitionEnter, basicPageTransitionLeave]
 }
 </script>
