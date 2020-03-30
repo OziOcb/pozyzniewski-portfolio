@@ -1,7 +1,8 @@
 <template>
   <section class="hero">
     <div class="hero__contentWrapper">
-      <span class="hero__backgroundText">Dev</span>
+      <div class="hero__backgroundText"><p>Dev</p></div>
+      <div class="hero__backgroundText hero__backgroundText--clone"><p>Dev</p></div>
       <p class="hero__lead">Hello</p>
       <p class="hero__heading">It's Paul</p>
       <h1 class="hero__extraLead">
@@ -94,9 +95,15 @@ export default {
       left: 10px;
       display: block;
       font-size: 360px;
+      line-height: 0;
       color: $color-text-lightest;
       transition: color $duration-animation-base ease;
       transform: translateY(-50%);
+
+      &--clone {
+        color: rgba($color-secondary, 0.3);
+        clip-path: polygon(0 0, 0 0, 50% 100%, 0 100%);
+      }
     }
   }
 
