@@ -9,7 +9,7 @@
 export default {
   metaInfo: {
     title: "FAQ",
-    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }]
+    meta: [{ name: "robots", content: "noindex,nofollow,disallow" }] // Remove when this page is ready
   }
 }
 </script>
