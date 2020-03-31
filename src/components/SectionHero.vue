@@ -128,6 +128,7 @@ export default {
     position: relative;
     margin-left: 1rem;
     display: flex;
+    width: 650px;
     height: 100%;
     align-items: center;
     grid-area: contentWrapper;
