@@ -1,15 +1,23 @@
 <template>
   <section class="hero">
-    <div class="hero__contentWrapper">
+    <div
+      ref="hero__contentWrapper"
+      class="hero__contentWrapper"
+      :style="cssProps"
+      @mousemove="onMouseMove"
+      @mouseout="onMouseOut"
+    >
       <div class="hero__backgroundText"><p>Dev</p></div>
       <div class="hero__backgroundText hero__backgroundText--clone"><p>Dev</p></div>
-      <p class="hero__lead">Hello</p>
-      <p class="hero__heading">It's Paul</p>
-      <h1 class="hero__extraLead">
-        The
-        <strong>Front End Developer</strong>
-        you need!
-      </h1>
+      <div>
+        <p class="hero__lead">Hello</p>
+        <p class="hero__heading">It's Paul</p>
+        <h1 class="hero__extraLead">
+          The
+          <strong>Front End Developer</strong>
+          you need!
+        </h1>
+      </div>
     </div>
 
     <SocialIcons class="hero__socialIcons" parent-component="the Hero" />
@@ -26,6 +34,43 @@ import SocialIcons from "@/components/SocialIcons.vue"
 export default {
   components: {
     SocialIcons
+  },
+  data() {
+    return {
+      cursorPosition: {
+        x: 0,
+        y: 50
+      }
+    }
+  },
+  computed: {
+    cssProps() {
+      const { x, y } = this.cursorPosition
+
+      return {
+        "--maskX": x,
+        "--maskY": y
+      }
+    }
+  },
+  methods: {
+    onMouseMove(e) {
+      const width = this.$refs.hero__contentWrapper.clientWidth
+      const height = this.$refs.hero__contentWrapper.clientHeight
+      const oX = (e.layerX / width) * 100
+      const oY = (e.layerY / height) * 100
+
+      this.cursorPosition = {
+        x: oX,
+        y: oY
+      }
+    },
+    onMouseOut() {
+      this.cursorPosition = {
+        x: 0,
+        y: 50
+      }
+    }
   }
 }
 </script>
@@ -81,9 +126,11 @@ export default {
 
   &__contentWrapper {
     position: relative;
-    grid-area: contentWrapper;
-    align-self: center;
     margin-left: 1rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    grid-area: contentWrapper;
     --maskX: 0;
     --maskY: 50;
   }
@@ -104,7 +151,14 @@ export default {
 
       &--clone {
         color: rgba($color-secondary, 0.3);
-        clip-path: polygon(0 0, calc(var(--maskX) * 1%) 0, calc(var(--maskY) * 1%) 100%, 0 100%);
+        transition: clip-path 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        // clip-path: polygon(0 0, calc(var(--maskX) * 1%) 0, calc(var(--maskY) * 1%) 100%, 0 100%);
+        clip-path: polygon(
+          0 0,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * 0.4%) 0,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * -0.4%) 100%,
+          0 100%
+        );
       }
     }
   }
