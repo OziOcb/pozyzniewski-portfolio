@@ -199,6 +199,7 @@ export default {
   &__figure {
     position: relative;
     margin: 0;
+    width: 100%; // required by firefox!
   }
 
   &__image {
