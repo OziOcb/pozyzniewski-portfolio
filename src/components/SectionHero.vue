@@ -153,11 +153,10 @@ export default {
       &--clone {
         color: rgba($color-secondary, 0.3);
         transition: clip-path 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        // clip-path: polygon(0 0, calc(var(--maskX) * 1%) 0, calc(var(--maskY) * 1%) 100%, 0 100%);
         clip-path: polygon(
           0 0,
-          calc(var(--maskX) * 1% + (var(--maskY) - 50) * 0.4%) 0,
-          calc(var(--maskX) * 1% + (var(--maskY) - 50) * -0.4%) 100%,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * 1%) 0,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * -1%) 100%,
           0 100%
         );
       }
