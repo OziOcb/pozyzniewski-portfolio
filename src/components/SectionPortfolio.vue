@@ -36,6 +36,17 @@ export default {
       portfolioProjects: [
         {
           year: 2020,
+          title: "The official Gridsome Starter Kit",
+          desc: "Design & Development - Vue.js (Gridsome), GSAP",
+          repoUrl: "https://github.com/OziOcb/Gridsome-and-Markdown-Starter-Kit",
+          projectUrl:
+            "https://gridsome.org/starters/gridsome-and-markdown-starter-kit-page-transitions/",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(3,131,92,0.9)",
+          bgImage: "gridsomeStarterKit"
+        },
+        {
+          year: 2020,
           title: "This Portfolio",
           desc: "Design & Development - Vue.js (Gridsome), Netlify, GSAP",
           repoUrl: "https://github.com/OziOcb/pozyzniewski-portfolio",
