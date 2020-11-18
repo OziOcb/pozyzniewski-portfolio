@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
+/* test */
 .baseButton {
   @extend %typography-button;
   padding: $size-button-padding;
