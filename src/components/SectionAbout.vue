@@ -9,11 +9,11 @@
         <h2 class="aboutMe__title fixedSize">who am I?</h2>
         <ul class="aboutMe__detailsList">
           <li>
-            A full-time
-            <strong>Front End Developer</strong>
+            A
+            <strong>UX Developer</strong>
             at
-            <a href="https://www.bigfootdigital.co.uk/" target="_blank" rel="noopener noreferrer">
-              Bigfoot Digital
+            <a href="https://www.myhermes.co.uk/" target="_blank" rel="noopener noreferrer">
+              Hermes
             </a>
             .
           </li>
