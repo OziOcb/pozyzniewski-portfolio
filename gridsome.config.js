@@ -33,8 +33,15 @@ module.exports = {
           autolinkHeadings: false // disable auto-adding links to headings
         }
       }
+    },
+    {
+      use: "@gridsome/plugin-google-analytics",
+      options: {
+        id: "UA-184638931-1"
+      }
     }
   ],
+
   chainWebpack: config => {
     // Load variables for all vue-files
     const types = ["vue-modules", "vue", "normal-modules", "normal"]
