@@ -35,6 +35,17 @@ export default {
     return {
       portfolioProjects: [
         {
+          year: 2021,
+          title: "Veriffica Mobile App",
+          desc: "Design & Development - Vue.js (Quasar)",
+          designUrl:
+            "https://www.figma.com/file/VEzge00Ar7BdCOPMFt60ML/Veriffica-App---HQ-Mockup?node-id=66%3A0",
+          projectUrl: "https://apps.apple.com/gb/app/veriffica-car-check/id1589604742",
+          colorGradientPrimary: "rgba(255,255,255,0.9)",
+          colorGradientSecondary: "rgba(11,101,179,0.9)",
+          bgImage: "veriffica"
+        },
+        {
           year: 2020,
           title: "The official Gridsome Starter Kit",
           desc: "Design & Development - Vue.js (Gridsome), GSAP",
@@ -63,7 +74,7 @@ export default {
           repoUrl: "https://github.com/OziOcb/Dude-is-this-another-Todo-List",
           projectUrl: "https://dude-is-this-another-todolist3.web.app/auth",
           colorGradientPrimary: "rgba(255,255,255,0.9)",
-          colorGradientSecondary: "rgba(0,145,235,0.9)",
+          colorGradientSecondary: "rgba(0,145,235,0.6)",
           bgImage: "default"
         },
         {

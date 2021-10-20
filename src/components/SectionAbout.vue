@@ -10,7 +10,7 @@
         <ul class="aboutMe__detailsList">
           <li>
             A
-            <strong>UX Developer</strong>
+            <strong>Senior Frontend Developer</strong>
             at
             <a href="https://www.myhermes.co.uk/" target="_blank" rel="noopener noreferrer">
               Hermes

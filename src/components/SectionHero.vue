@@ -14,7 +14,7 @@
         <p class="hero__heading">It's Paul</p>
         <h1 class="hero__extraLead">
           The
-          <strong>Front End Developer</strong>
+          <strong>Senior Frontend Developer</strong>
           you need!
         </h1>
       </div>

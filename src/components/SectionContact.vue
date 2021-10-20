@@ -7,7 +7,7 @@
         <strong>talented</strong>
         and
         <strong>hard working</strong>
-        Front End Developer!
+        Senior Frontend Developer!
       </p>
     </div>
 
@@ -58,7 +58,7 @@ export default {
     @media (min-width: $breakpoint-xl) {
       margin-left: auto;
       padding-right: $size-gutter-width;
-      max-width: 360px;
+      max-width: 390px;
       text-align: right;
     }
   }
