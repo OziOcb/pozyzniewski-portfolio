@@ -71,12 +71,13 @@ export default function(Vue, { router, head, isClient }) {
       key: "description",
       name: "description",
       content:
-        "Paul Ozyzniewski is a Barnsley-based freelance front-end web developer. He specialises in responsive HTML5, CSS, and JavaScript (Vue.js) software development."
+        "Paul Ozyzniewski is a Barnsley-based Senior Frontend Developer. He specialises in responsive HTML5, CSS, and JavaScript (Vue.js) software development."
     },
     {
       key: "keywords",
       name: "keywords",
-      content: "HTML, CSS, JavaScript, Vue.js, Front-end, Front End Developer, Developer, Freelance"
+      content:
+        "HTML, CSS, JavaScript, Vue.js, Front-end, Senior Front End Developer, Developer, Freelance"
     },
     { key: "robots", name: "robots", content: "index, follow, noodp, noydir" }
   )
