@@ -1,0 +1,70 @@
+<template>
+  <section class="faq">
+    <div class="faq__inner container">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima nostrum nemo neque ipsum aut
+      nesciunt fuga aliquam velit autem. Officia rem omnis eveniet fugit, facilis aliquid sint?
+      Unde, doloribus assumenda!
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      galleryDetails: {
+        primaryImg: "portrait",
+        primaryAlt: "Portrait of Paul Ozyzniewski the author and the owner of this website",
+        secondaryAlt: "Well maintained office desk"
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.faq {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  overflow: hidden;
+  background-color: $color-body-bg-light;
+  @media (min-width: $breakpoint-xxl) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    content: "";
+    border-right: 100vw solid transparent;
+  }
+  &:before {
+    top: 0;
+    border-top: 45px solid $color-body-bg;
+    @media (min-width: $breakpoint-xxl) {
+      border-top-width: 90px;
+    }
+  }
+  &:after {
+    bottom: 0;
+    border-bottom: 45px solid $color-body-bg;
+    @media (min-width: $breakpoint-xxl) {
+      border-bottom-width: 90px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: $layer-page-z-index;
+    padding: 150px $size-gutter-width 90px;
+    background-color: $color-body-bg-light;
+    border-radius: 15px;
+    @media (min-width: $breakpoint-xl) {
+      display: flex;
+    }
+  }
+}
+</style>
