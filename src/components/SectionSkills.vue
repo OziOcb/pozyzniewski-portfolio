@@ -8,7 +8,7 @@
         <QuoteBlock align-right>
           Tell me and I forget,
           <br />
-          teach me and I may premember,
+          teach me and I may remember,
           <br />
           involve me and I learn
 
