@@ -7,16 +7,17 @@
       @mousemove="onMouseMove"
       @mouseout="onMouseOut"
     >
-      <div class="hero__backgroundText"><p>Dev</p></div>
-      <div class="hero__backgroundText hero__backgroundText--clone"><p>Dev</p></div>
+      <div class="hero__backgroundText">
+        <p>{{ content.backgroundText }}</p>
+      </div>
+      <div class="hero__backgroundText hero__backgroundText--clone">
+        <p>{{ content.backgroundText }}</p>
+      </div>
       <div>
-        <p class="hero__lead">Hello</p>
-        <p class="hero__heading">It's Paul</p>
-        <h1 class="hero__extraLead">
-          The
-          <strong>Senior Frontend Developer</strong>
-          you need!
-        </h1>
+        <p class="hero__lead">{{ content.lead }}</p>
+        <p class="hero__heading">{{ content.heading }}</p>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <h1 class="hero__extraLead" v-html="content.extraLead" />
       </div>
     </div>
 
@@ -34,6 +35,12 @@ import SocialIcons from "@/components/SocialIcons.vue"
 export default {
   components: {
     SocialIcons
+  },
+  props: {
+    content: {
+      type: Object,
+      required: true
+    }
   },
   data() {
     return {
