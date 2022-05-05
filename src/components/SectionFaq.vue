@@ -1,15 +1,16 @@
 <template>
   <section class="faq">
     <div class="faq__inner container">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima nostrum nemo neque ipsum aut
-      nesciunt fuga aliquam velit autem. Officia rem omnis eveniet fugit, facilis aliquid sint?
-      Unde, doloribus assumenda!
+      <AccordionBase />
     </div>
   </section>
 </template>
 
 <script>
+import AccordionBase from "@/components/AccordionBase.vue"
+
 export default {
+  components: { AccordionBase },
   data() {
     return {
       galleryDetails: {
