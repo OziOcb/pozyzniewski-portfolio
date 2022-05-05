@@ -5,7 +5,7 @@
         :content="{
           backgroundText: 'Dev',
           lead: 'Hello',
-          heading: 'It\'s Paul',
+          heading: 'it\'s Paul',
           extraLead: 'The <strong>Senior Frontend Developer</strong> you need!'
         }"
       />
