@@ -63,9 +63,6 @@ export default {
     padding: 150px $size-gutter-width 90px;
     background-color: $color-body-bg-light;
     border-radius: 15px;
-    @media (min-width: $breakpoint-xl) {
-      display: flex;
-    }
   }
 }
 </style>
