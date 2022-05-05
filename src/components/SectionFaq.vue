@@ -1,23 +1,57 @@
 <template>
   <section class="faq">
     <div class="faq__inner container">
-      <AccordionBase />
+      <AccordionBase :content="faqContent" />
     </div>
   </section>
 </template>
 
 <script>
 import AccordionBase from "@/components/AccordionBase.vue"
+import { v4 as uuidv4 } from "uuid"
 
 export default {
   components: { AccordionBase },
   data() {
     return {
-      galleryDetails: {
-        primaryImg: "portrait",
-        primaryAlt: "Portrait of Paul Ozyzniewski the author and the owner of this website",
-        secondaryAlt: "Well maintained office desk"
-      }
+      faqContent: [
+        {
+          id: uuidv4(),
+          title: "Title 1",
+          questions: [
+            {
+              id: uuidv4(),
+              question: "Question 1",
+              answer:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dignissimos earum magni deleniti ratione maxime optio eveniet. Magnam dolorem velit impedit quam libero minus deleniti, qui reiciendis, voluptas ut veritatis!"
+            },
+            {
+              id: uuidv4(),
+              question: "Question 2",
+              answer:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dignissimos earum magni deleniti ratione maxime optio eveniet. Magnam dolorem velit impedit quam libero minus deleniti, qui reiciendis, voluptas ut veritatis!"
+            }
+          ]
+        },
+        {
+          id: uuidv4(),
+          title: "Title 2",
+          questions: [
+            {
+              id: uuidv4(),
+              question: "Question 3",
+              answer:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dignissimos earum magni deleniti ratione maxime optio eveniet. Magnam dolorem velit impedit quam libero minus deleniti, qui reiciendis, voluptas ut veritatis!"
+            },
+            {
+              id: uuidv4(),
+              question: "Question 4",
+              answer:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dignissimos earum magni deleniti ratione maxime optio eveniet. Magnam dolorem velit impedit quam libero minus deleniti, qui reiciendis, voluptas ut veritatis!"
+            }
+          ]
+        }
+      ]
     }
   }
 }
