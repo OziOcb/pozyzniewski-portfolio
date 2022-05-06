@@ -9,7 +9,7 @@
         {{ questionObj.question }}
       </h4>
 
-      <div class="accordionItem__toggleIcon">+</div>
+      <div class="accordionItem__toggleIcon"></div>
     </div>
 
     <div v-if="isDropdownOpen" class="accordionItem__dropdown">
@@ -88,15 +88,32 @@ export default {
   }
   &__toggleIcon {
     z-index: $layer-page-z-index;
-    font-size: 1.4rem;
-    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-    .accordionItem__top--active & {
-      transform: rotate(45deg);
+    &:before,
+    &:after {
+      display: block;
+      width: 0.75rem;
+      content: "";
+      border-top: 2px solid $color-text-secondary;
+      transition: $duration-animation-base * 2;
+    }
+    &:before {
+      .accordionItem__top--active & {
+        transform: rotate(180deg);
+      }
+    }
+    &:after {
+      margin-top: -2px;
+      transform: rotate(90deg);
+
+      .accordionItem__top--active & {
+        transform: rotate(0deg);
+      }
     }
   }
 
   &__dropdown {
+    // TODO: ENDED HERE! End animating dropdown using this as the example - https://codepen.io/morimiko/pen/prMyrO?editors=1100
     border-bottom: 2px solid $color-text-light;
   }
 }
