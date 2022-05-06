@@ -3,13 +3,15 @@
     <section v-for="section in content" :key="section.id">
       <h2>{{ section.title }}</h2>
 
-      <AccordionItem
-        v-for="question in section.questions"
-        :key="question.id"
-        :question-obj="question"
-        :is-dropdown-open="question.id === activeItemId"
-        @changeActiveItemId="handleChangeActiveItemId($event)"
-      />
+      <ul class="accordion__list">
+        <AccordionItem
+          v-for="question in section.questions"
+          :key="question.id"
+          :question-obj="question"
+          :is-dropdown-open="question.id === activeItemId"
+          @changeActiveItemId="handleChangeActiveItemId($event)"
+        />
+      </ul>
     </section>
   </div>
 </template>
@@ -34,8 +36,17 @@ export default {
 
   methods: {
     handleChangeActiveItemId(id) {
-      this.activeItemId = id
+      this.activeItemId !== id ? (this.activeItemId = id) : (this.activeItemId = "")
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.accordion {
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+}
+</style>

@@ -1,7 +1,13 @@
 <template>
-  <div class="accordionItem">
-    <div class="accordionItem__top" @click="handleClickOnTop()">
-      <h4 class="accordionItem__question">{{ questionObj.question }}</h4>
+  <li class="accordionItem">
+    <div
+      :class="['accordionItem__top', isDropdownOpen && 'accordionItem__top--active']"
+      @click="handleClickOnTop()"
+    >
+      <h4 class="accordionItem__question">
+        <span>&bull;</span>
+        {{ questionObj.question }}
+      </h4>
 
       <div class="accordionItem__toggleIcon">+</div>
     </div>
@@ -9,7 +15,7 @@
     <div v-if="isDropdownOpen" class="accordionItem__dropdown">
       <p>{{ questionObj.answer }}</p>
     </div>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -47,6 +53,7 @@ export default {
       rgba($color-secondary, 0.1) 60%,
       rgba(255, 255, 255, 0.6) 95%
     );
+    cursor: pointer;
 
     &:before {
       position: absolute;
@@ -61,7 +68,8 @@ export default {
     }
 
     &:hover,
-    &:focus-within {
+    &:focus-within,
+    &--active {
       &:before {
         transform: translateX(100%);
       }
@@ -71,9 +79,21 @@ export default {
   &__question {
     z-index: $layer-page-z-index;
     margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    @media (min-width: $breakpoint-sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
   &__toggleIcon {
     z-index: $layer-page-z-index;
+    font-size: 1.4rem;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .accordionItem__top--active & {
+      transform: rotate(45deg);
+    }
   }
 
   &__dropdown {
