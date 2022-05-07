@@ -1,9 +1,6 @@
 <template>
-  <li class="accordionItem">
-    <div
-      :class="['accordionItem__top', isDropdownOpen && 'accordionItem__top--active']"
-      @click="handleClickOnTop()"
-    >
+  <li :class="['accordionItem', isDropdownOpen && 'accordionItem--active']">
+    <div class="accordionItem__top" @click="handleClickOnTop()">
       <div class="accordionItem__toggleIcon"></div>
 
       <h4 class="accordionItem__question">
@@ -11,7 +8,7 @@
       </h4>
     </div>
 
-    <div v-if="isDropdownOpen" class="accordionItem__dropdown">
+    <div class="accordionItem__dropdown">
       <p>{{ questionObj.answer }}</p>
     </div>
   </li>
@@ -67,7 +64,7 @@ export default {
 
     &:hover,
     &:focus-within,
-    &--active {
+    .accordionItem--active & {
       &:before {
         transform: translateX(100%);
       }
@@ -87,15 +84,14 @@ export default {
       transition: $duration-animation-base * 2;
     }
     &:before {
-      .accordionItem__top--active & {
+      .accordionItem--active & {
         transform: rotate(180deg);
       }
     }
     &:after {
       margin-top: -2px;
       transform: rotate(90deg);
-
-      .accordionItem__top--active & {
+      .accordionItem--active & {
         transform: rotate(0deg);
       }
     }
@@ -113,8 +109,15 @@ export default {
   }
 
   &__dropdown {
-    // TODO: ENDED HERE! End animating dropdown using this as the example - https://codepen.io/morimiko/pen/prMyrO?editors=1100
-    border-bottom: 2px solid $color-text-light;
+    overflow: hidden;
+    max-height: 0;
+    border-bottom: 2px solid transparent;
+    transition: max-height $duration-animation-base * 4,
+      border-bottom-color $duration-animation-base * 4;
+    .accordionItem--active & {
+      max-height: 400px;
+      border-bottom-color: $color-text-light;
+    }
   }
 }
 </style>
