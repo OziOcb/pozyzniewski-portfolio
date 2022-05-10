@@ -8,9 +8,8 @@
       </h4>
     </div>
 
-    <div class="accordionItem__dropdown">
-      <p>{{ questionObj.answer }}</p>
-    </div>
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <div class="accordionItem__dropdown" v-html="questionObj.answerHtml"></div>
   </li>
 </template>
 
