@@ -1,7 +1,14 @@
 <template>
   <layout>
     <main role="main">
-      <SectionHero />
+      <SectionHero
+        :content="{
+          backgroundText: 'Dev',
+          lead: 'Hello',
+          heading: 'it\'s Paul',
+          extraLead: 'The <strong>Senior Frontend Developer</strong> you need!'
+        }"
+      />
       <SectionAbout />
       <SectionSkills />
       <SectionPortfolio />
