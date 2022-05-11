@@ -75,7 +75,7 @@
       id="webOrCompanyName"
       v-model.trim="$v.formResponses.webOrCompanyName.$model"
       type="text"
-      label="Websit Or Company Name"
+      label="Website Or Company Name"
       :class="{
         'formField--error': errors && $v.formResponses.webOrCompanyName.$invalid,
         'formField--success': errors && !$v.formResponses.webOrCompanyName.$invalid
