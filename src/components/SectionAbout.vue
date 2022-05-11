@@ -26,16 +26,19 @@
 
         <h2 class="aboutMe__title fixedSize">in more details</h2>
         <p>
-          In 2017 I had chosen to follow my passion and become a programmer. After a rough start -
-          coding late at night while still working full time - I've decided to dedicate to
+          In 2017 I chose to follow my passion and become a programmer. After a rough start - coding
+          late at night while still working full time - I've decided to dedicate myself to
           programming.
+
           <br />
           <br />
-          Since then, I strive to perfect my coding skills by educating myself towards creating
+
+          Since then, I have strived to perfect my coding skills by educating myself towards
+          creating
           <strong>clean, easy to enlargement code.</strong>
           I gathered enough
           <strong>experience in front end development</strong>
-          to be a valuable employee and to make the web a beautiful place with every line of code.
+          to be a valuable employee and make the web a beautiful place with every line of code.
         </p>
 
         <ul class="aboutMe__detailsList">
