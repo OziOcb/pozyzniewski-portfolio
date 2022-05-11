@@ -12,8 +12,8 @@
             A
             <strong>Senior Frontend Developer</strong>
             at
-            <a href="https://www.myhermes.co.uk/" target="_blank" rel="noopener noreferrer">
-              Hermes
+            <a href="https://www.evri.com/" target="_blank" rel="noopener noreferrer">
+              Evri (old Hermes)
             </a>
             .
           </li>
