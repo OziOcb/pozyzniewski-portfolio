@@ -1,11 +1,3 @@
 {
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "vetur.validation.template": false,
-  // vscode-stylelint
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }

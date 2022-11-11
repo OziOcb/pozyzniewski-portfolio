@@ -1,0 +1,117 @@
+// BASE
+$color-black: #232323;
+$color-white: #fcfcfc;
+$color-green: #008080;
+$color-red: #f00;
+$color-accent: #a7a7a7;
+$color-outline: rgb(0 123 255 / 50%);
+$color-box-shadow: rgb(0 0 0 / 25%);
+
+// CONTENT
+$color-body-bg: #efefef;
+$color-body-bg-light: $color-white;
+$color-bg-dark: $color-black;
+$color-text-primary: #3e3e3e;
+$color-text-secondary: #626262;
+$color-text-light: #adadad;
+$color-text-lightest: #e2e2e2;
+$color-heading-text: $color-text-primary;
+$color-primary: #ef6f6c;
+$color-secondary: #465677;
+
+// MENU
+/* stylelint-disable */
+// prettier-ignore
+$color-menu-gradient: linear-gradient(158deg, rgb(84 84 84 / 3%) 0%, rgb(84 84 84 / 3%) 20%, rgb(219 219 219 / 3%) 20%, rgb(219 219 219 / 3%) 40%, rgb(54 54 54 / 3%) 40%, rgb(54 54 54 / 3%) 60%, rgb(99 99 99 / 3%) 60%, rgb(99 99 99 / 3%) 80%, rgb(92 92 92 / 3%) 80%, rgb(92 92 92 / 3%) 100%),linear-gradient(45deg, rgb(221 221 221 / 2%) 0%, rgb(221 221 221 / 2%) 14.286%, rgb(8 8 8 / 2%) 14.286%, rgb(8 8 8 / 2%) 28.572%, rgb(52 52 52 / 2%) 28.572%, rgb(52 52 52 / 2%) 42.858%, rgb(234 234 234 / 2%) 42.858%, rgb(234 234 234 / 2%) 57.144%, rgb(81 81 81 / 2%) 57.144%, rgb(81 81 81 / 2%) 71.42999999999999%, rgb(239 239 239 / 2%) 71.43%, rgb(239 239 239 / 2%) 85.71600000000001%, rgb(187 187 187 / 2%) 85.716%, rgb(187 187 187 / 2%) 100.002%),linear-gradient(109deg, rgb(33 33 33 / 3%) 0%, rgb(33 33 33 / 3%) 12.5%, rgb(147 147 147 / 3%) 12.5%, rgb(147 147 147 / 3%) 25%, rgb(131 131 131 / 3%) 25%, rgb(131 131 131 / 3%) 37.5%, rgb(151 151 151 / 3%) 37.5%, rgb(151 151 151 / 3%) 50%, rgb(211 211 211 / 3%) 50%, rgb(211 211 211 / 3%) 62.5%, rgb(39 39 39 / 3%) 62.5%, rgb(39 39 39 / 3%) 75%, rgb(55 55 55 / 3%) 75%, rgb(55 55 55 / 3%) 87.5%, rgb(82 82 82 / 3%) 87.5%, rgb(82 82 82 / 3%) 100%),linear-gradient(348deg, rgb(42 42 42 / 2%) 0%, rgb(42 42 42 / 2%) 20%, rgb(8 8 8 / 2%) 20%, rgb(8 8 8 / 2%) 40%, rgb(242 242 242 / 2%) 40%, rgb(242 242 242 / 2%) 60%, rgb(42 42 42 / 2%) 60%, rgb(42 42 42 / 2%) 80%, rgb(80 80 80 / 2%) 80%, rgb(80 80 80 / 2%) 100%),linear-gradient(120deg, rgb(106 106 106 / 3%) 0%, rgb(106 106 106 / 3%) 14.286%, rgb(67 67 67 / 3%) 14.286%, rgb(67 67 67 / 3%) 28.572%, rgb(134 134 134 / 3%) 28.572%, rgb(134 134 134 / 3%) 42.858%, rgb(19 19 19 / 3%) 42.858%, rgb(19 19 19 / 3%) 57.144%, rgb(101 101 101 / 3%) 57.144%, rgb(101 101 101 / 3%) 71.42999999999999%, rgb(205 205 205 / 3%) 71.43%, rgb(205 205 205 / 3%) 85.71600000000001%, rgb(53 53 53 / 3%) 85.716%, rgb(53 53 53 / 3%) 100.002%),linear-gradient(45deg, rgb(214 214 214 / 3%) 0%, rgb(214 214 214 / 3%) 16.667%, rgb(255 255 255 / 3%) 16.667%, rgb(255 255 255 / 3%) 33.334%, rgb(250 250 250 / 3%) 33.334%, rgb(250 250 250 / 3%) 50.001000000000005%, rgb(231 231 231 / 3%) 50.001%, rgb(231 231 231 / 3%) 66.668%, rgb(241 241 241 / 3%) 66.668%, rgb(241 241 241 / 3%) 83.33500000000001%, rgb(31 31 31 / 3%) 83.335%, rgb(31 31 31 / 3%) 100.002%),linear-gradient(59deg, rgb(224 224 224 / 3%) 0%, rgb(224 224 224 / 3%) 12.5%, rgb(97 97 97 / 3%) 12.5%, rgb(97 97 97 / 3%) 25%, rgb(143 143 143 / 3%) 25%, rgb(143 143 143 / 3%) 37.5%, rgb(110 110 110 / 3%) 37.5%, rgb(110 110 110 / 3%) 50%, rgb(34 34 34 / 3%) 50%, rgb(34 34 34 / 3%) 62.5%, rgb(155 155 155 / 3%) 62.5%, rgb(155 155 155 / 3%) 75%, rgb(249 249 249 / 3%) 75%, rgb(249 249 249 / 3%) 87.5%, rgb(179 179 179 / 3%) 87.5%, rgb(179 179 179 / 3%) 100%),linear-gradient(241deg, rgb(58 58 58 / 2%) 0%, rgb(58 58 58 / 2%) 25%, rgb(124 124 124 / 2%) 25%, rgb(124 124 124 / 2%) 50%, rgb(254 254 254 / 2%) 50%, rgb(254 254 254 / 2%) 75%, rgb(52 52 52 / 2%) 75%, rgb(52 52 52 / 2%) 100%),linear-gradient(90deg, #fff, #fff);
+/* stylelint-enable */
+
+// MODAL
+$color-modal-overlay: rgb(24 32 40 / 94%);
+$color-modal-bg: $color-body-bg-light;
+$color-modal-shadow: $color-box-shadow;
+
+// LINKS
+$color-link-text: $color-text-primary;
+$color-link-text-active: $color-text-primary;
+$color-link-text-hover: $color-primary;
+
+// INPUTS
+$color-input-border: lighten($color-heading-text, 50%);
+$color-input-bg: transparent;
+$color-input-success: $color-green;
+$color-input-error: $color-red;
+
+// BUTTONS
+// regular
+$color-button-bg: $color-primary;
+$color-button-bg-disabled: darken(desaturate($color-button-bg, 25%), 30%);
+$color-button-bg-hover: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-text: $color-white;
+$color-button-shadow: $color-box-shadow;
+
+// alt
+$color-button-alt-bg: transparent;
+$color-button-alt-bg-hover: rgb(255 255 255 / 25%);
+$color-button-alt-text: $color-black;
+$color-button-alt-shadow: $color-box-shadow;
+$color-button-alt-border: $color-black;
+
+// GITHUB CALENDAR
+$color-github-calendar-bg: $color-white;
+$color-github-calendar-text: #666;
+$color-github-calendar-shadow: $color-box-shadow;
+$color-github-calendar-single-commit-bg: $color-secondary;
+$color-github-calendar-svg-fill: $color-github-calendar-single-commit-bg;
+
+// THE SKILLS GRID
+$color-skills-grid-box-bg: $color-secondary;
+$color-skills-grid-box-bg-hover: transparent;
+
+// brands colors
+$color-logos: (
+  "AdobeIllustrator": #ff7c00,
+  "AdobePhotoshop": #00c8ff,
+  "AdobeTypekit": #87ec00,
+  "AdobeXd": #ff2bc2,
+  "Atom": #66595c,
+  "Babel": #f9dc3e,
+  "Basecamp": #5ecc62,
+  "Bit": #73398d,
+  "Bootstrap": #563d7c,
+  "Codeoen": #000,
+  "CodeSandbox": #000,
+  "Codewars": #ad2c27,
+  "Css": #1572b6,
+  "CssWizardy": #f43059,
+  "EsLint": #4b32c3,
+  "Figma": #f24e1e,
+  "FilleZilla": #bf0000,
+  "Firebase": #ffca28,
+  "Git": #f14e32,
+  "GitHub": #181717,
+  "GitLab": #fca121,
+  "GraphQl": #e10098,
+  "Gulp": #da4648,
+  "Html5": #e34f26,
+  "Javascript": #f7df1e,
+  "Jekyll": #c00,
+  "Jest": #c21325,
+  "Json": #000,
+  "Markdown": #000,
+  "MaterialDesign": #757575,
+  "Npm": #cb3837,
+  "NuxtJs": #00c58e,
+  "Postman": #ff6c37,
+  "PowerShell": #5391fe,
+  "Prettier": #f7b93e,
+  "Sass": #c69,
+  "VSC": #007acc,
+  "VueJs": #4fc08d,
+  "Vue": #4fc08d,
+  "Webpack": #8dd6f9,
+  "Yarn": #2c8ebb,
+  "Zapier": #ff4a00,
+);
+
+// BLOG
+$color-blog-image-beforeElement: $color-text-lightest;

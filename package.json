@@ -1,6 +1,6 @@
 {
   "name": "pozyzniewski-portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is the my personal portfolio project",
   "private": true,
   "author": "Paul Ozyzniewski",
@@ -9,55 +9,59 @@
     "url": "https://github.com/OziOcb/pozyzniewski-portfolio.git"
   },
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
-    "explore": "gridsome explore"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.12.0",
-    "@fortawesome/vue-fontawesome": "^0.1.8",
-    "@gridsome/plugin-google-analytics": "^0.1.2",
-    "@gridsome/vue-remark": "^0.1.9",
-    "github-calendar": "^1.3.4",
-    "gridsome": "^0.7.10",
-    "gsap": "^3.0.4",
-    "normalize.css": "^8.0.1",
-    "sweet-modal-vue": "^2.0.0",
-    "uuid": "^8.3.2",
-    "vuelidate": "^0.7.4"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "stylelint": "npx stylelint \"**/*.scss\" \"**/*.vue\" --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-loader": "^3.0.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^5.2.3",
-    "gridsome-plugin-base-components": "^0.0.12",
-    "husky": "^3.0.9",
-    "imports-loader": "^0.8.0",
-    "lint-staged": "^10.0.0-1",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.18.2",
-    "sass-loader": "^8.0.0",
-    "style-resources-loader": "^1.3.2",
-    "stylelint": "^11.1.1",
-    "stylelint-config-prettier": "^6.0.0",
-    "stylelint-config-recommended": "^3.0.0",
-    "stylelint-order": "^3.1.1",
-    "vue-svg-loader": "^0.15.0"
+    "@nuxt/content": "^2.2.1",
+    "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "@zhead/schema": "^0.9.7",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.7.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "nuxt": "^3.0.0-rc.12",
+    "nuxt-icon": "^0.1.6",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "stylelint": "^14.14.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "typescript": "^4.8.4",
+    "vue-tsc": "^1.0.7"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.3",
+    "@types/node": "^18.8.0",
+    "@vuelidate/core": "^2.0.0",
+    "@vuelidate/validators": "^2.0.0",
+    "github-calendar": "^2.3.1",
+    "gsap": "^3.0.4",
+    "pinia": "^2.0.23",
+    "uuid": "^8.3.2",
+    "v-pagination-3": "^0.1.7"
   },
   "lint-staged": {
-    "src/**/*.{css,scss,postcss,vue,js}": [
-      "stylelint --fix",
-      "prettier --write"
+    "**/*.{js,ts,vue,html,css}": [
+      "npm run lintfix",
+      "npm run stylelint"
     ]
   }
 }

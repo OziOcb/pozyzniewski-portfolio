@@ -1,67 +1,110 @@
 # Pozyzniewski Portfolio
 
-## Install
+## Links
+- Repository - [GitHub](https://github.com/OziOcb/pozyzniewski-portfolio)
+- Live - [paulthedeveloper.com](https://www.paulthedeveloper.com/)
 
-### 1. Install Gridsome CLI tool if you don't have
+&nbsp;
+## Setup
 
-`npm install --global @gridsome/cli`
+Make sure to install the dependencies:
 
-### 2. Run the Project
+```bash
+# yarn
+yarn install
 
-1. Clone the Repository.
-2. `cd pozyzniewski-portfolio` to open the folder.
-3. `gridsome develop` to start a local dev server at `http://localhost:8080` 🎉🙌
+# npm
+npm install
 
-## Base Components
-
-Many components will be relatively generic, possibly only wrapping an element like an input or a button. We sometimes refer to these as [base components](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended) and they tend to be used very frequently across your components.
-
-Thanks to `gridsome-plugin-base-components` plugin, all Components with names that start with `Base...` (`BaseButton.vue` etc.) will be globally available.
-
-No need for doing below in every component that uses these `base-components`:
-
-```javascript
-<script>
-import BaseButton from "@/components/BaseButton.vue"
-
-export  default  {
-	components:  {
-		BaseButton,
-	},
-}
-</script>
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-## Using SVGs as Components
+## Development Server
 
-You can import SVGs as you do with any other Vue component.
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+&nbsp;
+# My Notes
+
+## TypeScript
+
+- types/interfaces for elements used inside <head>
+https://github.com/harlan-zw/zhead/tree/main/packages/schema/src
+
+- Type checking on Dev is set to true, if you need to turn it off (for performance reasons) go to the `.nuxt.config.ts` file and set `typescript.typeCheck` to `false`
+
+&nbsp;
+## Icons
+- This boilerplate comes with the `nuxt-icon` packaged - [github](https://github.com/nuxt-modules/icon)
+- All icons that are available when using `nuxt-icon` package - [icones.js.org](https://icones.js.org/collection/ci)
+
+### Usage 👌
+
+**Props:**
+- `name` (required): icon name, emoji or global component name
+- `size`: icon size (default: `1em`)
+
+#### Iconify dataset
+
+You can use any name from the https://icones.js.org collection:
 
 ```html
-<template>
-  <layout>
-    <SvgBrand />
-  </layout>
-</template>
-
-<script>
-  import SvgBrand from "~/assets/img/svg/Brand.svg"
-
-  export default {
-    components: {
-      SvgBrand
-    }
-  }
-</script>
+<Icon name="uil:github" />
 ```
 
-## Adding Background Images in styles
+#### Emoji
 
-To do that you must use `~@/` as a prefix in the url
+```html
+<Icon name="🚀" />
+```
 
-```css
-.imageBox {
-  background: url("~@/assets/img/image-name.jpg") center/cover no-repeat;
-}
+#### Vue component
+
+```html
+<Icon name="NuxtIcon" />
+```
+
+Note that `NuxtIcon` needs to be inside `components/global/` folder (see [example](./playground/components/global/NuxtIcon.vue)).
+
+
+&nbsp;
+## Pinia
+- This boilerplate uses `Pinia` as a state management solution
+- It auto-imports the `defineStore()`. This means you no longer have to manually import these from pinia whenever your defining your stores
+- Also, it auto-imports every file that's inside `@/stores/`
+```js
+// stores/counter.ts
+export const useCounterStore = defineStore('counter', {
+  //         ^^^^^^^^^^^^^^^
+  // ...
+})
+```
+
+```js
+// someComponent.vue
+import { useCounterStore } from '@/stores/counter' // this line can be omitted thanks to auto-import!
+const countStore = useCounterStore()
 ```
 
 <!--
@@ -143,27 +186,17 @@ export  default  {
 ```
 -->
 
-## FontAwesome 5
-
-### 1. Setup: [here](https://gridsome.org/docs/assets-svg/#fontawesome-svg-icons)
-
-### 2. Example:
-
-```javascript
-<font-awesome  :icon="['fab',  'github']"  />
-<font-awesome  :icon="['fab',  'linkedin']"  />
-```
-
+&nbsp;
 ## About Me Gallery Images
 
 1.  Follow this sizes: (For image templates follow this [link](https://www.figma.com/file/FjVqnpkJ4mvdc3Y3CnFIDe/POzyzniewski_Portfolio_Project_Image_Breakpoints_Sizez_Template?node-id=0%3A1))
 
         Primary Image		-	h: 290px; w: 250px
-        Secondary Image	-	h: 380px; w: 380px
+        Secondary Image	    -	h: 380px; w: 380px
 
 2.  All files must be places inside:
 
-    - `/src/assets/img/jpg/`
+    - `/public/assets/img/jpg/`
 
 3.  While passing the file name via props **use only the name without the extension**:
     - for example if your file is `portrait.jpg` use:
@@ -185,6 +218,7 @@ data() {
 }
 ```
 
+&nbsp;
 ## Portfolio Projects Background Images
 
 To save visitors' bandwith (especially on mobile devices) it's important to follow these few rules.
@@ -198,7 +232,7 @@ To save visitors' bandwith (especially on mobile devices) it's important to foll
 
 2.  They **must** be placed inside:
 
-    - `static/assets/img/jpg/projects-bgs/`
+    - `public/assets/img/jpg/projects-bgs/`
 
 3.  While passing the file name via props **use only the name without the extension**:
     - for example if your file is `design.jpg` use:
@@ -222,4 +256,3 @@ data() {
 		}
 	}
 }
-```
