@@ -17,7 +17,7 @@
 
         <ContentDoc class="post__content" />
 
-        <BaseLinkLikeButton class="post__backBtn" to="/blog">
+        <BaseLinkLikeButton class="post__backBtn" to="/blog/">
           Back to Blog
         </BaseLinkLikeButton>
       </article>
