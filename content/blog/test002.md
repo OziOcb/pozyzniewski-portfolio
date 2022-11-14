@@ -11,7 +11,6 @@ image: https://res.cloudinary.com/oziocb/image/upload/v1667557680/img2.jpg
 # image: ./images/img2.jpg
 image_caption: Photo by Josh Spires on Unsplash
 tags: tag1, tag2
-
 ---
 
 ## Test 002
