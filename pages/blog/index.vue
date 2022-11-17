@@ -50,6 +50,13 @@
         @paginate="paginationHandler()"
       />
     </footer>
+
+    <!-- This is needed to pre generate all single posts for static hosting -->
+    <span class="sr-only">
+      <NuxtLink v-for="link in postsListOfUrls" :key="link" :to="link">
+        {{ link }}
+      </NuxtLink>
+    </span>
   </main>
 </template>
 
@@ -139,7 +146,9 @@ const paginatedPosts = computed(() => {
 function paginationHandler() {
   document.body.scrollIntoView({ behavior: "smooth", block: "start" });
 }
-/////// PAGINATION - END
+
+// This is needed to pre generate all single posts for static hosting
+const postsListOfUrls = posts.value.map((post) => post._path);
 </script>
 
 <style lang="scss" scoped>

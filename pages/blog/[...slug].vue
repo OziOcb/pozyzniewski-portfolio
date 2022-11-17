@@ -1,25 +1,27 @@
 <template>
-  <main role="main" class="post" :style="cssProps">
-    <header class="post__header header">
-      <div class="header__wrapper">
-        <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
-        <hr class="header__divider" />
-        <div class="header__summary">{{ post.excerpt }}</div>
-      </div>
-    </header>
+  <main role="main" class="post">
+    <ContentDoc v-slot="{ doc: post }">
+      <header class="post__header header" :style="cssProps(post)">
+        <div class="header__wrapper">
+          <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
+          <hr class="header__divider" />
+          <div class="header__summary">{{ post.excerpt }}</div>
+        </div>
+      </header>
 
-    <article class="post__article container container--sm">
-      <p class="post__details">
-        {{ post.category }} / {{ post.author }} /
-        {{ formatDateToDayMonthYear(post.created_at) }}
-      </p>
+      <article class="post__article container container--sm">
+        <p class="post__details">
+          {{ post.category }} / {{ post.author }} /
+          {{ formatDateToDayMonthYear(post.created_at) }}
+        </p>
 
-      <ContentDoc class="post__content" />
+        <ContentDoc class="post__content" />
 
-      <BaseLinkLikeButton class="post__backBtn" to="/blog">
-        Back to Blog
-      </BaseLinkLikeButton>
-    </article>
+        <BaseLinkLikeButton class="post__backBtn" to="/blog/">
+          Back to Blog
+        </BaseLinkLikeButton>
+      </article>
+    </ContentDoc>
   </main>
 </template>
 
@@ -36,29 +38,12 @@ import {
 } from "@/utils/transitions";
 import { gsap } from "gsap";
 
-const route = useRoute();
-const { data: post } = await useAsyncData("hello", () =>
-  queryContent(route.path)
-    .only([
-      "title",
-      "title_color",
-      "title_visible",
-      "excerpt",
-      "author",
-      "created_at",
-      "category",
-      "image",
-      "image_caption",
-    ])
-    .findOne()
-);
-
-const cssProps = computed(() => {
+function cssProps(post) {
   return {
-    "--background-image-url": `url('${post.value.image}')`,
-    "--color-title": post.value.title_color,
+    "--background-image-url": `url('${post.image}')`,
+    "--color-title": post.title_color,
   };
-});
+}
 
 onMounted(async () => {
   if (checkWindowWidth() < breakpoint.lg) {
