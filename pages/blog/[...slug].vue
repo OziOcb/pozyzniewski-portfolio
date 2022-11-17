@@ -1,7 +1,7 @@
 <template>
-  <ContentDoc v-slot="{ doc: post }">
-    <main role="main" class="post" :style="cssProps(post)">
-      <header class="post__header header">
+  <main role="main" class="post">
+    <ContentDoc v-slot="{ doc: post }">
+      <header class="post__header header" :style="cssProps(post)">
         <div class="header__wrapper">
           <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
           <hr class="header__divider" />
@@ -21,8 +21,8 @@
           Back to Blog
         </BaseLinkLikeButton>
       </article>
-    </main>
-  </ContentDoc>
+    </ContentDoc>
+  </main>
 </template>
 
 <script setup>
