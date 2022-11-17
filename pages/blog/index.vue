@@ -139,6 +139,15 @@ const paginatedPosts = computed(() => {
 function paginationHandler() {
   document.body.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// This is needed to pre generate all single posts for static hosting
+const runtimeConfig = useRuntimeConfig();
+const postsListOfUrls = posts.value.map(
+  (post) => runtimeConfig.public.websiteUrl + post._path
+);
+
+// prettier-ignore
+console.log("-\n--\n postsListOfUrls \n >", postsListOfUrls, "\n--\n-") // REMOVE_ME: remove when done!
 /////// PAGINATION - END
 </script>
 
