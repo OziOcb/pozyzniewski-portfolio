@@ -93,6 +93,7 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +104,15 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: rgba($color-black, 80%);
+  }
 
   &__wrapper {
     max-width: 800px;
