@@ -73,6 +73,10 @@ import {
 } from "@/utils/transitions";
 import { gsap } from "gsap";
 import Pagination from "v-pagination-3";
+import { currentMediaQuery } from "@/composable/currentMediaQuery";
+
+// prettier-ignore
+console.log("-\n--\n currentMediaQuery() \n >", currentMediaQuery(), "\n--\n-") // REMOVE_ME: remove when done!
 
 useHead({
   title: "Blog",

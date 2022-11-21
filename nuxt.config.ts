@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
     "@nuxt/image-edge",
+    "@vueuse/nuxt",
     "nuxt-icon",
     [
       "@pinia/nuxt",
