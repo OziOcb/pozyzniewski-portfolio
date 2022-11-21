@@ -14,7 +14,7 @@
             v-else
             class="blogCard__image"
             :alt="post.image_caption"
-            :src="post[`thumbnail--${currentMediaQuery()}`]"
+            :src="post[`thumbnail--${correctImageSize()}`]"
           />
 
           <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
@@ -76,7 +76,7 @@ import {
 } from "@/utils/transitions";
 import { gsap } from "gsap";
 import Pagination from "v-pagination-3";
-import { currentMediaQuery } from "@/composable/currentMediaQuery";
+import { correctImageSize } from "@/composable/currentMediaQuery";
 
 useHead({
   title: "Blog",
@@ -90,10 +90,10 @@ const { data: posts } = await useAsyncData("posts", () =>
       "category",
       "created_at",
       "excerpt",
+      "thumbnail--xs",
       "thumbnail--sm",
-      "thumbnail--md",
       "thumbnail--lg",
-      "thumbnail--xl",
+      "thumbnail--xxl",
       "image_caption",
       "title_visible",
     ])

@@ -18,3 +18,16 @@ const mediaQueries: { [key: string]: boolean } = {
 export function currentMediaQuery() {
   return `${Object.keys(mediaQueries).filter((key) => mediaQueries[key])}`;
 }
+
+export function correctImageSize() {
+  return (
+    {
+      xs: "xs",
+      sm: "sm",
+      md: "sm",
+      lg: "lg",
+      xl: "lg",
+      xxl: "xxl",
+    }[currentMediaQuery()] || "xs"
+  );
+}
