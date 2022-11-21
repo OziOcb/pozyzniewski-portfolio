@@ -9,10 +9,10 @@ excerpt: 001 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dol
 # FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
 # image: ./images/img1.jpg
 image: https://res.cloudinary.com/oziocb/image/upload/v1669034597/YoutubeThumbnail_AnimatedButton_hd7nzb.jpg
-thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669034597/YoutubeThumbnail_AnimatedButton_hd7nzb.jpg
-thumbnail--sm: https://
-thumbnail--lg: https://
-thumbnail--xxl: https://
+thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
+thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
+thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
+thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--xxl.jpg
 coverImg--xs: https://
 coverImg--sm: https://
 coverImg--lg: https://
