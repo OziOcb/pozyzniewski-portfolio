@@ -8,10 +8,13 @@
     <article v-for="post in paginatedPosts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
+          <span v-if="!isMounted">Loading...</span>
+
           <NuxtImg
+            v-else
             class="blogCard__image"
             :alt="post.image_caption"
-            :src="post.image"
+            :src="post[`thumbnail--${currentMediaQuery()}`]"
           />
 
           <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
@@ -75,13 +78,11 @@ import { gsap } from "gsap";
 import Pagination from "v-pagination-3";
 import { currentMediaQuery } from "@/composable/currentMediaQuery";
 
-// prettier-ignore
-console.log("-\n--\n currentMediaQuery() \n >", currentMediaQuery(), "\n--\n-") // REMOVE_ME: remove when done!
-
 useHead({
   title: "Blog",
 });
 
+const isMounted = ref(false);
 const { data: posts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
@@ -89,7 +90,10 @@ const { data: posts } = await useAsyncData("posts", () =>
       "category",
       "created_at",
       "excerpt",
-      "image",
+      "thumbnail--sm",
+      "thumbnail--md",
+      "thumbnail--lg",
+      "thumbnail--xl",
       "image_caption",
       "title_visible",
     ])
@@ -105,6 +109,8 @@ onMounted(async () => {
       gsapPageTransition({ pageEnter: true });
     }, 100);
   }
+
+  isMounted.value = true;
 });
 
 onBeforeRouteLeave((to, from, next) => {
