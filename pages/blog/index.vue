@@ -140,11 +140,6 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 }
 
 /////// CORRECT THUMBNAIL - START
-// TODO: ENDED HERE!
-// TODO: ENDED HERE!
-// TODO: ENDED HERE Extract this logic to the composable/currentMediaQuery.ts file if possible!
-// TODO: ENDED HERE!
-// TODO: ENDED HERE!
 const mq = useMq();
 const correctImageSize = computed(() => {
   return (
