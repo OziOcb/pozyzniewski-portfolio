@@ -14,7 +14,7 @@
             v-else
             class="blogCard__image"
             :alt="post.image_caption"
-            :src="post[`thumbnail--${correctImageSize()}`]"
+            :src="post[`thumbnail--${correctImageSize}`]"
           />
 
           <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
@@ -76,7 +76,7 @@ import {
 } from "@/utils/transitions";
 import { gsap } from "gsap";
 import Pagination from "v-pagination-3";
-import { correctImageSize } from "@/composable/currentMediaQuery";
+import { useMq } from "vue3-mq";
 
 useHead({
   title: "Blog",
@@ -139,6 +139,27 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   return pageEnter ? tl.reverse(0) : tl.play();
 }
 
+/////// CORRECT THUMBNAIL - START
+// TODO: ENDED HERE!
+// TODO: ENDED HERE!
+// TODO: ENDED HERE Extract this logic to the composable/currentMediaQuery.ts file if possible!
+// TODO: ENDED HERE!
+// TODO: ENDED HERE!
+const mq = useMq();
+const correctImageSize = computed(() => {
+  return (
+    {
+      xs: "xs",
+      sm: "sm",
+      md: "sm",
+      lg: "lg",
+      xl: "lg",
+      xxl: "xxl",
+    }[mq.current] || "xs"
+  );
+});
+/////// CORRECT THUMBNAIL - END
+
 /////// PAGINATION - START
 const pageNumber = ref(1);
 const postsPerPage = ref(6);
@@ -159,6 +180,7 @@ function paginationHandler() {
 
 // This is needed to pre generate all single posts for static hosting
 const postsListOfUrls = posts.value.map((post) => post._path);
+/////// PAGINATION - END
 </script>
 
 <style lang="scss" scoped>
