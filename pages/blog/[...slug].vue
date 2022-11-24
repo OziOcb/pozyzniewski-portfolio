@@ -134,6 +134,7 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   }
 
   &__wrapper {
+    z-index: $layer-page-z-index;
     max-width: 800px;
     text-align: center;
   }
