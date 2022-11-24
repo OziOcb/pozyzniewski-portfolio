@@ -75,8 +75,9 @@ import {
   leavePageWithBasicTransition,
 } from "@/utils/transitions";
 import { gsap } from "gsap";
-import Pagination from "v-pagination-3";
 import { useMq } from "vue3-mq";
+import correctImageSizeObj from "@/utils/correctImageSizeObj.ts";
+import Pagination from "v-pagination-3";
 
 useHead({
   title: "Blog",
@@ -140,18 +141,10 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 }
 
 /////// CORRECT THUMBNAIL - START
+// TODO: I should put this logic inside a composable. However, doing `import { useMq } from "vue3-mq";` inside composable throws an error (maybe this issue will be fixed in the future)
 const mq = useMq();
 const correctImageSize = computed(() => {
-  return (
-    {
-      xs: "xs",
-      sm: "sm",
-      md: "sm",
-      lg: "lg",
-      xl: "lg",
-      xxl: "xxl",
-    }[mq.current] || "xs"
-  );
+  return correctImageSizeObj[mq.current] || "xs";
 });
 /////// CORRECT THUMBNAIL - END
 
