@@ -13,10 +13,10 @@ thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbn
 thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
 thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
 thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--xxl.jpg
-coverImg--xs: https://
-coverImg--sm: https://
-coverImg--lg: https://
-coverImg--xxl: https://
+coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xs.jpg
+coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--sm.jpg
+coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
+coverImg--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xxl.jpg
 image_caption: Photo by OziOcb
 tags: tutorials, youtube
 ---

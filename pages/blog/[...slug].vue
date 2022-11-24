@@ -1,7 +1,11 @@
 <template>
   <main role="main" class="post">
     <ContentDoc v-slot="{ doc: post }">
-      <header class="post__header header" :style="cssProps(post)">
+      <header
+        v-if="isMounted"
+        class="post__header header"
+        :style="cssProps(post)"
+      >
         <div class="header__wrapper">
           <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
           <hr class="header__divider" />
@@ -37,10 +41,23 @@ import {
   leavePageWithBasicTransition,
 } from "@/utils/transitions";
 import { gsap } from "gsap";
+import { useMq } from "vue3-mq";
+import correctImageSizeObj from "@/utils/correctImageSizeObj.ts";
+
+const isMounted = ref(false);
+/////// CORRECT COVER_IMAGE - START
+// TODO: I should put this logic inside a composable. However, doing `import { useMq } from "vue3-mq";` inside composable throws an error (maybe this issue will be fixed in the future)
+const mq = useMq();
+const correctImageSize = computed(() => {
+  return correctImageSizeObj[mq.current] || "xs";
+});
+/////// CORRECT COVER_IMAGE - END
 
 function cssProps(post) {
+  const correctCoverImgSize = [`coverImg--${correctImageSize.value}`];
+
   return {
-    "--background-image-url": `url('${post.image}')`,
+    "--background-image-url": `url('${post[correctCoverImgSize]}')`,
     "--color-title": post.title_color,
   };
 }
@@ -53,6 +70,8 @@ onMounted(async () => {
       gsapPageTransition({ pageEnter: true });
     }, 100);
   }
+
+  isMounted.value = true;
 });
 
 onBeforeRouteLeave((to, from, next) => {
