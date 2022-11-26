@@ -83,7 +83,6 @@ const languageColor = computed(() =>
   margin-bottom: 1rem;
   overflow: hidden;
   background: $color-bg-dark;
-  border-radius: 0.5rem;
 
   &__filenameText {
     position: absolute;
