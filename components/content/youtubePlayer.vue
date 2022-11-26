@@ -1,8 +1,8 @@
 <template>
-  <div class="videoPlayer">
+  <div class="youtubePlayer">
     <div
       v-if="!isVideoActive"
-      class="videoPlayer__cover cover"
+      class="youtubePlayer__cover cover"
       @click="activateVideoHandler()"
     >
       <NuxtImg
@@ -15,7 +15,7 @@
 
     <iframe
       v-else
-      class="videoPlayer__frame"
+      class="youtubePlayer__frame"
       width="560"
       height="315"
       :src="`https://www.youtube.com/embed/${videoId}`"
@@ -47,7 +47,7 @@ function activateVideoHandler() {
 </script>
 
 <style lang="scss" scoped>
-.videoPlayer {
+.youtubePlayer {
   background-color: #ada; // REMOVE_ME: remove when done!
 }
 
