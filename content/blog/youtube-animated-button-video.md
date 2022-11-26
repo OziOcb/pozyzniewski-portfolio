@@ -48,9 +48,8 @@ tags: tutorials, youtube
 
 ::videoContainer
 ---
-link: https://www.youtube.com/embed/wrtvBtNGUjU
-description: Harness the full power of Nuxt and the Nuxt ecosystem.
-title: Nuxt Architecture.
+videoId: wrtvBtNGUjU
+title: CSS Animation Effect | Animated Button | CSS Only
 ---
 ::
 

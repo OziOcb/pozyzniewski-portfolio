@@ -1,19 +1,10 @@
 <template>
-  <div style="background: red">
-    title {{ title }}
-
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
-    <!-- TODO: ENDED HERE! -->
+  <div class="videoPlayer">
     <iframe
       width="560"
       height="315"
-      :src="link"
-      :title="title"
+      :src="`https://www.youtube.com/embed/${videoId}`"
+      :title="`Youtube video player - ${title}`"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
@@ -28,10 +19,16 @@ export default {
       type: String,
       required: true,
     },
-    link: {
+    videoId: {
       type: String,
       required: true,
     },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.videoPlayer {
+  background-color: #ada; // REMOVE_ME: remove when done!
+}
+</style>
