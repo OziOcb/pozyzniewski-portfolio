@@ -7,9 +7,11 @@
         :style="cssProps(post)"
       >
         <div class="header__wrapper">
-          <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <h1 class="header__title display-xl" v-html="post.title_visible" />
           <hr class="header__divider" />
-          <div class="header__summary">{{ post.excerpt }}</div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div class="header__summary" v-html="post.excerpt" />
         </div>
       </header>
 
@@ -135,7 +137,7 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 
   &__wrapper {
     z-index: $layer-page-z-index;
-    max-width: 800px;
+    max-width: $size-container-sm-max-width;
     text-align: center;
   }
 

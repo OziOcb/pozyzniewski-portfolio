@@ -25,10 +25,13 @@
 
       <div class="blogCard__textContainer">
         <h2 class="blogCard__title">
-          <NuxtLink :to="`${post._path}`">{{ post.title_visible }}</NuxtLink>
+          <NuxtLink :to="`${post._path}`">
+            {{ removeNBSP(post.title_visible) }}
+          </NuxtLink>
         </h2>
 
-        <p class="blogCard__excerpt">{{ post.excerpt }}</p>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <p class="blogCard__excerpt" v-html="post.excerpt" />
 
         <p class="blogCard__details">
           {{ post.category }} / {{ formatDateToDayMonthYear(post.created_at) }}
@@ -138,6 +141,10 @@ function gsapPageTransition({ onComplete, pageEnter }) {
     .fromTo(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.9)
 
   return pageEnter ? tl.reverse(0) : tl.play();
+}
+
+function removeNBSP(str) {
+  return str.replaceAll("&nbsp;", " ");
 }
 
 /////// CORRECT THUMBNAIL - START

@@ -21,7 +21,7 @@ defineProps<{
 
 <style lang="scss" scoped>
 .youtubePlayer {
-  height: 52vw;
-  max-height: 655px;
+  height: 44vw;
+  max-height: 370px;
 }
 </style>
