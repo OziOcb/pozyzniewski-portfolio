@@ -8,10 +8,13 @@
     <article v-for="post in paginatedPosts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
+          <span v-if="!isMounted">Loading...</span>
+
           <NuxtImg
+            v-else
             class="blogCard__image"
             :alt="post.image_caption"
-            :src="post.image"
+            :src="post[`thumbnail--${correctImageSize}`]"
           />
 
           <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
@@ -22,10 +25,13 @@
 
       <div class="blogCard__textContainer">
         <h2 class="blogCard__title">
-          <NuxtLink :to="`${post._path}`">{{ post.title_visible }}</NuxtLink>
+          <NuxtLink :to="`${post._path}`">
+            {{ removeNBSP(post.title_visible) }}
+          </NuxtLink>
         </h2>
 
-        <p class="blogCard__excerpt">{{ post.excerpt }}</p>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <p class="blogCard__excerpt" v-html="post.excerpt" />
 
         <p class="blogCard__details">
           {{ post.category }} / {{ formatDateToDayMonthYear(post.created_at) }}
@@ -72,12 +78,15 @@ import {
   leavePageWithBasicTransition,
 } from "@/utils/transitions";
 import { gsap } from "gsap";
+import { useMq } from "vue3-mq";
+import correctImageSizeObj from "@/utils/correctImageSizeObj.ts";
 import Pagination from "v-pagination-3";
 
 useHead({
   title: "Blog",
 });
 
+const isMounted = ref(false);
 const { data: posts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
@@ -85,7 +94,10 @@ const { data: posts } = await useAsyncData("posts", () =>
       "category",
       "created_at",
       "excerpt",
-      "image",
+      "thumbnail--xs",
+      "thumbnail--sm",
+      "thumbnail--lg",
+      "thumbnail--xxl",
       "image_caption",
       "title_visible",
     ])
@@ -101,6 +113,8 @@ onMounted(async () => {
       gsapPageTransition({ pageEnter: true });
     }, 100);
   }
+
+  isMounted.value = true;
 });
 
 onBeforeRouteLeave((to, from, next) => {
@@ -129,6 +143,18 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   return pageEnter ? tl.reverse(0) : tl.play();
 }
 
+function removeNBSP(str) {
+  return str.replaceAll("&nbsp;", " ");
+}
+
+/////// CORRECT THUMBNAIL - START
+// TODO: I should put this logic inside a composable. However, doing `import { useMq } from "vue3-mq";` inside composable throws an error (maybe this issue will be fixed in the future)
+const mq = useMq();
+const correctImageSize = computed(() => {
+  return correctImageSizeObj[mq.current] || "xs";
+});
+/////// CORRECT THUMBNAIL - END
+
 /////// PAGINATION - START
 const pageNumber = ref(1);
 const postsPerPage = ref(6);
@@ -149,6 +175,7 @@ function paginationHandler() {
 
 // This is needed to pre generate all single posts for static hosting
 const postsListOfUrls = posts.value.map((post) => post._path);
+/////// PAGINATION - END
 </script>
 
 <style lang="scss" scoped>

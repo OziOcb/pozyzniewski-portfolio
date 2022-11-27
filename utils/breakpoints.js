@@ -1,6 +1,7 @@
 // If you change anything in here you must change the same thing inside:
 // src/assets/sass/globals/_breakpoints.scss
 export default {
+  xxs: 0,
   xs: 320, // smartphones, portrait iPhone, portrait 480x320 phones (Android)
   sm: 480, // smartphones, Android phones, landscape iPhone
   md: 600, // portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android),

@@ -5,7 +5,12 @@
     "stylelint-config-standard-scss",
     "stylelint-config-recommended-vue/scss"
   ],
-  "ignoreFiles": ["nuxt.config.ts"],
+  "ignoreFiles": [
+    "nuxt.config.ts",
+    "composable/**.*",
+    "plugins/**.*",
+    "utils/**.*"
+  ],
   "overrides": [
     {
       "files": ["*.vue", "**/*.vue"],

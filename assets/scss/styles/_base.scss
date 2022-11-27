@@ -64,6 +64,10 @@ h6 {
   padding-right: $size-gutter-width;
   padding-left: $size-gutter-width;
   margin: 0 auto;
+
+  &--sm {
+    max-width: $size-container-sm-max-width;
+  }
 }
 
 // ===

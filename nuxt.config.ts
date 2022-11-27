@@ -1,5 +1,11 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  content: {
+    highlight: {
+      preload: ["vue-html", "vue"],
+    },
+  },
+
   imports: {
     dirs: ["stores"],
   },

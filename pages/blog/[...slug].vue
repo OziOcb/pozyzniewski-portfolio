@@ -1,11 +1,17 @@
 <template>
   <main role="main" class="post">
     <ContentDoc v-slot="{ doc: post }">
-      <header class="post__header header" :style="cssProps(post)">
+      <header
+        v-if="isMounted"
+        class="post__header header"
+        :style="cssProps(post)"
+      >
         <div class="header__wrapper">
-          <h1 class="header__title display-xl">{{ post.title_visible }}</h1>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <h1 class="header__title display-xl" v-html="post.title_visible" />
           <hr class="header__divider" />
-          <div class="header__summary">{{ post.excerpt }}</div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div class="header__summary" v-html="post.excerpt" />
         </div>
       </header>
 
@@ -37,10 +43,23 @@ import {
   leavePageWithBasicTransition,
 } from "@/utils/transitions";
 import { gsap } from "gsap";
+import { useMq } from "vue3-mq";
+import correctImageSizeObj from "@/utils/correctImageSizeObj.ts";
+
+const isMounted = ref(false);
+/////// CORRECT COVER_IMAGE - START
+// TODO: I should put this logic inside a composable. However, doing `import { useMq } from "vue3-mq";` inside composable throws an error (maybe this issue will be fixed in the future)
+const mq = useMq();
+const correctImageSize = computed(() => {
+  return correctImageSizeObj[mq.current] || "xs";
+});
+/////// CORRECT COVER_IMAGE - END
 
 function cssProps(post) {
+  const correctCoverImgSize = [`coverImg--${correctImageSize.value}`];
+
   return {
-    "--background-image-url": `url('${post.image}')`,
+    "--background-image-url": `url('${post[correctCoverImgSize]}')`,
     "--color-title": post.title_color,
   };
 }
@@ -53,6 +72,8 @@ onMounted(async () => {
       gsapPageTransition({ pageEnter: true });
     }, 100);
   }
+
+  isMounted.value = true;
 });
 
 onBeforeRouteLeave((to, from, next) => {
@@ -93,6 +114,7 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,9 +125,19 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: rgba($color-black, 80%);
+  }
 
   &__wrapper {
-    max-width: 800px;
+    z-index: $layer-page-z-index;
+    max-width: $size-container-sm-max-width;
     text-align: center;
   }
 
