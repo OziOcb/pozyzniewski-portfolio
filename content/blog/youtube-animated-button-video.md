@@ -37,7 +37,7 @@ title: CSS Animation Effect | Animated Button | CSS Only
 
 ### Source Code
 
-Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button)
+Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button){:target="_blank"}
 
 ```html [index.html]
 <button class="btn">
