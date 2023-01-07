@@ -8,14 +8,14 @@ created_at: 2023-01-07T12:10:01.723Z
 excerpt: A fantastic looking <strong>parallax card</strong> created with <strong>HTML, CSS & JS</strong>. <strong>Youtube video included!</strong>
 # FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
 # image: ./images/img1.jpg
-thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
-thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
-thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
-thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--xxl.jpg
-coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xs.jpg
-coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--sm.jpg
-coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
-coverImg--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xxl.jpg
+thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1673103325/yt-002/thumbnail--xs.jpg
+thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1673103324/yt-002/thumbnail--sm.jpg
+thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1673103324/yt-002/thumbnail--lg.jpg
+thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1673103326/yt-002/thumbnail--xxl.jpg
+coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1673103324/yt-002/coverImg--xs.jpg
+coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1673103324/yt-002/coverImg--sm.jpg
+coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1673103324/yt-002/coverImg--lg.jpg
+coverImg--xxl: https://res.cloudinary.com/oziocb/image/upload/v1673103325/yt-002/coverImg--xxl.jpg
 image_caption: Photo by OziOcb
 tags: tutorials, youtube
 ---
