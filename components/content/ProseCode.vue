@@ -57,6 +57,21 @@ const languageMap: Record<
     background: "#42b883",
     color: "white",
   },
+  html: {
+    text: "html",
+    background: "#e44d27",
+    color: "white",
+  },
+  css: {
+    text: "css",
+    background: "#379ad6",
+    color: "white",
+  },
+  scss: {
+    text: "scss",
+    background: "#cc6799",
+    color: "white",
+  },
   js: {
     text: "js",
     background: "#f7df1e",

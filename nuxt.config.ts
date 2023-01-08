@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   content: {
     highlight: {
-      preload: ["vue-html", "vue"],
+      preload: ["vue-html", "vue", "scss"],
     },
   },
 
