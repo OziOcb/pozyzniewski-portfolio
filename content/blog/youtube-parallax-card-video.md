@@ -20,54 +20,67 @@ image_caption: Photo by OziOcb
 tags: tutorials, youtube
 ---
 
-## Animated Button -&nbsp;CSS&nbsp;Only
+## Parallax Card -&nbsp;HTML&nbsp;CSS&nbsp;Js
 
-As a Senior Developer, I often miss creating simple things. That's why I decided to start making <strong>uncomplicated yet cool components</strong> every now and then. Such as this beautiful, <strong>animated button</strong> made using <strong>HTML</strong> and <strong>CSS</strong> only!
+Another quick tutorial! This time I created this <strong>fantastic card</strong> with a <strong>unique parallax effect</strong>.
 
 I invite all interested to watch and share your feedback in the comments section on <strong>youtube</strong>.
 
 ::youtubePlayer
 ---
-videoId: wrtvBtNGUjU
-title: CSS Animation Effect | Animated Button | CSS Only
+videoId: D9Fy5OSvpbo
+title: Parallax Card | Html Css Js
 ---
 ::
 
 
 ### Source Code
 
-Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button){:target="_blank"}
+Link to the [GitHub repository](https://github.com/OziOcb/yt-002-parallax-card){:target="_blank"}
 
 ```html [index.html]
-<button class="btn">
-  <span class="btn__text">
-    <span class="btn__text--base">Hover effect</span>
-    <span class="btn__text--hover">Yeah!</span>
-  </span>
+<div class="card">
+  <div class="card__inner">
+    <div
+      class="card__background"
+      style="background-image: url('https://picsum.photos/id/323/1300/1400');"
+    ></div>
 
-  <span class="btn__line btn__line--right"></span>
-  <span class="btn__line btn__line--top"></span>
-  <span class="btn__line btn__line--left"></span>
-  <span class="btn__line btn__line--bottom"></span>
-</button>
+    <div class="card__textArea">
+      <h3>Hey You!</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card__inner">
+    <div
+      class="card__background"
+      style="background-image: url('https://picsum.photos/id/525/1300/1400');"
+    ></div>
+
+    <div class="card__textArea">
+      <h3>Bye Bye!</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+  </div>
+</div>
 ```
 
 
-```css [style.css]
+```scss [style.scss]
 /* SETUP */
-@import 'https://fonts.googleapis.com/css?family=Poppins:900i';
+@import "https://fonts.googleapis.com/css?family=Poppins:900i";
 
-:root {
-  --font-size: 34px;
-  --button-width: 300px;
-  --button-height: 90px;
-  --button-border-radius: 10px;
-  --line-thickness: 4px;
-  --padding: 0.7em;
-  --color-text: #efefef;
-  --color-border: #f2cf22;
-  --color-bg: #282825;
-}
+$font-size: 16px;
+$color-black: #070707;
+$color-white: #efefef;
+$color-bg: #282825;
+$color-text: $color-white;
+
+// Transitions
+$duration-textArea-transition: 0.6s 1.6s ease;
 
 * {
   box-sizing: border-box;
@@ -79,196 +92,132 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: var(--color-bg);
-}
-
-/* BTN */
-.btn {
-  position: relative;
-  width: var(--button-width);
-  height: var(--button-height);
-  overflow: hidden;
-  font-size: var(--font-size);
-  color: var(--color-text);
-  cursor: pointer;
-  background-color: transparent;
-  border: var(--line-thickness) solid transparent;
-  border-radius: var(--button-border-radius);
-}
-
-.btn .btn__text {
-  position: relative;
-  display: block;
   font-family: Poppins, sans-serif;
-  transition: transform 0.8s ease-out 0.8s, color 0.4s 0.4s;
-  transform: translateY(calc(var(--padding) / 1.1));
+  font-size: $font-size;
+  color: $color-text;
+  background: $color-bg;
 }
 
-.btn .btn__text .btn__text--base,
-.btn .btn__text .btn__text--hover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  transform: translateY(-48%);
-}
+.card {
+  margin: 10px;
+  transform: perspective(600px);
+  transform-style: preserve-3d;
+  cursor: pointer;
 
-.btn .btn__text .btn__text--base {
-  opacity: 1;
-  transition: opacity 0.8s 0.8s;
-}
-
-.btn .btn__text .btn__text--hover {
-  opacity: 0;
-  transition: opacity 0s 0.4s;
-}
-
-.btn::before {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  display: block;
-  width: 150%;
-  height: 100%;
-  content: '';
-  background-color: var(--color-border);
-  transform: skew(-45deg) translate(-115%);
-  animation: bg-out 0.8s;
-}
-
-.btn::after {
-  position: absolute;
-  right: calc(var(--padding) * 1.55);
-  bottom: 0;
-  left: calc(var(--padding) * 1.55);
-  height: var(--line-thickness);
-  content: '';
-  background: var(--color-border);
-  transition: transform 1s ease-out 0.2s, right 0.2s ease-out 0.6s,
-    left 0.4s ease-out 1s;
-  transform-origin: left;
-}
-
-.btn__line {
-  position: absolute;
-  background: var(--color-border);
-}
-
-.btn__line--right,
-.btn__line--left {
-  top: 0;
-  bottom: 0;
-  width: var(--line-thickness);
-  transform: scale3d(1, 0, 1);
-}
-
-.btn__line--top,
-.btn__line--bottom {
-  right: 0;
-  left: 0;
-  height: var(--line-thickness);
-  transform: scale3d(0, 1, 1);
-}
-
-.btn__line--right {
-  right: 0;
-  transition: transform 0.2s ease-out 0.4s;
-  transform-origin: top;
-}
-
-.btn__line--top {
-  top: 0;
-  transition: transform 0.2s ease-out 0.6s;
-  transform-origin: left;
-}
-
-.btn__line--left {
-  left: 0;
-  transition: transform 0.2s ease-out 0.8s;
-  transform-origin: bottom;
-}
-
-.btn__line--bottom {
-  bottom: 0;
-  transition: transform 0.2s ease-out;
-  transform-origin: right;
-}
-
-/* ------------------------------ */
-/* HOVER */
-.btn:hover .btn__text {
-  color: var(--color-bg);
-  transition: transform 0.8s ease-out 0.4s, color 0.4s 0.4s;
-  transform: translateY(0);
-}
-
-.btn:hover .btn__text .btn__text--base {
-  opacity: 0;
-  transition: opacity 0s 0.8s;
-}
-
-.btn:hover .btn__text .btn__text--hover {
-  opacity: 1;
-  transition: opacity 0s 1s;
-}
-
-.btn:hover::before {
-  transform: skew(-45deg) translate(-15%);
-  animation: bg-in 2s;
-}
-
-.btn:hover::after {
-  right: 0;
-  left: 0;
-  transition: transform 0.6s ease-out 0.2s, right 0.2s ease-out, left 0s 0.6s;
-  transform: scale3d(0, 1, 1);
-  transform-origin: right;
-}
-
-.btn:hover .btn__line {
-  transform: scale3d(1, 1, 1);
-}
-
-.btn:hover .btn__line--right {
-  transition: transform 0.2s ease-out 0.2s;
-  transform-origin: bottom;
-}
-
-.btn:hover .btn__line--top {
-  transition: transform 0.2s ease-out 0.4s;
-  transform-origin: right;
-}
-
-.btn:hover .btn__line--left {
-  transition: transform 0.2s ease-out 0.6s;
-  transform-origin: top;
-}
-
-.btn:hover .btn__line--bottom {
-  transition: transform 0.2s ease-out 0.8s;
-  transform-origin: left;
-}
-
-@keyframes bg-in {
-  0% {
-    transform: skew(-45deg) translate(-115%);
+  &__inner {
+    position: relative;
+    width: 280px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 30px 60px 0 rgba($color-black, 0.5);
+    transition: transform 1.2s ease;
+    .card:hover & {
+      transition-duration: 0.6s;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+    }
+    &::before {
+      background-color: rgba($color-black, 0.5);
+    }
+    &::after {
+      margin: 6px;
+      border: 1px solid rgba($color-black, 0.5);
+      border-radius: 10px;
+    }
   }
-  40% {
-    transform: skew(-45deg) translate(-115%);
+
+  &__background {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    bottom: -30px;
+    left: -30px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform 1.2s ease;
+    .card:hover & {
+      transition-duration: 0.6s;
+    }
   }
-  100% {
-    transform: skew(-45deg) translate(-15%);
+
+  &__textArea {
+    position: absolute;
+    bottom: -60px;
+    padding: 20px;
+    transition: transform $duration-textArea-transition;
+    .card:hover & {
+      transition-delay: initial;
+      transform: translateY(-54px);
+    }
+
+    h3 {
+      margin-bottom: 4px;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      text-shadow: 0 2px 3px $color-black;
+      opacity: 0;
+      transition: opacity $duration-textArea-transition;
+      .card:hover & {
+        opacity: 1;
+        transition-delay: initial;
+      }
+    }
   }
 }
+```
 
-@keyframes bg-out {
-  from {
-    transform: skew(-45deg) translate(-15%);
-  }
-  to {
-    transform: skew(-45deg) translate(100%);
-  }
-}
+```js [main.js]
+const wrapper = document.querySelectorAll(".card");
+
+wrapper.forEach((card) => {
+  const cardInner = card.querySelector(".card__inner");
+  const cardBackground = cardInner.querySelector(".card__background");
+
+  const state = {
+    mouseX: 0,
+    mouseY: 0,
+    cardHeight: card.clientHeight,
+    cardWidth: card.clientWidth,
+    cardOffsetLeft: card.offsetLeft,
+    cardOffsetTop: card.offsetTop,
+  };
+
+  const mouseMove = (el) => {
+    state.mouseX = el.pageX - state.cardOffsetLeft - state.cardWidth / 2;
+    state.mouseY = el.pageY - state.cardOffsetTop - state.cardHeight / 2;
+
+    const angleX = (state.mouseX / state.cardWidth) * 25;
+    const angleY = (state.mouseY / state.cardHeight) * -25;
+
+    const posX = (state.mouseX / state.cardWidth) * -60;
+    const posY = (state.mouseY / state.cardHeight) * -60;
+
+    cardInner.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+    cardBackground.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+  };
+
+  const mouseOut = (el) => {
+    cardInner.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    cardBackground.style.transform = `translateX(0px) translateY(0px)`;
+  };
+
+  card.addEventListener("mousemove", mouseMove);
+  card.addEventListener("mouseout", mouseOut);
+});
 ```
 
 Thanks!
