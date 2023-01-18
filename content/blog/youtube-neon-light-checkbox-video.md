@@ -36,7 +36,7 @@ title: Neon Light Checkbox | Animated Checkbox | CSS Only
 
 ### Source Code
 
-Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button){:target="_blank"}
+Link to the [GitHub repository](https://github.com/OziOcb/yt-003-neon-light-checkbox){:target="_blank"}
 
 ```html [index.html]
 <div class="cBox">
