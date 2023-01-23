@@ -5,7 +5,8 @@ title_visible: Parallax Card
 author: Paul Ozyzniewski
 category: Tutorials | YouTube
 created_at: 2023-01-07T12:10:01.723Z
-excerpt: A fantastic looking <strong>parallax card</strong> created with <strong>HTML, CSS & JS</strong>. <strong>Youtube video included!</strong>
+# excerpt: A fantastic looking <strong>parallax card</strong> created with <strong>HTML, CSS & JS</strong>. <strong>Youtube video included!</strong>
+excerpt: Are you ready to <strong>add some fun and excitement to your website</strong>? Look no further than the <strong>Parallax Card</strong>!
 # FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
 # image: ./images/img1.jpg
 thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1673103325/yt-002/thumbnail--xs.jpg
@@ -20,12 +21,6 @@ image_caption: Photo by OziOcb
 tags: tutorials, youtube
 ---
 
-## Parallax Card -&nbsp;HTML&nbsp;CSS&nbsp;Js
-
-Another quick tutorial! This time I created this <strong>fantastic card</strong> with a <strong>unique parallax effect</strong>.
-
-I invite all interested to watch and share your feedback in the comments section on <strong>youtube</strong>.
-
 ::youtubePlayer
 ---
 videoId: D9Fy5OSvpbo
@@ -33,10 +28,18 @@ title: Parallax Card | Html Css Js
 ---
 ::
 
-
-### Source Code
-
 Link to the [GitHub repository](https://github.com/OziOcb/yt-002-parallax-card){:target="_blank"}
+
+## Parallax Card -&nbsp;HTML&nbsp;CSS&nbsp;Js
+
+Hey there Front-End Developers!
+
+Are you ready to <strong>add some fun and excitement to your website</strong>? Look no further than the <strong>Parallax Card</strong>!
+
+This <strong>amazing design</strong> feature creates a <strong>3D effect</strong> as users scroll through your website. The background image on the card moves at a slower rate than the foreground content, giving the <strong>illusion of depth and movement</strong>. Not only is it <strong>visually stunning</strong>, but it also adds an interactive element to your website that will keep users engaged.
+
+Creating a <strong>Parallax Card</strong> is easy and can be done using just <strong>CSS and JavaScript</strong>. Simply set up a container for the card, add a background image, and use <strong>CSS</strong> to set the speed at which the image moves.
+
 
 ```html [index.html]
 <div class="card">
@@ -180,6 +183,10 @@ body {
 }
 ```
 
+
+You can also add some <strong>JavaScript</strong> to control the movement of the card on scroll, and voila! You have a beautiful, <strong>interactive design element</strong> that will make your website stand out.
+
+
 ```js [main.js]
 const wrapper = document.querySelectorAll(".card");
 
@@ -220,4 +227,8 @@ wrapper.forEach((card) => {
 });
 ```
 
-Thanks!
+But that's not all! You can also add <strong>hover effects, animations</strong>, and even make the card clickable to take users to another page. The possibilities are endless!
+
+So, what are you waiting for? Add some flair to your website with a <strong>Parallax Card</strong> and watch as your visitors are wowed by the interactive design.
+
+Happy coding!
