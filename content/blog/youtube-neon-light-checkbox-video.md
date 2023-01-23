@@ -5,7 +5,7 @@ title_visible: Neon Light Checkbox -&nbsp;CSS&nbsp;Only
 author: Paul Ozyzniewski
 category: Tutorials | YouTube
 created_at: 2023-01-18T20:10:01.723Z
-excerpt: A futuristic, <strong>Neon Light Checkbox</strong> created with <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video included!</strong>
+excerpt: Are you tired of boring old <strong>checkboxes</strong> that blend into the background of your website? Want to <strong>add some pizazz and personality to your forms?</strong> Look no further than the world of <strong>CSS-only checkboxes</strong>!
 # FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
 # image: ./images/img1.jpg
 thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1674069637/yt-003/thumbnail--xs.jpg
@@ -20,11 +20,7 @@ image_caption: Photo by OziOcb
 tags: tutorials, youtube
 ---
 
-## Neon Light Checkbox -&nbsp;CSS&nbsp;Only
 
-Another quicky! This time I created this <strong>futuristic html checkbox</strong> with a <strong>unique neon light effect</strong>.
-
-I invite all interested to watch and share your feedback in the comments section on <strong>youtube</strong>.
 
 ::youtubePlayer
 ---
@@ -34,9 +30,15 @@ title: Neon Light Checkbox | Animated Checkbox | CSS Only
 ::
 
 
-### Source Code
-
 Link to the [GitHub repository](https://github.com/OziOcb/yt-003-neon-light-checkbox){:target="_blank"}
+
+## Neon Light Checkbox -&nbsp;CSS&nbsp;Only
+
+Are you tired of boring old <strong>checkboxes</strong> that blend into the background of your website? Want to <strong>add some pizazz and personality to your forms?</strong> Look no further than the world of <strong>CSS-only checkboxes</strong>!
+
+With just a bit of <strong>CSS</strong> magic, you can turn those plain <strong>checkboxes</strong> into sleek, stylish <strong>elements</strong> that will <strong>make your forms stand out</strong>. And the best part? No JavaScript required!
+
+First things first, let's create the <strong>HTML</strong> for our <strong>checkbox</strong>. It can be as simple as a div or a label. Then, add a class or id so that you can target it with your <strong>CSS</strong>.
 
 ```html [index.html]
 <div class="cBox">
@@ -52,6 +54,7 @@ Link to the [GitHub repository](https://github.com/OziOcb/yt-003-neon-light-chec
 </div>
 ```
 
+Now, it's time to break out your <strong>CSS</strong> wizardry!
 
 ```scss [style.scss]
 /* SETUP */
@@ -194,4 +197,8 @@ body {
 }
 ```
 
-Thanks!
+That's it! But <strong>checkboxes</strong> aren't the only game in town. You can also use <strong>CSS</strong> to <strong>create custom radio buttons and toggle switches</strong>. These elements can be used to create <strong>more interactive and engaging forms</strong>, and can be customized to match the overall design of your website.
+
+The possibilities are endless with <strong>CSS-only checkboxes</strong>. Want to make your <strong>checkboxes</strong> look like cute little aliens? Go for it! Want to make them look like buttons on a retro video game controller? Why not! The only limit is your imagination (and <strong>CSS skills</strong>, of course).
+
+So don't be afraid to <strong>get creative</strong> and have fun with your <strong>checkboxes</strong>. Your users will thank you for the added personality and pizzazz on your website. Happy styling!
