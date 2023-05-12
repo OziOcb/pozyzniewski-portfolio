@@ -1,10 +1,16 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: master
+
+local_backend: true
+publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
 
+# TODO
+# TODO Finish setting up the collection for the blog posts
+# TODO
 collections:
   - name: 'blog'
     label: 'Blog'
@@ -12,8 +18,9 @@ collections:
     format: 'frontmatter'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    preview_path: blog/{{slug}}
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
