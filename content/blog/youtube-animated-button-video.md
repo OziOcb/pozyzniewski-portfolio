@@ -1,44 +1,46 @@
 ---
-title: YouTube - Animated Button - CSS Only
-title_color: "#fcfcfc"
-title_visible: Animated Button -&nbsp;CSS&nbsp;Only
-author: Paul Ozyzniewski
-category: Tutorials | YouTube
-created_at: 2022-11-27T12:50:01.723Z
-excerpt: A fabulous, <strong>animated button</strong> created with <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video included!</strong>
-# FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
-# image: ./images/img1.jpg
-thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
-thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
-thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
 thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--xxl.jpg
-coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xs.jpg
-coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--sm.jpg
-coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
 coverImg--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xxl.jpg
+excerpt: A fabulous, <strong>animated button</strong> created with
+  <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video
+  included!</strong>
 image_caption: Photo by OziOcb
+coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--sm.jpg
+thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
+coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
+thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
+coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xs.jpg
+thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
+created_at: 2022-11-27T12:50:01.723Z
+author: Paul Ozyzniewski
+title_visible: Animated Button -&nbsp;CSS&nbsp;Only
+title: YouTube - Animated Button - CSS Only
+date: 2023-05-12T16:01:21.891Z
 tags: tutorials, youtube
+title_color: "#fcfcfc"
+description: desc
+category: Tutorials | YouTube
 ---
-
 ## Animated Button -&nbsp;CSS&nbsp;Only
 
 As a Senior Developer, I often miss creating simple things. That's why I decided to start making <strong>uncomplicated yet cool components</strong> every now and then. Such as this beautiful, <strong>animated button</strong> made using <strong>HTML</strong> and <strong>CSS</strong> only!
 
 I invite all interested to watch and share your feedback in the comments section on <strong>youtube</strong>.
 
-::youtubePlayer
----
+## ::youtubePlayer
+
 videoId: wrtvBtNGUjU
 title: CSS Animation Effect | Animated Button | CSS Only
----
-::
 
+- - -
+
+::
 
 ### Source Code
 
 Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button){:target="_blank"}
 
-```html [index.html]
+```html
 <button class="btn">
   <span class="btn__text">
     <span class="btn__text--base">Hover effect</span>
@@ -52,8 +54,7 @@ Link to the [GitHub repository](https://github.com/OziOcb/yt-001-animated-button
 </button>
 ```
 
-
-```css [style.css]
+```css
 /* SETUP */
 @import 'https://fonts.googleapis.com/css?family=Poppins:900i';
 
@@ -271,4 +272,4 @@ body {
 }
 ```
 
-Thanks!
+Thanks!!
