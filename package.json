@@ -15,7 +15,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
     "stylelint": "npx stylelint \"**/*.scss\" \"**/*.vue\" --fix",
     "prepare": "husky install"
   },
@@ -62,7 +62,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,vue,html,css}": [
-      "npm run lintfix",
+      "npm run lint:fix",
       "npm run stylelint"
     ]
   }

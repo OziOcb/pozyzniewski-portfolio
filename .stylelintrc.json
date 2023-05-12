@@ -9,7 +9,8 @@
     "nuxt.config.ts",
     "composable/**.*",
     "plugins/**.*",
-    "utils/**.*"
+    "utils/**.*",
+    "public/admin/**.*"
   ],
   "overrides": [
     {
