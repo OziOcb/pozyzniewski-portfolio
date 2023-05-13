@@ -47,6 +47,15 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/prese
 &nbsp;
 # My Notes
 
+## Decap CMS
+This project uses [Decap CMS](https://decapcms.org/) (old Netlify CMS).
+
+To run it locally
+1. Run the project `npm run dev`
+2. In a separate terminal run this command `npx netlify-cms-proxy-server`. This will create a local server, so changes won't be deployed to the PROD when clicking Publish button
+3. Open this page `localhost:3000/admin`
+
+&nbsp;
 ## TypeScript
 
 - types/interfaces for elements used inside <head>
