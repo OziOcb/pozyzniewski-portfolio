@@ -1,11 +1,11 @@
 ---
 title: YouTube - Animated Button - CSS Onlys
 title_color: "#fcfcfc"
-title_visible: Animated Button -&nbsp;CSS&nbsp;Only
+title_visible: Animated Button -&nbsp;CSS&nbsp;Onlyssss
 author: Paul Ozyzniewski
 category: Tutorials | YouTube
 created_at: 2022-11-27T12:50:01.723Z
-excerpt: A fabulous, <strong>animated button</strong> created with
+excerpt: A fabulousdss, <strong>animated button</strong> created with
   <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video
   included!</strong>
 thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
