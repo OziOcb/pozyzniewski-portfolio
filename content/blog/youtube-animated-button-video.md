@@ -1,22 +1,22 @@
 ---
-title: YouTube - Animated Button - CSS Only
+title: YouTube - Animated Button - CSS Onlys
 title_color: "#fcfcfc"
 title_visible: Animated Button -&nbsp;CSS&nbsp;Only
 author: Paul Ozyzniewski
 category: Tutorials | YouTube
 created_at: 2022-11-27T12:50:01.723Z
-excerpt: A fabulous, <strong>animated button</strong> created with <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video included!</strong>
-# FIXME: Stop using cloudinary when this bug is fixed - https://github.com/nuxt/image/issues/638
-# image: ./images/img1.jpg
+excerpt: A fabulous, <strong>animated button</strong> created with
+  <strong>HTML</strong> and <strong>CSS</strong> only. <strong>Youtube video
+  included!</strong>
 thumbnail--xs: https://res.cloudinary.com/oziocb/image/upload/v1669049332/thumbnail--xs.jpg
 thumbnail--sm: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--sm.jpg
 thumbnail--lg: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--lg.jpg
 thumbnail--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669049331/thumbnail--xxl.jpg
 coverImg--xs: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xs.jpg
 coverImg--sm: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--sm.jpg
-coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
 coverImg--xxl: https://res.cloudinary.com/oziocb/image/upload/v1669301753/coverImg--xxl.jpg
 image_caption: Photo by OziOcb
+coverImg--lg: https://res.cloudinary.com/oziocb/image/upload/v1669301752/coverImg--lg.jpg
 tags: tutorials, youtube
 ---
 
